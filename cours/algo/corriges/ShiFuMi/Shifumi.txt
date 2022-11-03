@@ -1,0 +1,9 @@
+ShiFuMi
+
+Créez le jeu ShiFuMi en tapant les mots clés "pierre" ou "p", "feuille" ou "f" ou "ciseaux" ou "c"
+Il faut chercher une fonction aléatoire qui permettra de jouer contre l'ordinateur
+Ciseaux remporte sur feuille, feuille sur pierre et pierre sur ciseaux
+Il faut faire 2 ou 3 parties pour determiner qui a gagner la première manche
+Il y aura 2 ou 3 manches pour déterminer le grand vainqueur 
+
+Bien évidement il faudra afficher les scores et il faudra créer les fonctions qui vont bien.
