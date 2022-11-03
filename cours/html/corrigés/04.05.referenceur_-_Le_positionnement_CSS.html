@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+        <title>Le positionnement CSS - Mise en pratique</title>
+    </head>
+
+    <body>
+        <div style="overflow:auto;">
+            <div style="float:right;width:80%;">
+                <header style="background-color:#881707;height:200px;" role="banner">Header</header>
+
+                <main style="width:75%;" role="main">
+                    <section>
+                        <article style="background-color:#3c1e06;height:350px;" role="article">Content</article>
+                    </section>
+                </main>
+            </div>
+
+            <aside style="background-color:#d08b00;float:left;height:550px;width:20%;" role="complementary">SideBar Left</aside>
+
+            <aside style="background-color:#03323a;float:right;height:550px;width:20%;position:relative;top:-350px;" role="complementary">SideBar Right</aside>
+
+            <footer style="background-color:#007287;float:left;height:200px;width:80%;" role="contentinfo">Footer</footer>
+        </div>
+    </body>
+</html>
