@@ -1,0 +1,52 @@
+/*
+    Commentaire
+*/
+.alkas {
+    height: 100px;
+    background-color: red;
+    color: white;
+    width: 100px;
+}
+
+#laurent {
+    color: blue;
+    position: relative;
+    top: 10px;
+}
+
+#thomas {
+
+}
+
+.float {
+    float: left;
+}
+
+#ecoleDevAlkas .alkas {
+    color: yellow;
+    background-color: blue;
+}
+
+#maPositionRelative {
+    position: relative;
+    border: 1px solid red;
+    width: 300px;
+    height: 300px;
+
+    top: 20px;
+    left: 30px;
+}
+.exposant {
+    position: absolute;
+    bottom: -5px;
+    font-size: 10px;
+}
+
+.caSeDeplace {
+    position: absolute;
+    border: 1px solid green;
+    width: 50%;
+    top: 50%;
+    right: 30px;
+
+}
