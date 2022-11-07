@@ -1,0 +1,11 @@
+ Le volume dans le lecteur C s'appelle Win 10
+ Le num‚ro de s‚rie du volume est 48A0-6FC1
+
+ R‚pertoire de C:\dev\code\php\cours\Alkas-2022-2023\test
+
+07/11/2022  13:31    <DIR>          .
+04/11/2022  13:57    <DIR>          ..
+07/11/2022  13:31                 0 blabla.txt
+03/11/2022  16:39               392 laurent.txt
+               2 fichier(s)              392 octets
+               2 R‚p(s)  468ÿ118ÿ118ÿ400 octets libres
