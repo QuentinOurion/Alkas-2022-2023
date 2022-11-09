@@ -39,3 +39,15 @@ echo '<br>';
 for($i = 0; $i < 10; $i++) {
     echo $i.'<br>';
 }
+
+$count = 0;
+do {
+    echo 'count = '.$count.'<br>';
+    $count++;
+} while($count < 10);
+
+$count = 0;
+while($count < 10) {
+    echo 'count = '.$count.'<br>';
+    $count++;
+}
