@@ -22,3 +22,20 @@ if(1 == $maVariable) {
 } else {
     echo "Au revoir";
 }
+
+
+echo '<br>';
+$count = 0;
+$count = $count +1;
+echo 'count = '.$count.'<br>';
+$count++; // $count = $count +1;
+echo 'count = '.$count.'<br>';
+$count++;
+$count = $count +2;
+echo 'count = '.$count.'<br>';
+
+
+echo '<br>';
+for($i = 0; $i < 10; $i++) {
+    echo $i.'<br>';
+}
