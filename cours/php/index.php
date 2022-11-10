@@ -131,3 +131,6 @@ function maNote(string $prenom, int $note) : string
 
     return $resultatDeLaNote.'<br>';
 }
+
+$anthonyNotes = [45, 23, 4];
+echo $anthonyNotes[0]; // affiche 45
