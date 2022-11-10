@@ -83,14 +83,15 @@ boire($maBoissonEst);
 boire('bière');
 boire('café');
 boire($maBoissonEst);
-$laurent = 10;
-echo maNote('laurent', $laurent);
-$thomas = 15;
-echo maNote('thomas', $thomas);
-$anthony = 20;
+$laurentNote = 10;
+echo maNote('laurent', $laurentNote);
+$thomasNote = 15;
+echo maNote('thomas', $thomasNote);
+$anthonyNote = 20;
 $anthonyPrenom = 'Anthony';
-echo maNote($anthonyPrenom, $anthony);
-echo maNote('yann', 21);
+echo maNote($anthonyPrenom, $anthonyNote);
+$yannAppreciation = maNote('yann', 21);
+echo $yannAppreciation;
 
 function boire(string $boisson) : void
 {
