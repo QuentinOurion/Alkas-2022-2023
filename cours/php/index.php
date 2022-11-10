@@ -23,6 +23,14 @@ if(1 == $maVariable) {
     echo "Au revoir";
 }
 
+$maVariable = 'Mr';
+switch ($maVariable) {
+    case 'Mme':
+        break;
+    case 'Mr':
+    default:
+}
+
 
 echo '<br>';
 $count = 0;
@@ -100,7 +108,7 @@ function boire(string $boisson) : void
 
 /**
  * Appreciation sur une note donnée
- * 
+ *
  * @param string $prenom prénom
  * @param int $note      Note de l'éleve
  * @return string
