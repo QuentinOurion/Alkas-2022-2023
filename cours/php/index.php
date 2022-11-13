@@ -23,6 +23,14 @@ if(1 == $maVariable) {
     echo "Au revoir";
 }
 
+$maVariable = 'Mr';
+switch ($maVariable) {
+    case 'Mme':
+        break;
+    case 'Mr':
+    default:
+}
+
 
 echo '<br>';
 $count = 0;
@@ -83,14 +91,15 @@ boire($maBoissonEst);
 boire('bière');
 boire('café');
 boire($maBoissonEst);
-$laurent = 10;
-echo maNote('laurent', $laurent);
-$thomas = 15;
-echo maNote('thomas', $thomas);
-$anthony = 20;
+$laurentNote = 10;
+echo maNote('laurent', $laurentNote);
+$thomasNote = 15;
+echo maNote('thomas', $thomasNote);
+$anthonyNote = 20;
 $anthonyPrenom = 'Anthony';
-echo maNote($anthonyPrenom, $anthony);
-echo maNote('yann', 21);
+echo maNote($anthonyPrenom, $anthonyNote);
+$yannAppreciation = maNote('yann', 21);
+echo $yannAppreciation;
 
 function boire(string $boisson) : void
 {
@@ -99,7 +108,7 @@ function boire(string $boisson) : void
 
 /**
  * Appreciation sur une note donnée
- * 
+ *
  * @param string $prenom prénom
  * @param int $note      Note de l'éleve
  * @return string
@@ -122,3 +131,6 @@ function maNote(string $prenom, int $note) : string
 
     return $resultatDeLaNote.'<br>';
 }
+
+$anthonyNotes = [45, 23, 4];
+echo $anthonyNotes[0]; // affiche 45
