@@ -132,5 +132,27 @@ function maNote(string $prenom, int $note) : string
     return $resultatDeLaNote.'<br>';
 }
 
-$anthonyNotes = [45, 23, 4];
-echo $anthonyNotes[0]; // affiche 45
+
+/////////////////////////////////////
+/// Array
+$notes = array(45, 23, 4);
+$notes = [45, 23, 4];
+//echo $notes[0]; // affiche 45
+
+for($i = 0; $i < count($notes); $i++) {
+    echo "note : ".$notes[$i]."<br>";
+}
+
+foreach ($notes as $val) {
+    echo "note : ".$val."<br>";
+}
+
+$thomasNote = [];
+$thomasNote[0] = 15;
+$thomasNote[1] = 5;
+$thomasNote[2] = 7;
+$thomasNote = [15, 5, 7];
+
+for ($i = 0; $i < 10; $i++) {
+    $thomasNote[$i] = rand(0,20);
+}
