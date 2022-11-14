@@ -17,7 +17,7 @@ $maVariable = 1;
 }*/
 
 
-if(1 == $maVariable) {
+if (1 == $maVariable) {
     echo "<br>Bienvenue";
 } else {
     echo "Au revoir";
@@ -34,37 +34,37 @@ switch ($maVariable) {
 
 echo '<br>';
 $count = 0;
-$count = $count +1;
-echo 'count = '.$count.'<br>';
+$count = $count + 1;
+echo 'count = ' . $count . '<br>';
 $count++; // $count = $count +1;
-echo 'count = '.$count.'<br>';
+echo 'count = ' . $count . '<br>';
 $count++;
-$count = $count +2;
-echo 'count = '.$count.'<br>';
+$count = $count + 2;
+echo 'count = ' . $count . '<br>';
 
 
 echo '<br>';
-for($i = 0; $i < 10; $i++) {
-    echo $i.'<br>';
+for ($i = 0; $i < 10; $i++) {
+    echo $i . '<br>';
 }
 
 $count = 0;
 do {
-    echo 'count = '.$count.'<br>';
+    echo 'count = ' . $count . '<br>';
     $count++;
-} while($count < 10);
+} while ($count < 10);
 
 $count = 0;
-while($count < 10) {
-    echo 'count = '.$count.'<br>';
+while ($count < 10) {
+    echo 'count = ' . $count . '<br>';
     $count++;
 }
 
 test('laurent');
 
-function  test(string $nom) : void
+function test(string $nom): void
 {
-    echo ucfirst($nom).'<br>';
+    echo ucfirst($nom) . '<br>';
 }
 
 $i = 0;
@@ -81,9 +81,9 @@ $monPrenom = "thomas";
 echo nomPrenom($monNom, $monPrenom);
 echo nomPrenom("Grolier", "anthony");
 
-function nomPrenom(string $nom, string $prenom) : string
+function nomPrenom(string $nom, string $prenom): string
 {
-    return "Mon nom est : ".ucfirst($nom)."<br>Mon prénom est : ".ucfirst($prenom).'<br>';
+    return "Mon nom est : " . ucfirst($nom) . "<br>Mon prénom est : " . ucfirst($prenom) . '<br>';
 }
 
 $maBoissonEst = 'pisse mémé';
@@ -101,21 +101,21 @@ echo maNote($anthonyPrenom, $anthonyNote);
 $yannAppreciation = maNote('yann', 21);
 echo $yannAppreciation;
 
-function boire(string $boisson) : void
+function boire(string $boisson): void
 {
-    echo 'Tu bois (du/de la): '.ucfirst($boisson).'<br>';
+    echo 'Tu bois (du/de la): ' . ucfirst($boisson) . '<br>';
 }
 
 /**
  * Appreciation sur une note donnée
  *
  * @param string $prenom prénom
- * @param int $note      Note de l'éleve
+ * @param int $note Note de l'éleve
  * @return string
  */
-function maNote(string $prenom, int $note) : string
+function maNote(string $prenom, int $note): string
 {
-    $resultatDeLaNote = 'La note de '.ucfirst($prenom).' est '.$note.' <br>';
+    $resultatDeLaNote = 'La note de ' . ucfirst($prenom) . ' est ' . $note . ' <br>';
 
     if ($note > 20) {
         $resultatDeLaNote .= "Arrête de boire ou double les doses";
@@ -129,7 +129,7 @@ function maNote(string $prenom, int $note) : string
         }
     }
 
-    return $resultatDeLaNote.'<br>';
+    return $resultatDeLaNote . '<br>';
 }
 
 
@@ -139,12 +139,12 @@ $notes = array(45, 23, 4);
 $notes = [45, 23, 4];
 //echo $notes[0]; // affiche 45
 
-for($i = 0; $i < count($notes); $i++) {
-    echo "note : ".$notes[$i]."<br>";
+for ($i = 0; $i < count($notes); $i++) {
+    echo "note : " . $notes[$i] . "<br>";
 }
 
 foreach ($notes as $val) {
-    echo "note : ".$val."<br>";
+    echo "note : " . $val . "<br>";
 }
 
 $thomasNote = [];
@@ -154,5 +154,25 @@ $thomasNote[2] = 7;
 $thomasNote = [15, 5, 7];
 
 for ($i = 0; $i < 10; $i++) {
-    $thomasNote[$i] = rand(0,20);
+    $thomasNote[$i] = rand(0, 20);
 }
+$thomas = 'Thomas';
+eleve();
+eleve($thomas);
+sort($thomasNote);
+function eleve(string &$nom = 'Valeur par défaut'): void
+{
+    $nom = 'Anthony';
+    echo $nom;
+}
+
+echo $thomas;
+
+$courses = [
+    'fruits' =>
+        ['banane', 'poire', 'pomme'],
+    'legume' =>
+        ['courgette', 'fenouil', 'champignon'],
+    'boisson' =>
+        ['rhum', 'coca', 'eau']
+];
