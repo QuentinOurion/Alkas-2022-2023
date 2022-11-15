@@ -168,6 +168,16 @@ function eleve(string &$nom = 'Valeur par défaut'): void
 
 echo $thomas;
 
+$notes = [10, 20, 4, 6];
+$notes = [0 => 10, 1 => 20, 2 => 4, 3 => 6];
+//unset($notes[1]);
+//array_splice();
+
+// La, ça pet car il manque un élément
+//for($i = 0; $i < count($notes); $i++) {
+//    echo $notes[$i].'<br>';
+//}
+
 $courses = [
     'fruits' =>
         ['banane', 'poire', 'pomme'],
@@ -176,3 +186,37 @@ $courses = [
     'boisson' =>
         ['rhum', 'coca', 'eau']
 ];
+
+unset($courses['fruits'][0]);
+
+// ça ne marche plus car la premère clé est redefini par un mot
+//echo $courses[0].'<br>';
+
+foreach ($courses['fruits'] as $fruits) {
+    echo $fruits . '<br>';
+}
+
+
+$fruits = ['afrique' => 'banane', 'poire', 'pomme'];
+
+//$courses = [
+//    'fruits' =>
+//        'banane',
+//    'legume' =>
+//        'courgette',
+//    'boisson' =>
+//        'rhum'
+//];
+
+
+foreach ($courses as $rayon => $produits) {
+//    echo "Clé = $rayon val = $produits
+    echo "Clé = $rayon <br>";
+
+    if (is_array($produits)) {
+        foreach ($produits as $nomProduit) {
+            echo $nomProduit . '<br>';
+        }
+    }
+//    echo $courses[$keys].'<br>';
+}

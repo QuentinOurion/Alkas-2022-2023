@@ -85,22 +85,26 @@ function genereTableauAleatoire(array $tab, int $nombreElement = 10): array
 {
 
     for ($i = 0; $i < $nombreElement; $i++) {
-        $tab[$i] = rand(0, 20);
+//        $tab[$i] = rand(0, 20);
+        array_push($tab, rand(0, 20));
     }
+
     return $tab;
 }
 
 /**
  * Affiche un tableau en ligne
  *
- * @param array $tab
+ * @param array &$tab
  * @return void
  */
-function pre(array $tab): void
+function pre(array &$tab): void
 {
     echo '<pre>';
     print_r($tab);
+//    var_dump($tab);
     echo '</pre>';
+
 }
 
 /**
