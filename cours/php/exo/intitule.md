@@ -7,9 +7,9 @@ exemple :
 
     Alkas -> 
         dev -> 
-            laurent
+            laurent ->
                 notes -> 13,15,20
-            thomas
+            thomas ->
                 notes -> 13,15,20
             etc.
         vcm ->
