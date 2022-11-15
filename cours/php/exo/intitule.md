@@ -2,3 +2,18 @@
 ### on veut mettre ces élèves dans une classe par spécialité
 ### on veut mettre cette classe dans une école
 Affichez le tout
+
+exemple : 
+
+    Alkas -> 
+        dev -> 
+            laurent
+                notes -> 13,15,20
+            thomas
+                notes -> 13,15,20
+            etc.
+        vcm ->
+            A.S ->
+                notes -> 13,15,20
+            mahot ->
+                notes -> 13,15,20
