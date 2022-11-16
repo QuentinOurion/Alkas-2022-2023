@@ -20,3 +20,16 @@ exemple :
 
 ### Triez le fichier listePays.php (dans ce même dossier) par continent
 Voici le fichier listePaysTrie.php pour voir le résultat demandé
+
+#### Afficher les pays par continent
+exemple :
+    
+    africa
+        Algeria (code DZ)
+        Angola (code AO)
+        etc.
+
+    Antarctica
+        Antarctica (code AQ)
+        Bouvet Island (code BV)
+        etc.
