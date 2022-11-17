@@ -93,18 +93,17 @@ function genereTableauAleatoire(array $tab, int $nombreElement = 10): array
 }
 
 /**
- * Affiche un tableau en ligne
+ * Affiche une variable (en ligne pour les tableaux)
  *
- * @param array &$tab
+ * @param mixed $val
  * @return void
  */
-function pre(array &$tab): void
+function pre(mixed $val): void
 {
     echo '<pre>';
-    print_r($tab);
-//    var_dump($tab);
+    print_r($val);
+//    var_dump($val);
     echo '</pre>';
-
 }
 
 /**

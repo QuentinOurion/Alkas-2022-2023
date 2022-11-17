@@ -1,4 +1,5 @@
 <?php
+require_once ('exo/fonctions/outils.php');
 
 $maVariable = 2;
 $chaineCaract = '<br>"je suis une phrase, c\'est la première fois"<br>';
@@ -179,8 +180,7 @@ $notes = [0 => 10, 1 => 20, 2 => 4, 3 => 6];
 //}
 
 $courses = [
-    'fruits' =>
-        ['banane', 'poire', 'pomme'],
+    'fruits' => ['banane', 'poire', 'pomme'],
     'legume' =>
         ['courgette', 'fenouil', 'champignon'],
     'boisson' =>
@@ -208,10 +208,16 @@ $fruits = ['afrique' => 'banane', 'poire', 'pomme'];
 //        'rhum'
 //];
 
-
+/**
+ * foreach ($courses as $rayon => $produits)
+ * $courses est le tableau à parcourir
+ * $rayon sont les clés du tableau (donc fruits / légumes / etc.)
+ *        elles sont facultatives
+ * $produits sont les valeurs du tableau
+ */
 foreach ($courses as $rayon => $produits) {
 //    echo "Clé = $rayon val = $produits
-    echo "Clé = $rayon <br>";
+//    echo "Clé = $rayon <br>";
 
     if (is_array($produits)) {
         foreach ($produits as $nomProduit) {
@@ -219,4 +225,46 @@ foreach ($courses as $rayon => $produits) {
         }
     }
 //    echo $courses[$keys].'<br>';
+}
+
+
+$courses = [
+    0 => ['banane', 'poire', 'pomme'],
+    1 => ['courgette', 'fenouil', 'champignon'],
+    2 => ['rhum', 'coca', 'eau']
+];
+echo '<br>';
+foreach ($courses as $produits) {
+    for($i = 0; $i < count($produits); $i++) {
+        echo $produits[$i].'<br>';
+    }
+}
+
+$courses = [
+    0 => ['banane', 'poire', 'pomme'],
+    1 => ['courgette', 'fenouil', 'champignon'],
+    2 => ['rhum', 'coca', 'eau']
+];
+echo '<br>';
+foreach ($courses as $produits) {
+    foreach ($produits as $nomProduits) {
+        echo $nomProduits.'<br>';
+    }
+}
+
+$exempleBizarre = [
+    'bonjour',
+    ['rhum', 'coca', 'eau'],
+    'au revoir',
+    ['courgette', 'fenouil', 'champignon'],
+];
+echo '<br>';
+foreach ($exempleBizarre as $galere) {
+   if(is_array($galere)) {
+       foreach ($galere as $val) {
+           echo "galere = $val<br>";
+       }
+   } else {
+       echo "Ma valeur de galere : $galere<br>";
+   }
 }

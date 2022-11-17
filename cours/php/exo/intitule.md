@@ -24,7 +24,7 @@ Voici le fichier listePaysTrie.php pour voir le résultat demandé
 #### Afficher les pays par continent
 exemple :
     
-    africa
+    Africa
         Algeria (code DZ)
         Angola (code AO)
         etc.
@@ -33,3 +33,11 @@ exemple :
         Antarctica (code AQ)
         Bouvet Island (code BV)
         etc.
+
+
+###
+Reprendre l'exo sur les tableaux d'écoles et faire une mise en page comme sur la page alkas / équipe https://www.alkas.fr/alkas_website/en/alkas  
+Titre centré
+    spécialité 
+        les élèves (une photo aléatoire via ce site https://robohash.org/  )
+            afficher le prénom et le nom
