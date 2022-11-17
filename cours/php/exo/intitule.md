@@ -24,7 +24,7 @@ Voici le fichier listePaysTrie.php pour voir le résultat demandé
 #### Afficher les pays par continent
 exemple :
     
-    africa
+    Africa
         Algeria (code DZ)
         Angola (code AO)
         etc.
