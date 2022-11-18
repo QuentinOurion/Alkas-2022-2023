@@ -41,3 +41,7 @@ Titre centré
     spécialité 
         les élèves (une photo aléatoire via ce site https://robohash.org/  )
             afficher le prénom et le nom
+
+### Creer un formulaire qui va contenir 3 champs dont l'un permettra de faire une selection
+Cet exo permettra de faire des calculs entre 2 valeurs */+-
+Afficher l'historique de tous les calculs
