@@ -9,7 +9,7 @@
     method GET pour envoyer un formulaire via l'url
     method POST pour envoyer un formulaire non visible-->
     <form method="POST" action="" style="display: flex; flex-direction: column">
-        <input type="text" name="prenom">
+        <input type="text" name="prenom" value="<?=$_POST['prenom']?>">
         <input type="text" name="nom" >
         <input type="hidden" name="cacheMaisPasVraiment" value="pagePseudoSecrete">
         <br>
