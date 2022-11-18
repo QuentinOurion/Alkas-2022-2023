@@ -1,0 +1,29 @@
+body{
+    background-color: pink;
+}
+h1{
+    text-align: center;
+}
+
+section{
+    display: flex;
+    justify-content: space-evenly;
+}
+figure{
+    width: 100px;
+    border: 1px solid black;
+    box-shadow: 10px 5px 5px red;
+}
+
+img{
+    width: 80px;
+    z-index: 1;
+
+
+}
+.centrage{
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    flex-wrap: wrap;
+}
