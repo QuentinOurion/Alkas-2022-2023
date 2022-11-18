@@ -77,12 +77,12 @@ function moyenneNotes(int $somme, int $nombreNote): float
 /**
  * Génére un tableau aléatoire
  *
- * @param array $tab
  * @param int $nombreElement
  * @return array
  */
-function genereTableauAleatoire(array $tab, int $nombreElement = 10): array
+function genereTableauAleatoire(int $nombreElement = 10): array
 {
+    $tab = [];
 
     for ($i = 0; $i < $nombreElement; $i++) {
 //        $tab[$i] = rand(0, 20);

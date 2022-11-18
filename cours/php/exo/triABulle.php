@@ -4,9 +4,9 @@ require_once('fonctions/outils.php');
 $notes = [];
 
 
-$notes = genereTableauAleatoire($notes, 3);
+$notes = genereTableauAleatoire( 3);
 pre($notes);
-$notes = genereTableauAleatoire($notes);
+$notes = genereTableauAleatoire();
 pre($notes);
 
 triBulle($notes);
