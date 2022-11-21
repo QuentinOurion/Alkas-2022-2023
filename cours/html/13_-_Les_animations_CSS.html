@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+        <title>Les animations CSS</title>
+
+        <script src="_assets/plugins/highlight/highlight.pack.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
+
+        <link rel="stylesheet" type="text/css" href="_assets/css/style.css">
+
+        <style >
+            body {
+                perspective:400px;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Les animations CSS</h1>
+        <hr />
+        <p><em>Les animations CSS rendent possible la création de transitions animées depuis une décoration CSS à une autre. Les animations consistent en deux composants : un style décrivant l'animation et un ensemble de keyframes qui indique les états de début et de fin du style CSS de l'animation, ainsi que des points de passage intermédiaires.</em></p>
+        <p><em>Tout comme pour les transitions, pour définir une nouvelle animation il est nécessaire de préciser au minimum : </em></p>
+        <ul style="font-style:italic;">
+            <li>la ou les propriété(s) à animer (dans le cas ci-dessous : la position par rapport au bord gauche)</li>
+            <li>la durée de l'animation (exprimée en seconde)</li>
+        </ul>
+        <p><em>Ceci ne définit pas l'apparence réelle de l'animation, qui est elle définie par les règles @keyframes.</em></p>
+        <style >
+            #animation-left .div {
+                background-color:lightblue;
+                display:inline-block;
+                height:150px;
+                margin:15px;
+                position:relative;
+                width:150px;
+
+                animation-name:moveleft;
+                animation-duration:2s;
+
+            }
+
+            @keyframes moveleft {
+                0% {
+                    left:0;
+                }
+                100% {
+                    left:400px;
+                }
+            }
+            </style>
+        <div id="animation-left">
+            <div class="div"></div>
+        </div>
+        <pre><code class="css">
+.div {
+    background-color:lightblue;
+    display:inline-block;
+    height:150px;
+    margin:15px;
+    position:relative;
+    width:150px;
+
+    animation-name:moveleft; /* Défini le nom de la règle @keyframes décrivant les keyframes de l'animation. */
+    animation-duration:2s; /* Configure la durée que l'animation doit utiliser pour compléter un cycle. */
+}
+
+@keyframes moveleft { /* Définition des règles à appliquer sur une échelle de temps (en pourcentage) */
+    0% { /* équivaut à from {} */
+        left:0;
+    }
+    100% { /* équivaut à to {} */
+        left:400px;
+    }
+}</code>
+<code class="html">
+&lt;div class="div"&gt;&lt;/div&gt;</code></pre>
+        <p><em>Nous pouvons aussi appliquer la transition à plusieurs propriétés en même temps (dans l'exemple ci-dessous, le background et le padding en même temps) :</em></p>
+        <style >
+            #animation-left-bgcolor .div {
+                background-color:gray;
+                display:inline-block;
+                height:150px;
+                margin:15px;
+                position:relative;
+                width:150px;
+
+                animation-name:change-moveleft-bgcolor;
+                animation-duration:2s;
+
+            }
+
+            @keyframes change-moveleft-bgcolor {
+                0% {
+                    background-color:lightblue;
+                    left:0;
+                }
+                100% {
+                    background-color:lightgreen;
+                    left:400px;
+                }
+            }
+        </style>
+        <div id="animation-left-bgcolor">
+            <div class="div"></div>
+        </div>
+        <pre><code class="css">
+.div {
+    background-color:gray;
+    display:inline-block;
+    height:150px;
+    margin:15px;
+    position:relative;
+    width:150px;
+
+    animation-name:change-moveleft-bgcolor;
+    animation-duration:2s;
+}
+
+@keyframes change-moveleft-bgcolor {
+    0% {
+        background-color:lightblue;
+        left:0;
+    }
+    100% {
+        background-color:lightgreen;
+        left:400px;
+    }
+}</code>
+<code class="html">
+&lt;div class="div"&gt;&lt;/div&gt;</code></pre>
+        <h3>L'accélération : animation-timing-function</h3>
+        <style >
+            #animation-timing .div {
+                background-color:gray;
+                display:inline-block;
+                height:150px;
+                margin:15px;
+                position:relative;
+                width:150px;
+
+                animation-name:change-moveleft-bgcolor;
+                animation-duration:2s;
+                animation-timing-function:ease-in-out;
+            }
+
+            @keyframes change-moveleft-bgcolor {
+                0% {
+                    background-color:lightblue;
+                    left:0;
+                }
+                100% {
+                    background-color:lightgreen;
+                    left:400px;
+                }
+            }
+            </style>
+        <div id="animation-timing">
+            <div class="div"></div>
+        </div>
+        <pre><code class="css">
+.div {
+    background-color:gray;
+    display:inline-block;
+    height:150px;
+    margin:15px;
+    position:relative;
+    width:150px;
+
+    animation-name:change-moveleft-bgcolor;
+    animation-duration:2s;
+    animation-timing-function:ease-in-out;
+}
+
+@keyframes change-moveleft-bgcolor {
+    0% {
+        background-color:lightblue;
+        left:0;
+    }
+    100% {
+        background-color:lightgreen;
+        left:400px;
+    }
+}</code>
+<code class="html">
+&lt;div class="div"&gt;&lt;/div&gt;</code></pre>
+        <h3>Le délai de déclenchement : animation-delay</h3>
+        <style >
+            #animation-delay .div {
+                background-color:gray;
+                display:inline-block;
+                height:150px;
+                margin:15px;
+                position:relative;
+                width:150px;
+
+                animation-name:change-moveleft-bgcolor;
+                animation-duration:2s;
+                animation-timing-function:ease-in-out;
+                animation-delay:2s;
+            }
+
+            @keyframes change-moveleft-bgcolor {
+                0% {
+                    background-color:lightblue;
+                    left:0;
+                }
+                100% {
+                    background-color:lightgreen;
+                    left:400px;
+                }
+            }
+            </style>
+        <div id="animation-delay">
+            <div class="div"></div>
+        </div>
+        <pre><code class="css">
+.div {
+    background-color:gray;
+    display:inline-block;
+    height:150px;
+    margin:15px;
+    position:relative;
+    width:150px;
+
+    animation-name:change-moveleft-bgcolor;
+    animation-duration:2s;
+    animation-timing-function:ease-in-out;
+    animation-delay:2s;
+}
+
+@keyframes change-moveleft-bgcolor {
+    0% {
+        background-color:lightblue;
+        left:0;
+    }
+    100% {
+        background-color:lightgreen;
+        left:400px;
+    }
+}</code>
+<code class="html">
+&lt;div class="div"&gt;&lt;/div&gt;</code></pre>
+        <h3>L'itération : animation-iteration-count</h3>
+        <p><em>Définie le nombre de fois qu'un cycle d'animation doit être joué avant de s'arrêter.</em></p>
+        <style >
+            #animation-iteration .div {
+                background-color:gray;
+                display:inline-block;
+                height:150px;
+                margin:15px;
+                position:relative;
+                width:150px;
+
+                animation-name:change-moveleft-bgcolor;
+                animation-duration:2s;
+                animation-timing-function:ease-in-out;
+                animation-iteration-count:infinite;
+            }
+
+            @keyframes change-moveleft-bgcolor {
+                0% {
+                    background-color:lightblue;
+                    left:0;
+                }
+                100% {
+                    background-color:lightgreen;
+                    left:400px;
+                }
+            }
+            </style>
+        <div id="animation-iteration">
+            <div class="div"></div>
+        </div>
+        <pre><code class="css">
+.div {
+    background-color:gray;
+    display:inline-block;
+    height:150px;
+    margin:15px;
+    position:relative;
+    width:150px;
+
+    animation-name:change-moveleft-bgcolor;
+    animation-duration:2s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite; /* nombre | infinite */
+}
+
+@keyframes change-moveleft-bgcolor {
+    0% {
+        background-color:lightblue;
+        left:0;
+    }
+    100% {
+        background-color:lightgreen;
+        left:400px;
+    }
+}</code>
+<code class="html">
+&lt;div class="div"&gt;&lt;/div&gt;</code></pre>
+        <h3>Le sens d'animation : animation-direction</h3>
+        <p><em>Précise si l'animation doit se jouer à l'envers ou selon des cycles alternés.</em></p>
+        <style >
+            #animation-direction .div {
+                background-color:gray;
+                display:inline-block;
+                height:150px;
+                margin:15px;
+                position:relative;
+                width:150px;
+
+                animation-name:change-moveleft-bgcolor;
+                animation-duration:2s;
+                animation-timing-function:ease-in-out;
+                animation-iteration-count:infinite;
+                animation-direction:alternate;
+            }
+
+            @keyframes change-moveleft-bgcolor {
+                0% {
+                    background-color:lightblue;
+                    left:0;
+                }
+                100% {
+                    background-color:lightgreen;
+                    left:400px;
+                }
+            }
+            </style>
+        <div id="animation-direction">
+            <div class="div"></div>
+        </div>
+        <pre><code class="css">
+.div {
+    background-color:gray;
+    display:inline-block;
+    height:150px;
+    margin:15px;
+    position:relative;
+    width:150px;
+
+    animation-name:change-moveleft-bgcolor;
+    animation-duration:2s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite;
+    animation-direction:alternate; /* normal | alternate | reverse | alternate-reverse */
+}
+
+@keyframes change-moveleft-bgcolor {
+    0% {
+        background-color:lightblue;
+        left:0;
+    }
+    100% {
+        background-color:lightgreen;
+        left:400px;
+    }
+}</code>
+<code class="html">
+&lt;div class="div"&gt;&lt;/div&gt;</code></pre>
+        <h3>L'état d'animation : animation-play-state</h3>
+        <p><em>Détermine si l'animation est en cours de lecture ou en pause. Vous pouvez interroger cette propriété afin de déterminer si l'animation est en cours de lecture ou non. De plus, vous pouvez modifier cette valeur pour mettre en pause ou reprendre la lecture de l'animation (par exemple au survol de la souris).</em></p>
+        <style >
+            #animation-playstate .div {
+                background-color:gray;
+                display:inline-block;
+                height:150px;
+                margin:15px;
+                position:relative;
+                width:150px;
+
+                animation-name:change-moveleft-bgcolor;
+
+                animation-duration:2s;
+                animation-timing-function:ease-in-out;
+                animation-iteration-count:infinite;
+                animation-direction:alternate;
+            }
+            #animation-playstate .div:hover {
+                animation-play-state:paused;
+            }
+
+            @keyframes change-moveleft-bgcolor {
+                0% {
+                    background-color:lightblue;
+                    left:0;
+                }
+                100% {
+                    background-color:lightgreen;
+                    left:400px;
+                }
+            }
+            </style>
+        <div id="animation-playstate">
+            <div class="div"></div>
+        </div>
+        <pre><code class="css">
+.div {
+    background-color:gray;
+    display:inline-block;
+    height:150px;
+    margin:15px;
+    position:relative;
+    width:150px;
+
+    animation-name:change-moveleft-bgcolor;
+    animation-duration:2s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+}
+.div:hover {
+    animation-play-state:paused; /* running | paused */
+}
+
+@keyframes change-moveleft-bgcolor {
+    0% {
+        background-color:lightblue;
+        left:0;
+    }
+    100% {
+        background-color:lightgreen;
+        left:400px;
+    }
+}</code>
+<code class="html">
+&lt;div class="div"&gt;&lt;/div&gt;</code></pre>
+        <h3>Notation raccourcie</h3>
+        <style >
+            #animation .div {
+                background-color:gray;
+                display:inline-block;
+                height:150px;
+                margin:15px;
+                position:relative;
+                width:150px;
+
+                animation:change-moveleft-bgcolor 2s ease-in-out infinite alternate;
+            }
+            #animation .div:hover {
+                animation-play-state:paused;
+            }
+
+            @keyframes change-moveleft-bgcolor {
+                0% {
+                    background-color:lightblue;
+                    left:0;
+                }
+                100% {
+                    background-color:lightgreen;
+                    left:400px;
+                }
+            }
+            </style>
+        <div id="animation">
+            <div class="div"></div>
+        </div>
+        <pre><code class="css">
+.div {
+    background-color:gray;
+    display:inline-block;
+    height:150px;
+    margin:15px;
+    position:relative;
+    width:150px;
+
+    animation:change-moveleft-bgcolor 2s ease-in-out infinite alternate;
+}
+.div:hover {
+    animation-play-state:paused; /* running | paused */
+}
+
+@keyframes change-moveleft-bgcolor {
+    0% {
+        background-color:lightblue;
+        left:0;
+    }
+    100% {
+        background-color:lightgreen;
+        left:400px;
+    }
+}</code>
+<code class="html">
+&lt;div class="div" id="anim1-1"&gt;&lt;/div&gt;</code></pre>
+    </body>
+</html>
