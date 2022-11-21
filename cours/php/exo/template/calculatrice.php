@@ -27,6 +27,8 @@
     </label>
 
     <button type="submit">=</button>
+
+    <input type="hidden" name="historique" value="<?=$historique?>">
 </form>
 
 <section>
@@ -40,6 +42,7 @@
     <header>
         <h1>Historique</h1>
     </header>
+
     <?=$historique ?>
 </section>
 
