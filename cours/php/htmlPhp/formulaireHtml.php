@@ -9,7 +9,7 @@
     <!-- balise de formulaire qui prend 2 attributs obligatoires
     method GET pour envoyer un formulaire via l'url
     method POST pour envoyer un formulaire non visible -->
-    <form method="POST" action="formulaire.php" style="display: flex; flex-direction: column">
+    <form method="POST" action="" style="display: flex; flex-direction: column">
 <!--        champ qui prend obligatoirement un nom et un type-->
         <input type="text" name="prenom" value="<?=$_POST['prenom']?>">
         <input type="text" name="nom" >
