@@ -45,3 +45,6 @@ Titre centré
 ### Creer un formulaire qui va contenir 3 champs dont l'un permettra de faire une selection
 Cet exo permettra de faire des calculs entre 2 valeurs */+-
 Afficher l'historique de tous les calculs
+#### corrigez MON exo partiel de la calculatrice
+- Donc il faut corriger quand on envoie le formulaire vide le warning
+- Ajoutez l'historique
