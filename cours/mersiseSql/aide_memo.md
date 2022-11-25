@@ -1,5 +1,6 @@
 # SQL (Structured Query Language)
 #### Cours en ligne https://sql.sh/ ou https://www.w3schools.com/sql/
+#### Documentation officiel https://dev.mysql.com/doc/refman/8.0/en/
 
 Lister la liste des bases de données
 > show databases;
