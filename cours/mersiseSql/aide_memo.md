@@ -243,8 +243,6 @@ Exemple lors d'une création d'une table :
     )
 ```
 
-
-
 ```sql
     CREATE TABLE table_associe
     (
@@ -259,34 +257,41 @@ On peut ajouter une clé étrangère après coup
     ALTER TABLE ma_table ADD constraint FOREIGN KEY (maCleEtrangere) REFERENCES table_associe(sonID);
 ```
 
->    ON DELETE “action”
->    ON UPDATE “action”
-
->    action = RESTRICT | CASCADE | SET NULL
-
 #### CASCADE
->    ON DELETE CASCADE 
-> 
-Signifie que si l'enregistrement parent est supprimé, tous les enregistrements enfants sont également supprimés.
+```sql
+    ON DELETE #mettre une action “action”
+    ON UPDATE #mettre une action “action”
 
->    ON UPDATE CASCADE 
-> 
-Cela signifie que si la clé primaire parent est modifiée, la valeur enfant changera également pour refléter cela.
+    #action = RESTRICT | CASCADE | SET NULL
+```
 
->    ON UPDATE CASCADE ON DELETE CASCADE 
-> 
-Signifie que si vous UPDATE OU DELETE le parent, le changement est répercuté sur l'enfant. C'est l'équivalent des AND résultats des deux premières déclarations.
+"ON DELETE CASCADE" Signifie que si l'enregistrement parent est supprimé, tous les enregistrements enfants sont également supprimés.
+```sql
+    ON DELETE CASCADE 
+```
+
+"ON UPDATE CASCADE" Cela signifie que si la clé primaire parent est modifiée, la valeur enfant changera également pour refléter cela.
+```sql
+    ON UPDATE CASCADE 
+``` 
+
+"ON UPDATE CASCADE ON DELETE CASCADE" Signifie que si vous UPDATE OU DELETE le parent, le changement est répercuté sur l'enfant. C'est l'équivalent des AND résultats des deux premières déclarations.
+```sql
+    ON UPDATE CASCADE ON DELETE CASCADE 
+```
 
 #### RESTREINDRE
 
->    RESTRICT 
-> 
-signifie que toute tentative de suppression et / ou de mise à jour du parent échouera. C'est le comportement par défaut dans le cas où une action référentielle n'est pas explicitement spécifiée.
+"RESTRICT" signifie que toute tentative de suppression et / ou de mise à jour du parent échouera. C'est le comportement par défaut dans le cas où une action référentielle n'est pas explicitement spécifiée.
 Pour un ON DELETE ou ON UPDATE qui n'est pas spécifié, l'action par défaut est toujours RESTRICT.
+```sql
+    RESTRICT 
+```
 
->    SET NULL
-> 
-Supprimez ou mettez à jour la ligne de la table parent et définissez-la ou les colonnes de clé étrangère de la table enfant sur NULL.
+"NULL" Supprimez ou mettez à jour la ligne de la table parent et définissez-la ou les colonnes de clé étrangère de la table enfant sur NULL.
+```sql
+    SET NULL
+```
 
 Suppression d’une clé étrangère
 ```sql
@@ -296,14 +301,16 @@ Suppression d’une clé étrangère
 ## Index
 Un index, dans une base de données se base sur le même principe qu’un index dans un livre. Avec un index placé sur une ou plusieurs colonnes le système d’une base de données peut rechercher les données d’abord sur l’index et s’il trouve ce qu’il cherche il saura plus rapidement où se trouve les enregistrements concernés.
 
->	Index (key)
->
+>  "key" est un alias de "index"
+
 Dans son create table on peut ajouter aussi des index ce qui va accélérer les recherches ou les jointures
-key(nomDeLaColonnne)
+```sql
+    key(nom_de_la_colonne)
+```
 
 On peut rendre les clés uniques comme
 ```sql
-    ALTER TABLE `nomDeSaTable`  ADD KEY `nomUniqueQuiSertARien` (`nomDeLaColonnne`);
+    ALTER TABLE `nom_table`  ADD KEY `nom_index` (`nom_de_la_colonne`);
 ```
 
 # Importation / exportation d'un fichier SQL
