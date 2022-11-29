@@ -222,7 +222,7 @@ Concaténation entre 2 chaînes de caractères
 
 
 
-## Clé étrangère
+## Clé.s étrangère.s
 http://www.w3big.com/fr/sql/sql-foreignkey.html ou à la source https://dev.mysql.com/doc/refman/5.7/en/create-table-foreign-keys.html 
 
 Association entre 2 tables et permet un contrôle d’intégrité entre elles
