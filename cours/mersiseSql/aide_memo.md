@@ -119,14 +119,18 @@ Idem que distinct, mais s’utilise avec des fonctions comme count()
 Liste de plusieurs valeurs possible
 on peut mettre dans la parenthèse, des résultats attendue ou un autre select pour chercher des résultats
 ```sql
-    where attribut in () ou not in ()
+    where attribut in () 
+```
+ou
+```sql
+    where attribut not in ()
 ```
 
 Sous requete qui permet de lier une table avec une autre et dans cet exemple de retrouver des enregistrements qui ont un id identique.
 ```sql
     where attribut.id in (
         SELECT DISTINCT id
-        FROM autreTable
+        FROM autre_table
     )
 ```
 
@@ -137,24 +141,24 @@ Recherche par exemple dans un article, une date entre compris 1350-12-1 et 1351-
 
 #### Recherche un mot dans un texte
 
-recherche ‘nomARechercher’ dans un texte
+recherche ‘nom_a_rechercher’ dans un texte
 ```sql
-    like ‘nomARechercher’
+    like ‘nom_a_rechercher’
 ```
 
 mot commencant par …
 ```sql
-    like ‘%nomARechercher’
+    like ‘%nom_a_rechercher’
 ```
 
 Fini par
 ```sql
-    like ‘nomARechercher%’
+    like ‘nom_a_rechercher%’
 ```
 
 Cherche dans une phrase un mot
 ```sql
-    like ‘%motAChercher%
+    like ‘%mot_a_rechercher%
 ```
 
 Recherche par une expression régulière
@@ -171,7 +175,7 @@ Type de jointure entre 2 tables qui permet de lister tous les résultats des 2 t
 
 https://sql.sh/cours/jointures/inner-join 
 ```sql
-    join maTable on maTable.id = autreTable.id
+    join ma_table on ma_table.id = autre_table.id
 ```
 
 
