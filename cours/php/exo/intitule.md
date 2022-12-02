@@ -48,3 +48,11 @@ Afficher l'historique de tous les calculs
 #### corrigez MON exo partiel de la calculatrice
 - Donc il faut corriger quand on envoie le formulaire vide le warning
 - Ajoutez l'historique
+
+## Affichez des utilisateurs
+- Il faut afficher des utilisateurs (10 max) de façon responsive à partir de la base de donnée 
+- L'interface doit ressembler à l'image de gauche sur https://cantunsee.space/ (l'image démo est enregistré "cantunsee.png")
+- Il pourra y avoir plusieurs utilisateurs sur la même ligne
+- Il faudra respecter la charte graphique de cantunsee
+- Dans la bulle bleue, il faudra afficher l'email et la date d'inscription.
+- Il faudra générer une photo à partir du nom de l'utilisateur
