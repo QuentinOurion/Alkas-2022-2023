@@ -55,4 +55,14 @@ Afficher l'historique de tous les calculs
 - Il pourra y avoir plusieurs utilisateurs sur la même ligne
 - Il faudra respecter la charte graphique de cantunsee
 - Dans la bulle bleue, il faudra afficher l'email et la date d'inscription.
-- Il faudra générer une photo à partir du nom de l'utilisateur
+- Il faudra générer une photo à partir du nom de l'utilisateur 
+
+exemple :
+
+style open-peeps sur le prénom guillaume
+
+  https://avatars.dicebear.com/api/open-peeps/guillaume.svg
+style big-smile
+  https://avatars.dicebear.com/api/big-smile/guillaume.svg
+
+Vous pouvez changez de style https://avatars.dicebear.com/styles
