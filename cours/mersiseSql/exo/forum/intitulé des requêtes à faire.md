@@ -19,7 +19,7 @@
 7. Afficher le message de la conversation 9 avec msg + date msg + prenom + nom dans un nom que l'on nommera result
 
 
-8. Afficher les n° de conversations auxquelles a participé l'utilisateur "10" entre le "2010-12-31" et le "2022-01-01"
+8. Afficher les n° de conversations auxquelles a participé l'utilisateur "10" entre le '2020-1-31' et le '2021-10-11'
 
 
 9. Afficher tous les contacts qui ont pris part aux memes conversations que l'utilisateur u.id=8
