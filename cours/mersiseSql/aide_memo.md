@@ -47,7 +47,7 @@ CREATE TABLE nom_de_la_table
 
 Création d'une table complete 
 ```sql
-CREATE TABLE nomDeTable
+CREATE TABLE nom_de_la_table#
 (
 id                  int(11) not null AUTO_INCREMENT, # on précise que id va s'autoincrémenter
 chaineDeCaractere   char(50),
