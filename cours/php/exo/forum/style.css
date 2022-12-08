@@ -84,3 +84,8 @@ main {
     flex-direction: column;
     margin: 11px;
 }
+
+footer {
+    background-color: #fff;
+
+}
