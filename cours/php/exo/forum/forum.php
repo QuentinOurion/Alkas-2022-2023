@@ -3,6 +3,8 @@
 require_once ('gestionSql.php');
 
 date_default_timezone_set('Europe/Paris');
+$title = 'Liste des utilisateurs';
+
 $con = connexion();
 
 //$users = listAll($con, 'select * from user limit 10');
