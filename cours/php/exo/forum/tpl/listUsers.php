@@ -14,8 +14,10 @@ require_once('tpl/doctype.php');
         ?>
         <section class="user" role="contentinfo">
             <div class="info_portable">
-                <img src="logo_portable.png" alt="">
-                <?= $heure ?>
+                <div>
+                    <img src="logo_portable.png" alt="">
+                    <?= $heure ?>
+                </div>
             </div>
             <figure class="user_nom">
                 &leftarrow;
