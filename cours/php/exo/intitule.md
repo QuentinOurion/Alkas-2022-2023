@@ -67,10 +67,15 @@ style big-smile
 
 Vous pouvez changez de style https://avatars.dicebear.com/styles
 
-## pour jeudi 6 decembre 22
+## Pour jeudi 8 decembre 22
 Sur votre page cantunsee 
 - Il faudra pouvoir cliquer sur un lien ex : lire message.s 
 - Sur cette nouvelle page, il faudra afficher les messages de l'utilisateur correspondant, son nom, son role
 - Parce qu'il y a redondance, il faudra refactoriser son code et donc le découper, pour le php en fonction (connexion, requête) et le html en fichier spécifique pour le (head, header, main et footer)
 
 Voir ../page1.php et ../page2.php pour voir comment une page communique avec une autre
+
+## Créez un formulaire d'ajout d'utilisateur
+Créez une page de formulaire qui va permettre d'ajouter un utilisateur pour le forum
+
+Modifier la page afficher les utilisateurs pour voir les derniers utilisateurs

@@ -23,31 +23,30 @@ main {
     width: 400px;
     background-color: #fff;
     border-radius: 10px;
-            /*rgb(255, 255, 255) ou white ;*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-
     margin : 0 20px 20px 0;
-    /*margin-right: 20px;*/
 }
 
 .info_portable {
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: x-large;
     display: flex;
     justify-content: flex-end;
+}
+
+.info_portable img {
+    width: 30px;
 }
 
 .user_nom {
     display: flex;
     align-items: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bolder;
 }
 
 .user_nom img {
     margin: 0 5px;
-    width: 80px;
+    width: 70px;
 
     border: 1px solid #D5D5D5;
     border-radius: 50%;
