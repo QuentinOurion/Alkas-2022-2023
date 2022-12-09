@@ -16,12 +16,14 @@ require_once('tpl/doctype.php');
             <div class="info_portable">
                 <div>
                     <img src="logo_portable.png" alt="">
-                    <?= $heure ?>
+                    <?= date("H:i", strtotime($user['date_inscription'])) ?>
                 </div>
             </div>
+
             <figure class="user_nom">
                 &leftarrow;
                 <img src="https://avatars.dicebear.com/api/big-smile/<?= $user['nom'] ?>.svg" alt="">
+
                 <figcaption>
                     <?= $user['nom'] . ' ' . $user['prenom'] ?>
                 </figcaption>
@@ -32,16 +34,14 @@ require_once('tpl/doctype.php');
 
             <div class="message_blue">
                 <div class="content">
-                    <a href="mailto:<?= $user['login'] ?>"><?= $user['login'] ?></a> <?= $user['date_inscription'] ?>
-                    vcxvxcvxcvxcv<br>
-                    xcvxcvxcv<br>
-                    xcv<br>
+                    <a href="mailto:<?= $user['login'] ?>"><?= $user['login'] ?></a>
+                    <?= $user['date_inscription'] ?>
                 </div>
             </div>
 
             <div class="message_grey">
                 <div class="content">
-                    click
+                    Lire mes messages
                 </div>
             </div>
         </section>
