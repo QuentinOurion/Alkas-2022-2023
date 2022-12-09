@@ -44,6 +44,13 @@ function listAll(PDO $connexion, string $requete) : array
     return $result;
 }
 
+/**
+ * Enregistre une nouvelle ville
+ *
+ * @param PDO $connexion
+ * @param string $nom
+ * @return bool
+ */
 function addTown(PDO $connexion, string $nom) : bool
 {
     $prepare = $connexion->prepare('insert into ville (nom) values (:nom)');
