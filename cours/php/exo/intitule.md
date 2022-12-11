@@ -79,3 +79,6 @@ Voir ../page1.php et ../page2.php pour voir comment une page communique avec une
 Créez une page de formulaire qui va permettre d'ajouter un utilisateur pour le forum
 
 Modifier la page afficher les utilisateurs pour voir les derniers utilisateurs
+
+## Pour ce we
+- Ajoutez un menu en haut à droite qui doit contenir les liens entre les pages d'accueil et nouvel utilisateur

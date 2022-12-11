@@ -19,6 +19,13 @@ main {
     flex-wrap: wrap;
 }
 
+.message {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin : 0 20px 20px 0;
+}
+
 .user {
     width: 400px;
     background-color: #fff;
@@ -53,7 +60,7 @@ main {
     border-radius: 50%;
 }
 
-.message_blue, .user a {
+.message_blue, .message_blue a {
     background-color: #0099FF;
     color: white;
 }
@@ -63,6 +70,13 @@ main {
     flex-direction: column;
     margin: 10px 17px 6px 20%;
     border-radius: 11px 2px 17px 11px;
+}
+
+.message .message_blue {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    margin: 10px;
+    /*border-radius: 11px 2px 17px 11px;*/
 }
 
 .message_blue .content {
@@ -78,10 +92,11 @@ main {
 
 }
 
-.message_grey .content {
+.message_grey .content, .message_grey a {
     padding: 11px;
     background-color: #d7d7d7;
     border-radius: 50px;
+    color: black;
 }
 
 footer {
