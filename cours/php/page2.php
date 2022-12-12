@@ -11,15 +11,15 @@
 <?php
 $titi = 'test';
 if (isset($_GET['titi']) && $_GET['titi']) {
-$titi = $_GET['titi'];
+    $titi = $_GET['titi'];
 }
 
 if (!empty($_GET['titi'])) {
-$titi = $_GET['titi'];
+    $titi = $_GET['titi'];
 }
 ?>
 
-    <?=$titi?>
-    <a href="page1.php?toto=titi">page 1</a>
+<?= $titi ?>
+<a href="page1.php?toto=titi">page 1</a>
 </body>
 </html>

@@ -10,6 +10,12 @@
 <body>
 <header role="banner" class="wrapper">
     <h1>Can't Unsee</h1>
+    <nav role="navigation">
+        <ul>
+            <li><a href="forum.php">Home</a></li>
+            <li><a href="addUser.php">Inscription</a></li>
+        </ul>
+    </nav>
 </header>
 
 <main role="main" class="wrapper">

@@ -1,5 +1,6 @@
 body {
     background-color: rgb(46,46,46);
+    /*color: white;*/
 }
 
 .wrapper {
@@ -19,6 +20,7 @@ main {
     flex-wrap: wrap;
 }
 
+
 .message {
     width: 100%;
     background-color: #fff;
@@ -26,12 +28,23 @@ main {
     margin : 0 20px 20px 0;
 }
 
-.user {
+.user, .addUser {
     width: 400px;
     background-color: #fff;
     border-radius: 10px;
     margin : 0 20px 20px 0;
 }
+
+.addUser {
+    padding : 20px
+}
+
+.addUser form {
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 .info_portable {
     font-weight: bolder;

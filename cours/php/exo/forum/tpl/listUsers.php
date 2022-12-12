@@ -1,5 +1,5 @@
 <?php
-require_once('tpl/doctype.php');
+require_once('doctype.php');
 
 foreach ($users as $user) {
     ?>
@@ -31,7 +31,7 @@ foreach ($users as $user) {
 
         <div class="message_grey">
             <div class="content">
-                <a href="message.php?id=<?= $user['id'] ?>">Lire mes messages
+                <a title="id=<?= $user['id'] ?>" href="message.php?user_id=<?= $user['id'] ?>">Lire mes messages
                 </a>
             </div>
         </div>
