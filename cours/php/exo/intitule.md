@@ -84,7 +84,8 @@ Modifier la page afficher les utilisateurs pour voir les derniers utilisateurs
 - Ajoutez un menu en haut à droite qui doit contenir les liens entre les pages d'accueil et nouvel utilisateur
 
 ## Sécurité
-- Ajouter une colonne mot de passe de taille 100 dans la table USER
-- rendre la table le login unique dans la db 
+- Ajoutez une colonne mot de passe de taille 100 dans la table USER
+- rendre dans la table, le login unique dans la db 
 - créer un formulaire login / mot de passe  
+- modifiez le formulaire inscription pour ajouter un champ mot de passe
 - une fois connecté on devra afficher le nom de l'utilisateur en haut à droite (donc visible sur chaque page) 
