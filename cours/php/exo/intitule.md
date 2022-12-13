@@ -85,7 +85,13 @@ Modifier la page afficher les utilisateurs pour voir les derniers utilisateurs
 
 ## Sécurité
 - Ajoutez une colonne mot de passe de taille 100 dans la table USER
+```sql 
+    alter table user add column password varchar(100) AFTER login;
+```
 - rendre dans la table, le login unique dans la db 
+```sql 
+    alter table user add constraint ak_login unique (login);
+```
 - créer un formulaire login / mot de passe  
 - modifiez le formulaire inscription pour ajouter un champ mot de passe
 - une fois connecté on devra afficher le nom de l'utilisateur en haut à droite (donc visible sur chaque page) 

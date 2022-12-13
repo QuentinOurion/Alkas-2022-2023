@@ -35,6 +35,33 @@ main {
     margin : 0 20px 20px 0;
 }
 
+header[role=banner] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header[role=banner] a {
+    text-decoration: none;
+}
+
+
+header[role=banner] a:hover {
+    text-decoration: underline;
+}
+
+nav[role=navigation] ul {
+    display: flex;
+    background-color: white;
+    list-style: none;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+nav[role=navigation] li {
+    margin: 0 10px;
+}
+
 .addUser {
     padding : 20px
 }
@@ -43,8 +70,6 @@ main {
     display: flex;
     flex-direction: column;
 }
-
-
 
 .info_portable {
     font-weight: bolder;

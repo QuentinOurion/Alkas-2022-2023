@@ -9,11 +9,12 @@
 
 <body>
 <header role="banner" class="wrapper">
-    <h1>Can't Unsee</h1>
+    <a href="forum.php"><h1>Can't Unsee</h1></a>
     <nav role="navigation">
         <ul>
             <li><a href="forum.php">Home</a></li>
             <li><a href="addUser.php">Inscription</a></li>
+            <li><a href="connexion.php">Connexion</a></li>
         </ul>
     </nav>
 </header>
