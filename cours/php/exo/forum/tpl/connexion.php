@@ -2,7 +2,7 @@
 require_once('doctype.php');
 ?>
 
-    <section><?= $message ?></section>
+    <section class="messageInformation"><?= $message ?></section>
 
     <section class="addUser">
         <form method="post" action="" ><!--novalidate-->

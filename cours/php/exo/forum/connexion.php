@@ -7,8 +7,13 @@ $pwd = trim($_POST['password'] ?? '');
 
 if(filter_var($login, FILTER_VALIDATE_EMAIL) && $pwd) {
     $con = connexion();
-    var_dump(findUserByLogin($con, $login));
-    $message = strlen(password_hash($pwd, PASSWORD_ARGON2ID));
+    $user = findUserByLogin($con, $login);
+    if(password_verify($pwd, $user['password'])) {
+        $message = "Utilisateur valid";
+    } else {
+        $message = "Le mot de passe est invalide";
+    }
+//    password_hash($user['password'], PASSWORD_ARGON2ID);
 }
 
 require_once ('tpl/connexion.php');
