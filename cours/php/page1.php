@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,6 +15,10 @@
 
 <?php
 $toto = $_GET['toto'] ?? 'test';
+
+$ici = 'montpellier';
+
+$_SESSION['ici'] = $ici;
 ?>
 
 <?= $toto ?>

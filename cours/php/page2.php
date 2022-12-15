@@ -1,3 +1,9 @@
+<?php
+session_start([
+    'cookie_lifetime' => 3,
+]);
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,6 +16,7 @@
 
 <?php
 $titi = 'test';
+
 if (isset($_GET['titi']) && $_GET['titi']) {
     $titi = $_GET['titi'];
 }
@@ -17,9 +24,12 @@ if (isset($_GET['titi']) && $_GET['titi']) {
 if (!empty($_GET['titi'])) {
     $titi = $_GET['titi'];
 }
+
+$ici = $_SESSION['ici'];
 ?>
 
 <?= $titi ?>
 <a href="page1.php?toto=titi">page 1</a>
+<div><?=$ici?></div>
 </body>
 </html>
