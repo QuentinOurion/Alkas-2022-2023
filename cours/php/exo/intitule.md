@@ -95,3 +95,7 @@ Modifier la page afficher les utilisateurs pour voir les derniers utilisateurs
 - créer un formulaire login / mot de passe  
 - modifiez le formulaire inscription pour ajouter un champ mot de passe
 - une fois connecté on devra afficher le nom de l'utilisateur en haut à droite (donc visible sur chaque page) 
+
+## Sécurité bis 
+- Connectez un utilisateur
+- dans le menu, il faudra supprimer l'inscription et la connexion et le remplacer par un lien déconnexion 
