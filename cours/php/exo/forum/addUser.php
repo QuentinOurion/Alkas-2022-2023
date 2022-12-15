@@ -1,7 +1,8 @@
 <?php
-require_once('../fonctions/outils.php');
+require_once('outils/gestionSql.php');
 
-require_once('gestionSql.php');
+session_start();
+
 $con = connexion();
 $roles = listRoles($con);
 

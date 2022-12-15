@@ -13,9 +13,13 @@ h1 {
     text-shadow: 7px -4px 2px #C632A6;
 }
 
-.messageInformation {
+.messageInformation, .error {
     background-color: #fff;
     width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: red;
+    font-size: xxx-large;
 }
 
 main {

@@ -1,6 +1,6 @@
 <?php
-require_once('../fonctions/outils.php');
-require_once ('gestionSql.php');
+require_once('outils/gestionSql.php');
+session_start();
 
 date_default_timezone_set('Europe/Paris');
 $title = "Liste des messages d'un utilisateur";

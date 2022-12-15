@@ -6,7 +6,7 @@ foreach ($users as $user) {
     <section class="user" role="contentinfo">
         <div class="info_portable">
             <div>
-                <img src="logo_portable.png" alt="">
+                <img src="assets/images/logo_portable.png" alt="">
                 <?= date("H:i", strtotime($user['date_inscription'])) ?>
             </div>
         </div>
