@@ -99,3 +99,4 @@ Modifier la page afficher les utilisateurs pour voir les derniers utilisateurs
 ## Sécurité bis 
 - Connectez un utilisateur
 - dans le menu, il faudra supprimer l'inscription et la connexion et le remplacer par un lien déconnexion 
+- Afficher dans ce menu le nom de l'utilisateur connecté
