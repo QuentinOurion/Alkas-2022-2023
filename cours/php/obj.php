@@ -6,4 +6,6 @@ require_once ('Demo.php');
 $demo = new Demo('Bonjour le monde');
 $demo->test();
 
+//$demo->
+
 //$demo->methodePrivee();
