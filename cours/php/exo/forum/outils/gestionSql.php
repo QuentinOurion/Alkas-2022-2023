@@ -79,7 +79,7 @@ function listMessages(PDO $connexion, int $id): array
 }
 
 /**
- * Permet de récuperer des données
+ * Permet de récupérer des données
  *
  * @param PDO $connexion
  * @param string $requete
