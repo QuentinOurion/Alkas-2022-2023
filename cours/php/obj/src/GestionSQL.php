@@ -56,7 +56,11 @@ class GestionSQL
         // puis on récupère le résultat
         $result = $prepare->fetch();
 
-        return $result ?? [];
+        if(is_array($result)) {
+            return $result;
+        } else {
+            return [];
+        }
     }
 
 }

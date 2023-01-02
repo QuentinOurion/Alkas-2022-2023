@@ -2,6 +2,12 @@
 
 class UserRepository
 {
+//    private GestionSQL $gestionSQL;
+//
+//    public function __construct(GestionSQL $gestionSQL)
+//    {
+//        $this->gestionSQL = $gestionSQL;
+//    }
 
     public function __construct(private GestionSQL $gestionSQL)
     {
@@ -20,7 +26,7 @@ class UserRepository
             from user
             where login = :login', [
             'login' => $login
-        ]);
+        ]) ?? [];
     }
 
 
