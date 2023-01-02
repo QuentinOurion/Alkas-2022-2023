@@ -5,9 +5,9 @@
  *
  * @param string $nameFile (sans l'extension)
  *
- * @return void
+ * @return never
  */
-function redir(string $nameFile) : void
+function redir(string $nameFile) : never
 {
     header('Location: '.$nameFile.'.php');
     die();
