@@ -102,11 +102,45 @@ Modifier la page afficher les utilisateurs pour voir les derniers utilisateurs
 - Afficher dans ce menu le nom de l'utilisateur connecté
 
 # Exo sur l'héritage
-
 Vous avez 3 véhicules dont (1 voiture, 1 vélo, 1 ovni)
+
 Donc évidement chaque véhicule à des choses en commun, comme accélérer, avance, freiner
+
 La voiture quant à elle a des roues (3 ou 4), a un volant, a un klaxon
+
 Le vélo 2, il a des poignées
+
 L'ovni, lui vole, n'a pas de roue, devient invisible.
 
 Chaque fonctionnalité affiche un message
+
+
+# Eval Conception d'un " CMS " (3-1-23)
+
+- À partir du dossier eval, faite une copie dans votre dossier étudiant/votreprénom/evalPHP, vous devez le modifier, créer une base de donnée, comme ce qui suit : 
+
+- Une page est constitué d'un titre (100 caractères max), d'une description (200 caractères max), d'un slug (qui est identique au titre et est sans les accents, espaces et doit ressembler à ça "ma-premiere-page" au lieu de mettre "Ma première page"), le slug devra se faire automatiquement et non l'écrire à la main), titre pour le menu (ex: "accueil", "cv", "portfolio"), d'un contenu et une date de création et modification.
+  Chaque champ devra être protégé par la fonction htmlspecialchars pour éviter les attaques de type XSS
+
+- Chaque page à une catégorie (ex: sport, actualité, etc.) dont l'on devra sélectionner lors de la création et modification
+
+- On pourra lister les pages et on pourra les supprimers ou modifiers via des liens par page
+
+- Affichez une page via son slug et uniquement via le fichier index.php
+
+exemple :
+http://localhost/?page=ma-premiere-page
+
+- La page doit afficher uniquement : le titre, la date de création, sa catégorie et modification ainsi que son contenu. Dans le menu, on pourra voir la liste des pages.
+
+Attention cependant le titre et la description doivent être aussi dans les balises faites dans la tête.
+
+Le site devra être centré et avoir une taille maximum de 1000 pixels et doit être responsive
+
+- La partie back-end doit être en objet et les requêtes doivent être uniquement dans des fichiers et avoir le suffixe Repository et donc s'appeler comme ici Repository/NomClassRepository.php ex : Repository/UserRepository.php
+
+Les contrôleurs doivent avoir un suffixe Controller et donc s'appeler comme ici : Controller/NomClassController.php ex : Controller/AccueilController.php
+
+- modifiez le fichier config.php pour qu'il corresponde à votre configuration
+
+- Merci de le partager, ainsi que votre base de donnée qui devra être aussi dans ce dossier

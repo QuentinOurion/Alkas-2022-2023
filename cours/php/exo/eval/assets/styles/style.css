@@ -1,0 +1,67 @@
+body {
+    background-color: white;
+    /*color: white;*/
+}
+
+.wrapper {
+}
+
+h1 {
+    color: #0099FF;
+    text-shadow: 7px -4px 2px #C632A6;
+}
+
+.messageInformation, .error {
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: red;
+    font-size: xxx-large;
+}
+
+main {
+    display: flex;
+}
+
+.user {
+    background-color: #eee;
+    /*color: white;*/
+}
+
+header[role=banner] {
+    display: flex;
+}
+
+header[role=banner] a {
+    text-decoration: none;
+}
+
+
+header[role=banner] a:hover {
+    text-decoration: underline;
+}
+
+nav[role=navigation] ul {
+    display: flex;
+    background-color: #eee;
+    list-style: none;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+nav[role=navigation] li {
+    margin: 0 10px;
+}
+
+.user_nom {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+footer {
+    background-color: #fff;
+
+}
