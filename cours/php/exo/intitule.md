@@ -131,6 +131,10 @@ Chaque fonctionnalité affiche un message
 exemple :
 http://localhost/?page=ma-premiere-page
 
+titre = Eval Conception d'un " CMS " (3-1-23)
+
+slug = eval-conception-d-un-cms-3-1-23
+
 - La page doit afficher uniquement : le titre, la date de création, sa catégorie et modification ainsi que son contenu. Dans le menu, on pourra voir la liste des pages.
 
 Attention cependant le titre et la description doivent être aussi dans les balises faites dans la tête.

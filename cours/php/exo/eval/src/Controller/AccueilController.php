@@ -5,10 +5,12 @@ class AccueilController extends Controller
     public function accueil(GestionSQL $gestionSQL)
     {
         try {
-            $userRepository = new UserRepository($gestionSQL);
-            $user = $userRepository->findByLogin('aoll@aol.cp');
+            $pageRepository = new PageRepository($gestionSQL);
+            $pages = $pageRepository->findAll();
 
-            $this->render('user', ['user' => $user]);
+            $this->render('listPage', [
+                'pages' => $pages
+            ]);
         } catch(Exception $exception) {
             die($exception->getMessage());
         }

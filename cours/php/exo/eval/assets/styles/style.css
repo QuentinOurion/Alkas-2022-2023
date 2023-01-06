@@ -4,6 +4,8 @@ body {
 }
 
 .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -22,6 +24,9 @@ h1 {
 
 main {
     display: flex;
+    /*justify-content: center;*/
+
+    flex-wrap: wrap;
 }
 
 .user {
@@ -31,6 +36,8 @@ main {
 
 header[role=banner] {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header[role=banner] a {

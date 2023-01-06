@@ -47,7 +47,7 @@ class GestionSQL
      * @param array $data
      * @return array
      */
-    function find(string $query, array $data): array
+    public function find(string $query, array $data): array
     {
         // on prépare les requêtes pour pdo et on l'exécute
         $prepare = $this->con->prepare($query);
@@ -61,6 +61,22 @@ class GestionSQL
         } else {
             return [];
         }
+    }
+
+    public function insert(string $query, array $data): int
+    {
+        $prepare = $this->con->prepare($query);
+        $prepare->execute($data);
+
+        return intval($this->con->lastInsertId());
+    }
+
+    public function updateOrDelete(string $query, array $data): int
+    {
+        $prepare = $this->con->prepare($query);
+        $prepare->execute($data);
+
+        return $prepare->rowCount();
     }
 
 }

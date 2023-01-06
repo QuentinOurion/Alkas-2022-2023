@@ -1,6 +1,6 @@
 </main>
 
-<footer role="contentinfo">
+<footer role="contentinfo" class="wrapper">
     &copy; Alkas
 </footer>
 </body>

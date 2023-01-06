@@ -6,6 +6,10 @@ require_once('doctype.php');
     <?= $user['nom'] . ' ' . $user['prenom'] ?>
     <a href="mailto:<?= $user['login'] ?>"><?= $user['login'] ?></a>
     <?= $user['date_inscription'] ?>
+    <br>
+    <?=$id?>
+    <br>
+    <?=$prenom?>
 </section>
 
 <?php
