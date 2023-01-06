@@ -4,7 +4,9 @@
     <nav role="navigation">
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="index.php">Home</a></li>
+            <li>| Page ></li>
+            <li><a href="index.php?admin=creation">Ajout</a></li>
+            <li><a href="index.php?admin=modif">Liste des pages</a></li>
         </ul>
     </nav>
 </header>
