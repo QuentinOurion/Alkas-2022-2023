@@ -36,6 +36,9 @@ if (!empty($_GET['page'])) {
         case 'eff':
             $pageController->delete($gestionSQL, intval($_GET['id']));
     }
+} elseif(!empty($_GET['js'])) {
+    $accueilController = new AccueilController();
+    $accueilController->js();
 } else {
     $accueilController = new AccueilController();
     $accueilController->accueil($gestionSQL);

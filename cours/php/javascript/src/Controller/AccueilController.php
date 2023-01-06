@@ -15,4 +15,9 @@ class AccueilController extends Controller
             die($exception->getMessage());
         }
     }
+
+    public function js()
+    {
+        $this->render('js');
+    }
 }
