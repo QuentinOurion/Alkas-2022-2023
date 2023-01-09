@@ -4,6 +4,7 @@ require_once ('src/GestionSQL.php');
 require_once ('src/Controller.php');
 
 require_once ('src/Controller/AccueilController.php');
+require_once ('src/Controller/JsController.php');
 require_once ('src/Controller/PageController.php');
 require_once ('src/Repository/PageRepository.php');
 
@@ -38,15 +39,19 @@ if (!empty($_GET['page'])) {
             break;
     }
 } elseif(!empty($_GET['js'])) {
-    $accueilController = new AccueilController();
+    $jsController = new JsController();
 
     switch ($_GET['js']) {
         case 'cours':
-            $accueilController->cours();
+            $jsController->cours();
             break;
 
         case 'calculatrice':
-            $accueilController->calculatrice();
+            $jsController->calculatrice();
+            break;
+
+        case 'doWhile':
+            $jsController->doWhile();
             break;
     }
 } else {

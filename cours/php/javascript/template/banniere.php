@@ -7,6 +7,7 @@
             <li>| Js ></li>
             <li><a href="index.php?js=cours">Cours</a></li>
             <li><a href="index.php?js=calculatrice">Calculatrice</a></li>
+            <li><a href="index.php?js=doWhile">do while</a></li>
 
             <li>| Page ></li>
             <li><a href="index.php?admin=creation">Ajout</a></li>

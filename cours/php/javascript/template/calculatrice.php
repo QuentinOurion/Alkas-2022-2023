@@ -9,16 +9,20 @@ require_once('doctype.php');
             let operateur = prompt("Donnez un opérateur (+ - / *)")
             let chiffreSecond = +prompt("Veuillez donner un chiffre")
             let result = calculatrice(chiffrePremier, operateur, chiffreSecond)
-
             alert(chiffrePremier + operateur + chiffreSecond + " = " + result)
 
-            function calculatrice(chiffrePremier, operateur, chiffreSecond)
-            {
+            function calculatrice(chiffrePremier, operateur, chiffreSecond) {
                 let result
+
+                // if('+' === operateur ) {
+                //     result = chiffrePremier + chiffreSecond
+                // } else if('-' === operateur) {
+                //     result = chiffrePremier - chiffreSecond
+                // }
 
                 switch (operateur) {
                     case "+":
-                        result = chiffrePremier+chiffreSecond
+                        result = chiffrePremier + chiffreSecond
                         break
                     case "-":
                         result = chiffrePremier - chiffreSecond
