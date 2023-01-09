@@ -2,18 +2,9 @@
 
 class AccueilController extends Controller
 {
-    public function accueil(GestionSQL $gestionSQL)
+    public function accueil()
     {
-        try {
-            $pageRepository = new PageRepository($gestionSQL);
-            $pages = $pageRepository->findAll();
-
-            $this->render('listPage', [
-                'pages' => $pages
-            ]);
-        } catch(Exception $exception) {
-            die($exception->getMessage());
-        }
+        $this->render('accueil');
     }
 
 

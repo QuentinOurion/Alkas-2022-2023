@@ -1,4 +1,8 @@
 <?php
-const DB_PASSWORD = 'root';
-const DB_USERNAME = 'root';
-const DB_NAME = 'alkas2023';
+
+if(file_exists(dirname(__FILE__).'/maConfigPerso.php'))
+{
+    require (dirname(__FILE__).'/maConfigPerso.php');
+} else {
+    require (dirname(__FILE__).'/configDefault.php');
+}

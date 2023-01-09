@@ -17,7 +17,7 @@ abstract class Controller
      */
     public function redir(string $nameFile): never
     {
-        header('Location: ' . $nameFile . '.php');
+        header('Location: ' . $nameFile);
         die();
     }
 

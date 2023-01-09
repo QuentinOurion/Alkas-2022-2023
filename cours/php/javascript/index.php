@@ -1,12 +1,12 @@
 <?php
-require_once ('config.php');
-require_once ('src/GestionSQL.php');
-require_once ('src/Controller.php');
+require_once('config.php');
+require_once('src/GestionSQL.php');
+require_once('src/Controller.php');
 
-require_once ('src/Controller/AccueilController.php');
-require_once ('src/Controller/JsController.php');
-require_once ('src/Controller/PageController.php');
-require_once ('src/Repository/PageRepository.php');
+require_once('src/Controller/AccueilController.php');
+require_once('src/Controller/JsController.php');
+require_once('src/Controller/PageController.php');
+require_once('src/Repository/PageRepository.php');
 
 try {
     $gestionSQL = new GestionSQL();
@@ -23,22 +23,27 @@ try {
 if (!empty($_GET['page'])) {
     $pageController = new PageController();
     $pageController->show($gestionSQL, $_GET['page']);
-} elseif(!empty($_GET['admin'])) {
+} elseif (!empty($_GET['admin'])) {
     $pageController = new PageController();
 
     switch ($_GET['admin']) {
         case 'creation':
             $pageController->create($gestionSQL, $_POST);
             break;
+
+        case 'list':
+            $pageController->list($gestionSQL);
+            break;
+
         case 'modif':
-            $pageController->update($gestionSQL, $_REQUEST);
+            $pageController->update($gestionSQL, intval($_GET['id']), $_POST);
             break;
 
         case 'eff':
             $pageController->delete($gestionSQL, intval($_GET['id']));
             break;
     }
-} elseif(!empty($_GET['js'])) {
+} elseif (!empty($_GET['js'])) {
     $jsController = new JsController();
 
     switch ($_GET['js']) {
@@ -56,7 +61,7 @@ if (!empty($_GET['page'])) {
     }
 } else {
     $accueilController = new AccueilController();
-    $accueilController->accueil($gestionSQL);
+    $accueilController->accueil();
 }
 
 // sinon éventuellement on fait appel ou pas à un autre contrôleur ...

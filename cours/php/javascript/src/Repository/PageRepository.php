@@ -6,7 +6,14 @@ class PageRepository
     {
     }
 
-    public function findAll()
+    public function find(int $id): array
+    {
+        return $this->gestionSQL->find('select * from page where id=:id', [
+            'id' => $id
+        ]);
+    }
+
+    public function findAll(): array
     {
         return $this->gestionSQL->findAll('select * from page');
     }
@@ -38,6 +45,7 @@ class PageRepository
 
     public function update(array $data): int
     {
+        var_dump($data);
         return $this->gestionSQL->updateOrDelete(
             "
             update page set 

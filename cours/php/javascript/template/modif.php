@@ -1,12 +1,11 @@
 <?php
 require_once('doctype.php');
 ?>
-<section class="page" role="contentinfo">
-    <header>
-        <h1><?=$id?></h1>
-    </header>
-
-</section>
+    <section class="listPage" role="contentinfo">
+        <?php
+        require_once ('formPage.php');
+        ?>
+    </section>
 
 <?php
 
