@@ -30,8 +30,14 @@ require_once('doctype.php');
                 alert(anthony)
             }
 
-            test(anthony)
+            //test(anthony)
 
+            let blabla = prompt("Tapez quelque chose")
+
+            alert(blabla)
+
+            let monChiffre = Number(prompt("Tapez un chiffre"))
+            alert(monChiffre + 1)
         </script>
     </article>
 
