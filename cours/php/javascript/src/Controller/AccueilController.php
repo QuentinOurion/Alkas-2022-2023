@@ -16,8 +16,13 @@ class AccueilController extends Controller
         }
     }
 
-    public function js()
+    public function cours()
     {
-        $this->render('js');
+        $this->render('cours');
+    }
+
+    public function calculatrice()
+    {
+        $this->render('calculatrice');
     }
 }

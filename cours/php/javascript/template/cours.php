@@ -25,19 +25,19 @@ require_once('doctype.php');
             // let tab2 = ['bla' => 'test',67676,343434]
             // console.log(tab2[123])
 
-            function test(maVariable)
+            function test()
             {
                 alert(anthony)
             }
 
             //test(anthony)
 
-            let blabla = prompt("Tapez quelque chose")
+            // let blabla = prompt("Tapez quelque chose")
 
-            alert(blabla)
+            // alert(blabla)
 
-            let monChiffre = Number(prompt("Tapez un chiffre"))
-            alert(monChiffre + 1)
+            // let monChiffre = Number(prompt("Tapez un chiffre"))
+            // alert(monChiffre + 1)
         </script>
     </article>
 

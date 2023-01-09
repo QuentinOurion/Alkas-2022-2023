@@ -35,10 +35,20 @@ if (!empty($_GET['page'])) {
 
         case 'eff':
             $pageController->delete($gestionSQL, intval($_GET['id']));
+            break;
     }
 } elseif(!empty($_GET['js'])) {
     $accueilController = new AccueilController();
-    $accueilController->js();
+
+    switch ($_GET['js']) {
+        case 'cours':
+            $accueilController->cours();
+            break;
+
+        case 'calculatrice':
+            $accueilController->calculatrice();
+            break;
+    }
 } else {
     $accueilController = new AccueilController();
     $accueilController->accueil($gestionSQL);
