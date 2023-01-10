@@ -2,11 +2,6 @@
 
 class JsController extends Controller
 {
-    public function cours()
-    {
-        $this->render('cours');
-    }
-
     public function calculatrice()
     {
         $this->render('calculatrice');
@@ -15,5 +10,10 @@ class JsController extends Controller
     public function doWhile()
     {
         $this->render('doWhile');
+    }
+
+    public function event()
+    {
+        $this->render('event');
     }
 }

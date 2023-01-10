@@ -9,9 +9,32 @@ require_once('doctype.php');
                 color: red;
             }
         </style>
+
+
+
+
+
         <p id="monParagraphe">Saisir des données et s'arrêter dès que leur somme dépasse <span id="chiffreMax">500</span></p>
         <script>
-            doWhile(200)
+            // let ulListOne = document.getElementById('ulListOne');
+            let ulListOne = document.querySelector('#ulListOne');
+            // let items = ulListOne.getElementsByTagName('li');
+            let items = ulListOne.querySelectorAll('li');
+
+            // ulListOne.setAttribute('type', 'circle');
+            ulListOne.style.listStyleType = 'upper-roman';
+            // en css list-style-type : 'upper-roman'
+
+            for (let i = 0; i < items.length; i++) {
+
+                // items[i].setAttribute('onClick', "alert('item : '+(i+1))");
+                items[i].addEventListener('click', function () {
+                    alert('item : '+(i+1));
+                })
+
+                items[i].innerText = "Blabla " + (i + 1);
+            }
+            // doWhile(200)
 
             function doWhile(max = 500) {
                 let sortie = 0

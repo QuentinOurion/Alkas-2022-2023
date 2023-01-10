@@ -44,6 +44,21 @@ alert(blabla)
 // alert(monChiffre + 1)
 ```
 
+### Pour afficher les infos sur les objets JS
+```js
+// information du navigateur
+console.log(navigator);
+// information sur notre fenetre de notre navigateur
+console.log(window);
+// toutes les infos sur notre page html
+console.log(document)
+// exemple recupere une fois la page html chargé tous les enfants de body
+console.log(document.body.children);
+// childNodes donne tous les noeuds (les elements + texte), dans ce cas présent du body
+console.log(document.body.childNodes);
+```
+
+
 ### Evenement
 ````html
 <p id="monParagraphe">Saisir des données et s'arrêter dès que leur somme dépasse <span id="chiffreMax">500</span></p>
@@ -52,9 +67,14 @@ alert(blabla)
 ```js
 let chiffreMax = 200
 
-// récupére un element (la balise) dont l'identifiant est : chiffreMax sur la page html
+// récupére un element (la balise) dont l'identifiant est : chiffreMax sur la page html, comme on le fait en CSS
+// #chiffreMax {color: red}
 let elChiffreMax = document.querySelector('#chiffreMax')
-// document.querySelectorAll() permet de trouver une liste d'élements 
+
+document.querySelectorAll() // permet de trouver une liste d'élements 
+
+document
+// ici on cherche sur le document, donc la page html en entier mais on peut faire des recherches à partir d'autres éléments
 
 // On vérifie qu'on a bien (l'objet) l'element pour savoir s'il a été trouvé pour faire du traitement ou autre
 if (elChiffreMax) {
@@ -72,4 +92,21 @@ function monParagrapheChangeCouleur(e) {
     // console.log(this)
     this.style.color = "blue"
 }
+```
+
+### Recherche des élements
+```js
+// façon simple
+let ulListOne = document.querySelector('#ulListOne')
+let listLi = ulListOne.querySelectorAll('li')
+
+// façon selector plus avancé
+let listLi = ulListOne.querySelectorAll('#ulListOne > li')
+
+// façon la plus rapide
+let ulListOne = document.getElementById('ulListOne')
+let listLi = ulListOne.getElementsByTagName('li')
+
+// la même chose en une ligne
+let listLi = document.getElementById('ulListOne').getElementsByTagName('li')
 ```

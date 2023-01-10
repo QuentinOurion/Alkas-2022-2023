@@ -47,16 +47,16 @@ if (!empty($_GET['page'])) {
     $jsController = new JsController();
 
     switch ($_GET['js']) {
-        case 'cours':
-            $jsController->cours();
-            break;
-
         case 'calculatrice':
             $jsController->calculatrice();
             break;
 
         case 'doWhile':
             $jsController->doWhile();
+            break;
+
+        case 'event':
+            $jsController->event();
             break;
     }
 } else {
