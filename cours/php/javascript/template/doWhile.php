@@ -24,18 +24,23 @@ require_once('doctype.php');
         <p id="monParagraphe">Saisir des données et s'arrêter dès que leur somme dépasse <span id="chiffreMax">500</span></p>
         <script>
 
-            let max = 200
-            let chiffreMax = document.querySelector('#chiffreMax')
-            chiffreMax.textContent = max
+            let chiffreMax = 200
+            let elChiffreMax = document.querySelector('#chiffreMax')
 
-            let monParagraphe = document.querySelector('#monParagraphe')
+            if(elChiffreMax) {
+                elChiffreMax.textContent = chiffreMax
+            }
 
-            monParagraphe.addEventListener('click', monParagrapheChangeCouleur)
+            let elMonParagraphe = document.querySelector('#monParagraphe')
 
-            function monParagrapheChangeCouleur()
+            elMonParagraphe.addEventListener('click', monParagrapheChangeCouleur)
+
+
+            function monParagrapheChangeCouleur(e)
             {
-                console.log()
-                alert()
+                // console.log(e.target)
+                // console.log(this)
+                this.style.color = "blue"
             }
 
             // doWhile(200)
