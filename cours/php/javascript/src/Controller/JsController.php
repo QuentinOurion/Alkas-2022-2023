@@ -14,6 +14,9 @@ class JsController extends Controller
 
     public function event()
     {
-        $this->render('event');
+        $this->render('event', [
+            'titre' => 'Exo event',
+            'description' => "Exo sur les évenements"
+        ]);
     }
 }
