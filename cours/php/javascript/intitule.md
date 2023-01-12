@@ -18,3 +18,10 @@ On a une liste
 </ul>
 
 On veut changer item de la liste par blabla et afficher, sur un element de liste, un popup qui donne son numéro 
+
+
+### Todo
+Création d'une todolist (simple)
+On doit pouvoir saisir une nouvelle tache à faire et l'ajouter dans sa tache, puis de pouvoir supprimer une tache bien précise
+
+

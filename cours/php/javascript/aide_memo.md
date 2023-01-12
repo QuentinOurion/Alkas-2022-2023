@@ -110,3 +110,15 @@ let listLi = ulListOne.getElementsByTagName('li')
 // la même chose en une ligne
 let listLi = document.getElementById('ulListOne').getElementsByTagName('li')
 ```
+
+### DOM
+
+Création d'un élément 
+```js
+let elem = document.createElement('div')
+```
+Ajouter un élément dans une autre élément
+
+```js
+autreElement.appendChild(elem)
+```
