@@ -19,4 +19,9 @@ class JsController extends Controller
             'description' => "Exo sur les évenements"
         ]);
     }
+
+    public function todo()
+    {
+        $this->render('todo');
+    }
 }

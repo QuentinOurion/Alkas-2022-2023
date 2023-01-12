@@ -58,6 +58,10 @@ if (!empty($_GET['page'])) {
         case 'event':
             $jsController->event();
             break;
+
+        case 'todo':
+            $jsController->todo();
+            break;
     }
 } else {
     $accueilController = new AccueilController();
