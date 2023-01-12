@@ -22,6 +22,9 @@ On veut changer item de la liste par blabla et afficher, sur un element de liste
 
 ### Todo
 Création d'une todolist (simple)
-On doit pouvoir saisir une nouvelle tache à faire et l'ajouter dans sa tache, puis de pouvoir supprimer une tache bien précise
+
+On doit pouvoir saisir une nouvelle tache à faire et l'ajouter dans sa liste, puis de pouvoir supprimer une tache bien précise
+
+L'idée est de pouvoir utiliser cette liste n'importe où, donc tout doit être fait pour que ça soit contenu dans un block
 
 
