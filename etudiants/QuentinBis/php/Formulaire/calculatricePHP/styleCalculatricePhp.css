@@ -1,0 +1,70 @@
+body{
+    background-color: rgba(45, 45, 45, 0.45);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculatrice {
+    margin: 0 auto;
+    width: 410px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 130px repeat(5,105px);
+    grid-template-areas:
+    "r r r r"
+    "9 8 7 equal"
+    "6 5 4 equal"
+    "3 2 1 equal"
+    "dot 0 times minus"
+    "c c div plus";
+    border: solid 4px rgba(55, 53, 53, 0.76);
+    border-radius: 5px;
+    padding: 2px ;
+}
+
+#result {
+    grid-area: r;
+    text-align: right;
+    border-radius: 5px;
+    margin: 4px;
+    height: 119px;
+    line-height: 119px;
+    padding-right: 8px;
+    font-size: 3rem;
+    background-color: #3a3a3a;
+    color: white;
+}
+
+
+#clear {
+    grid-area: c;
+    width: 202px;
+    height: 100px ;
+    border-radius: 7px;
+    background: rgb(75, 192, 253);
+    font-size: 20px;
+}
+
+#egal {
+    grid-area: equal;
+    height: 310px ;
+    width: 100px;
+    border-radius: 7px;
+    background: rgb(75, 192, 253);
+    font-size: 20px;
+}
+
+.btn{
+    width: 100px ;
+    height:100px ;
+    background: rgb(50, 50, 50);
+    border-radius: 7px;
+    color: white;
+    font-size: 20px;
+}

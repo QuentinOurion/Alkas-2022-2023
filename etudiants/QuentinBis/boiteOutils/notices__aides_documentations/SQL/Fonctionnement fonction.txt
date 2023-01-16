@@ -1,0 +1,38 @@
+Déclaration de la fonction :
+
+
+
+function somme($chiffre1,$chiffre2){
+
+$resultat = $chiffre1 + $chiffre1
+
+return $result
+
+};
+
+																	2			5
+
+Ici la fonction a pour nom "somme" avec deux arguments d'entrées (paramètres) $chiffre1 et $chiffre1
+et en sortie retourne le resultat de la variable "$result"
+
+
+
+
+Appel de la fonction
+
+
+
+$nb1 = 2;
+$nb2 = 5;
+
+
+somme($nb1,$nb2);
+
+
+Entre parenthèses, on envoie à la fonction somme
+des variables en entrée (c'est les nombres sur lesquels elle va travailler).
+On pourrait egalement envoyer directement des valeurs a la place des variables :
+
+exemple : 
+
+somme(2,5);

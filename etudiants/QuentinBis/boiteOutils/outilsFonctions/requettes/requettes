@@ -1,0 +1,118 @@
+<?php
+
+
+/**
+ * Permet de selectioner des données d'une table de la Base de Données
+ * @param $connexion
+ * @param $id
+ * @return mixed
+ */
+function SelectionQuery($connexion, $id){
+$message = $connexion->prepare('select  r.nom nom_role, m.contenu message_contenu,u.nom utilisateur_nom,m.date_creation date_du_message
+from user u
+join message m on u.id = m.user_id
+join roles r on u.roles_id = r.id
+where u.id = :id');
+$message->execute([
+':id' => $id,
+]);
+$result = $message->fetchall();
+return $result;
+}
+
+
+/**
+ * Permet d'envoyer des données dans une table de la Base de Données
+ * @param $connexion
+ * @param $userId
+ * @param $conversationId
+ * @param $contenu
+ * @return mixed
+ */
+function envoiNvxMessage($connexion,$userId,$conversationId,$contenu){
+$message = $connexion->prepare('insert into message(user_id, conversation_id, contenu, date_creation)  values (:userId,:conversationId,:contenu,NOW())');
+$result = $message->execute([
+':userId' => $userId,
+':conversationId' =>  $conversationId,
+':contenu' => $contenu,
+]);
+return $result;
+}
+
+
+/**
+ * Permet de supprimer une valeur d'une table de la base de données
+ * @param $connexion
+ * @param $idTache
+ * @return void
+ */
+function suppTache($connexion,$idTache){
+    $prepare = $connexion->prepare('delete
+                                    from liste_de_taches
+                                    where id = :idTache;');
+    $prepare->execute([
+        ':idTache'=> $idTache
+    ]);
+}
+
+
+/**
+ * Permet de mettre à jour/modifier des données d'une table de la Base de Données
+ * @param $connexion
+ * @param $idTache
+ * @return void
+ */
+function updateQuery($connexion,$idTache){
+    $prepare = $connexion->prepare("update user set nom = 'le relou' where id = 137;");
+    $prepare->execute([
+        ':idTache'=> $idTache
+    ]);
+}
+
+
+
+
+
+
+
+
+/**
+ *
+* Permet de retourner un élement de la table
+* @param $connexion
+* @param $login
+* @return array
+ */
+function champsUtilisateurLogin($connexion, $login) : array
+{
+    $query = $connexion->prepare('select *
+                          from user
+                          where login = :login');
+    $query->execute([
+        'login'=> $login
+    ]);
+    $result = $query->fetch();
+    return $result;
+}
+
+
+
+
+
+
+
+
+/**
+ * Permet de recuperer une liste de 10 pays du monde
+ * @param $connexion
+ * @return mixed
+ */
+function listePays($connexion){
+    $query = $connexion->prepare('select nom_fr_fr
+                                        from pays
+                                        limit 10');
+    $query->execute();
+    $resultQuery = $query->fetchall();
+
+    return $resultQuery;
+}

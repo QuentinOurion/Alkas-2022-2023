@@ -1,0 +1,198 @@
+indows PowerShell
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+Testez le nouveau système multiplateforme PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Doud> mysql
+ERROR 1045 (28000): Access denied for user 'Doud'@'localhost' (using password: NO)
+PS C:\Users\Doud> mysql -u
+C:\dev\xampp\mysql\bin\mysql.exe: option '-u' requires an argument
+PS C:\Users\Doud> mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 51
+Server version: 10.4.25-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use seconde_table
+ERROR 1049 (42000): Unknown database 'seconde_table'
+MariaDB [(none)]> use alkas2023
+Database changed
+MariaDB [alkas2023]> use seconde_table
+ERROR 1049 (42000): Unknown database 'seconde_table'
+MariaDB [alkas2023]> show tables;
++---------------------+
+| Tables_in_alkas2023 |
++---------------------+
+| premieretable       |
+| seconde_table       |
++---------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [alkas2023]> alter table seconde_table add column nouveau date not null default "2022-12-12";
+Query OK, 0 rows affected (0.029 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [alkas2023]> show tables
+    -> describe seconde_table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'describe seconde_table' at line 2
+MariaDB [alkas2023]> describe seconde_table
+    -> ;
++------------+-------------+------+-----+------------+----------------+
+| Field      | Type        | Null | Key | Default    | Extra          |
++------------+-------------+------+-----+------------+----------------+
+| id         | int(11)     | NO   | PRI | NULL       | auto_increment |
+| chaine     | varchar(50) | YES  |     | NULL       |                |
+| chaine_bis | varchar(10) | NO   |     | test       |                |
+| nouveau    | date        | NO   |     | 2022-12-12 |                |
++------------+-------------+------+-----+------------+----------------+
+4 rows in set (0.023 sec)
+
+MariaDB [alkas2023]> insert into seconde_table(chaine) values('premier enregistrement');
+Query OK, 1 row affected (0.016 sec)
+
+MariaDB [alkas2023]> describe seconde_table
+    -> ;
++------------+-------------+------+-----+------------+----------------+
+| Field      | Type        | Null | Key | Default    | Extra          |
++------------+-------------+------+-----+------------+----------------+
+| id         | int(11)     | NO   | PRI | NULL       | auto_increment |
+| chaine     | varchar(50) | YES  |     | NULL       |                |
+| chaine_bis | varchar(10) | NO   |     | test       |                |
+| nouveau    | date        | NO   |     | 2022-12-12 |                |
++------------+-------------+------+-----+------------+----------------+
+4 rows in set (0.023 sec)
+
+MariaDB [alkas2023]> insert into seconde_table(chaine, chaine_bis) values('val',' val pour ma seconde chaine');
+Query OK, 1 row affected, 1 warning (0.014 sec)
+
+MariaDB [alkas2023]> describe seconde_table
+    -> ;
++------------+-------------+------+-----+------------+----------------+
+| Field      | Type        | Null | Key | Default    | Extra          |
++------------+-------------+------+-----+------------+----------------+
+| chaine     | varchar(50) | YES  |     | NULL       |                |
+| chaine_bis | varchar(10) | NO   |     | test       |                |
+| nouveau    | date        | NO   |     | 2022-12-12 |                |
++------------+-------------+------+-----+------------+----------------+
+4 rows in set (0.031 sec)
+
+MariaDB [alkas2023]> select * from seconde_table
+    -> select * from seconde_table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select * from seconde_table' at line 2
+MariaDB [alkas2023]> select * from seconde_table
+    -> ;
++----+------------------------+------------+------------+
+| id | chaine                 | chaine_bis | nouveau    |
++----+------------------------+------------+------------+
+|  1 | premier enregistrement | test       | 2022-12-12 |
+|  2 | val                    |  val pour  | 2022-12-12 |
+2 rows in set (0.000 sec)
+
+MariaDB [alkas2023]> select id from seconde_table;
++----+
+| id |
++----+
+|  1 |
+|  2 |
++----+
+2 rows in set (0.001 sec)
+
+MariaDB [alkas2023]> select * form seconde_table where id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'form seconde_table where id=1' at line 1
+MariaDB [alkas2023]> select * from seconde_table where id=1;
++----+------------------------+------------+------------+
+| id | chaine                 | chaine_bis | nouveau    |
++----+------------------------+------------+------------+
+|  1 | premier enregistrement | test       | 2022-12-12 |
++----+------------------------+------------+------------+
+1 row in set (0.003 sec)
+
+MariaDB [alkas2023]> quit
+Bye
+PS C:\Users\Doud> mysqldump -u root  127.0.0.1 -d alkas2023
+-- MariaDB dump 10.19  Distrib 10.4.25-MariaDB, for Win64 (AMD64)
+--
+-- Host: localhost    Database: 127.0.0.1
+-- ------------------------------------------------------
+-- Server version       10.4.25-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+mysqldump.exe: Got error: 1049: "Unknown database '127.0.0.1'" when selecting the database
+PS C:\Users\Doud> mysqldump -u root  -h 127.0.0.1 -d alkas2023
+-- MariaDB dump 10.19  Distrib 10.4.25-MariaDB, for Win64 (AMD64)
+--
+-- Host: 127.0.0.1    Database: alkas2023
+-- ------------------------------------------------------
+-- Server version       10.4.25-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `premieretable`
+--
+
+DROP TABLE IF EXISTS `premieretable`;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `premieretable` (
+  `entier` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `seconde_table`
+--
+
+DROP TABLE IF EXISTS `seconde_table`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `seconde_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `chaine` varchar(50) DEFAULT NULL,
+  `chaine_bis` varchar(10) NOT NULL DEFAULT 'test',
+  `nouveau` date NOT NULL DEFAULT '2022-12-12',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-11-25 11:48:54
+PS C:\Users\Doud>
+                  dump alkas2023
+dump : Le terme «dump» n'est pas reconnu comme nom d'applet de commande, fonction, fichier de script ou programme exécutable. Vérifiez
+l'orthographe du nom, ou si un chemin d'accès existe, vérifiez que le chemin d'accès est correct et réessayez.
+Au caractère Ligne:1 : 1
++ dump alkas2023
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (dump:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Doud> mysqldump -u root  -h 127.0.0.1 -d alkas2023 > alkas2023.sql
+PS C:\Users\Doud>

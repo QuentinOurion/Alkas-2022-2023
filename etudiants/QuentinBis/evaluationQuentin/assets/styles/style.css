@@ -1,0 +1,218 @@
+body {
+    background-color: #f1f2ee;
+    /*color: white;*/
+}
+
+
+/*.wrapper {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: baseline;*/
+/*}*/
+
+/*h1 {*/
+/*    color: #0099FF;*/
+/*    text-shadow: 7px -4px 2px #C632A6;*/
+/*}*/
+
+/*.messageInformation, .error {*/
+/*    background-color: #fff;*/
+/*    width: 100%;*/
+/*    padding: 10px;*/
+/*    border-radius: 10px;*/
+/*    color: red;*/
+/*    font-size: xxx-large;*/
+/*}*/
+
+/*main {*/
+/*    display: flex;*/
+
+/*}*/
+
+/*.user {*/
+/*    background-color: #eee;*/
+/*    !*color: white;*!*/
+/*}*/
+
+/*header[role=banner] {*/
+/*    display: flex;*/
+/*}*/
+
+/*header[role=banner] a {*/
+/*    text-decoration: none;*/
+/*}*/
+
+
+/*header[role=banner] a:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*nav[role=navigation] ul {*/
+/*    display: flex;*/
+/*    background-color: #eee;*/
+/*    list-style: none;*/
+/*    padding: 20px;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*nav[role=navigation] li {*/
+/*    margin: 0 10px;*/
+/*}*/
+
+/*.user_nom {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    font-size: 25px;*/
+/*    font-weight: bolder;*/
+/*}*/
+
+/*footer {*/
+/*    background-color: #fff;*/
+
+/*}*/
+
+
+/*style barre de navigation*/
+.containerUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change le lien de couleur */
+li a:hover {
+    background-color: #000000;
+}
+
+/*Pour créer un lien diviseurs*/
+li:last-child {
+    border-right: none;
+}
+
+/*Style sur les liens de la page accueil*/
+.LiensDesTitres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(241, 242, 238);
+}
+
+.LiensDesTitres a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(185, 185, 185, 0.87);
+    color: #ffffff;
+    width: 50%;
+
+}
+
+
+.containerPage {
+    background-color: #f1f2ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*style de la page*/
+.elementPage {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+
+}
+
+
+.titrePage {
+    text-align: center;
+}
+
+#contenu {
+    border: black 2px solid;
+    width: 600px;
+    height: 300px;
+}
+
+
+/*formulaire*/
+
+form{
+    margin-top: 50px;
+    display: flex;
+flex-direction: column;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+#iButton{
+    background-color: #de1919;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 10px;
+    width: 130px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    height: 40px;
+}
+
+input, select{
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 45px;
+    outline: 0;
+    padding: 4px 20px 0;
+}
+
+textarea{
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 200px;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 50%;
+    resize: none;
+}
+
+
+.lienPage{
+    display: flex;
+
+}
+
+#logoModif{
+    height: 24px;
+    width: 24px;
+}

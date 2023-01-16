@@ -1,0 +1,153 @@
+	SQL
+
+
+
+Test du fonctionement du server MYsql :
+ 
+mysql -u root 
+(utiliser -p en plus si il y'a un password)
+
+
+
+
+Créer une base de données :
+
+CREATE DATABASE
+
+Avec tout les parametres :
+
+create database server_sql_quentin default character set utf8 collate utf8_general_ci;
+
+
+
+
+Suppression de base de données : 
+
+DROP DATABASE
+
+
+
+
+Voir la liste des bases de données : 
+
+SHOW DATABASES
+
+
+
+
+Pour séléctionner une base de donnée :
+
+USE nom_de_la_base_de_donnee
+
+
+
+Voir toutes les tables dans une base de données :
+
+SHOW TABLES;
+
+
+
+Afficher la structure d’une table:
+
+DESCRIBE nom_de_la_table ;
+
+
+
+Supprimer une base de données :
+
+DROP DATABASE nom_de_la_base_de_donnee;
+
+
+
+Pour créer une nouvelle table :
+
+create table nom_de_la_table
+
+
+
+Pour supprimer une table :
+
+DROP TABLE nom_de_la_table;
+
+
+
+Renomer une table :
+
+RENAME TABLE ancien_nom to nouveau_nom;
+
+
+
+Supprimer une colonne d'une table :
+
+ALTER TABLE Nom_de_la_table
+	DROP COLUMN Nom_de_la_colonne
+
+
+
+Ajouter une colone a une table deja existante :
+
+ALTER TABLE nom_de_la_table add COLUMN nom_de_la_nouvelle_colonne type_de données
+
+
+
+Afficher les données d’une table :
+
+SELECT nom de ou des colonnes (*pour toutes les selectioner)
+FROM nom_de_la_table; (de la table ...)
+WERE nom_de_colonnes puis les condition (< 100 par exemple ou = "marc" || && )
+WERE nom_de_colonnes in (nom des elements a recup)
+LIKE desert "salad%" (il trouvera salade_de_fruit)
+LIKE desert "%lad%" (il trouvera salade_de_fruit)
+
+
+
+
+Renvoie les colonnes et les informations sur des colonnes relatives à une table :
+
+SHOW COLUMNS FROM nom_de_la_table;
+
+
+
+Pour insérer des valeurs dans les colones de la table :
+
+insert into nom_de_la_table(nom_de_la_colone1, nom_de_la_colone2, nom_de_la_colone3 ect..) value ("montpellier",904545,34000);
+
+
+
+Modifier des données d'une table :
+
+UPDATE nom_de_la_table
+exemple :UPDATE nom_de_la_table SET titre = "nouveau_titre" WHERE title = "titre qui va etre modifié"
+
+
+
+Supprimer une ligne ou plusieurs :
+
+DELETE nom_de_la_table
+exemple : DELETE recette WHERE titre = "soupe"
+
+
+Creer un index unique : 
+
+CREATE UNIQUE INDEX nom_de_L'index_ ON nom_de_la_table(element que l'on souhaite unique)
+
+
+Supprimer un index : 
+
+DROP INDEX 
+
+
+Un requête SELECT peut devenir assez longue. voici une requête SELECT qui possède presque toutes les commandes possibles:
+
+SELECT *
+FROM table
+WHERE condition
+GROUP BY expression
+HAVING condition
+{ UNION | INTERSECT | EXCEPT }
+ORDER BY expression
+LIMIT count
+OFFSET start
+
+
+

@@ -1,0 +1,6 @@
+
+Utilisation de la balise <pre> dans PHP :
+
+echo "<pre>";
+            print_r($films);
+      "</pre>";

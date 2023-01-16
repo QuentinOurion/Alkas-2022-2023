@@ -1,0 +1,85 @@
+invite de commandes 
+
+git clones "lien"g
+
+<dir> : permert de parcourir tout ce qu'il y a dans UN dossier
+
+md : créer un dossier
+
+pour rentrer dans le dossier faire un : cd
+
+.. : pour descendre une branche
+
+.  : dossier actuel
+
+cls : clear
+
+ajouter un fichier : git add (nom du fichier)
+
+git status : pour verifier si le fichier a bien été créer
+
+git add nomdufichier : creer un fichier
+
+git commit : envoyer tout les fichiers et dossiers qui sont en vert sur git
+
+
+
+-a  : tout ce qui est dans le status en vert on ajoute
+
+exemple : git commit -a -m "voici un commentaire"
+
+git push envoi : les fichiers sur gitHub
+
+
+
+
+
+Microsoft Windows [version 10.0.19043.2130]
+(c) Microsoft Corporation. Tous droits réservés.
+
+C:\Users\Doud>cd \
+
+C:\>md dev
+
+C:\>cd dev
+
+
+
+
+
+
+
+
+
+C:\dev>git clone https://github.com/NaturelLaurent/Alkas-2022-2023.git
+Cloning into 'Alkas-2022-2023'...
+info: please complete authentication in your browser...
+remote: Enumerating objects: 52, done.
+remote: Counting objects: 100% (52/52), done.
+remote: Compressing objects: 100% (47/47), done.
+remote: Total 52 (delta 4), reused 46 (delta 1), pack-reused 0
+Receiving objects: 100% (52/52), 1.17 MiB | 6.98 MiB/s, done.
+Resolving deltas: 100% (4/4), done.
+
+C:\dev>
+
+
+
+
+
+C:\dev>cd Alkas-2022-2023
+
+C:\dev\Alkas-2022-2023>dir
+ Le volume dans le lecteur C n’a pas de nom.
+ Le numéro de série du volume est 0E44-AB4E
+
+ Répertoire de C:\dev\Alkas-2022-2023
+
+03/11/2022  14:18    <DIR>          .
+03/11/2022  14:18    <DIR>          ..
+03/11/2022  14:18                17 README.md
+               1 fichier(s)               17 octets
+               2 Rép(s)  187 245 924 352 octets libres
+
+C:\dev\Alkas-2022-2023>
+

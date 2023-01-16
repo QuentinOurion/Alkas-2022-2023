@@ -1,0 +1,27 @@
+Flex Box
+
+La propriété flex-grow spécifie la croissance de l'élément par rapport au reste des éléments flexibles à l'intérieur du même conteneur.
+Remarque : Si l'élément n'est pas un élément flexible, la flex-growpropriété n'a aucun effet.
+
+Valeur par défaut:	0
+
+
+****************************************************************************************
+
+
+La propriété flex-shrink  spécifie comment l'élément sera réduit par rapport au reste des éléments flexibles à l'intérieur du même conteneur.
+
+Remarque : Si l'élément n'est pas un élément flexible, la flex-shrinkpropriété n'a aucun effet.
+
+Valeur par défaut:	1
+
+
+****************************************************************************************
+
+
+Définition et utilisation
+La propriété flex-basis propriété spécifie la longueur initiale d'un élément flexible.
+
+Remarque : Si l'élément n'est pas un élément flexible, la flex-basispropriété n'a aucun effet.
+
+Valeur par défaut:	auto

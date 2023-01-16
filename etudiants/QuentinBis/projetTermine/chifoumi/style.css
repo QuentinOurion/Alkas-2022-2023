@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(220, 245, 244);
+  font-family: sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score{
+  padding-top: 20px;
+  padding-left: 22px;
+  gap: 25px;
+  height: 250px;
+  width: 400px;
+  text-align: center;
+  font-size: 30px;
+  display: grid;
+  grid-template-columns: repeat(2,150px);
+  border: 3px solid black;
+  border-radius: 15px;
+  background-color: white;
+}
+
+#btn_recommencer{
+font-size: 18px;
+grid-column: 2 span;
+cursor: pointer;
+}
+
+
+.action{
+  margin-top: 50px;
+  font-size: 25px;
+}
+
+#msg_jouer{
+ text-align: center; 
+}
+
+
+#msg_suivant{
+  visibility: visible ;
+  background-color: red;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 30px;
+  cursor: pointer;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+
+.jeu{
+  font-size: 40px;
+  display: grid;
+  grid-template-columns: repeat(2,150px);
+  text-align: center;
+  margin-top: 150px;
+  padding-top: 100px;
+  gap: 300px;
+  border-top: solid black 1px;
+}
+
+
+.btn{
+  display: flex;
+  width: 220px;
+  margin-top: 30px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+
+.btn_joueur{
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+
+.desactivated {
+  background-color: white; 
+}
+
+
+.active {
+  background-color: rgba(0, 0, 255, 0.673);
+  }

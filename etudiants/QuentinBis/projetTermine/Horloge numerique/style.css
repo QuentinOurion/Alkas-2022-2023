@@ -1,0 +1,14 @@
+body{
+    background-color: rgba(0, 0, 255, 0.86);
+}
+
+
+#clock{
+color: white;
+font-size: 6rem;
+border: 2px solid white;
+border-radius : 20px;
+text-align : center;
+width : 530px;
+
+}

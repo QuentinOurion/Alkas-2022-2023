@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Chifoumi</title>
+  </head>
+  <body>
+    <div class="score">
+      <p>Vous</p>
+      <p>Ordinateur</p>
+      <p id="score_joueur">0</p>
+      <p id="score_ordinateur">0</p>
+      <p id="btn_recommencer">Recommercer</p>
+    </div>
+
+    <div class="action">
+      <p id="msg_jouer">A vous de jouer !</p>
+      <p id="msg_suivant">Tour suivant</p>
+    </div>
+
+    <div class="jeu">
+      <div class="choix">
+        <div class="btn btn_joueur" id="pierre">
+          <img src="assets/pierre.png" alt="photo de pierre" />
+          <p>Pierre</p>
+        </div>
+        <div class="btn btn_joueur" id="feuille">
+          <img src="assets/feuille.png" alt="photo de feuille" />
+          <p>Feuille</p>
+        </div>
+        <div class="btn btn_joueur" id="ciseaux">
+          <img src="assets/ciseaux.png" alt="photo de ciseaux" />
+          <p>Ciseaux</p>
+        </div>
+      </div>
+
+      <div class="choix">
+        <div class="btn btn_ordinateur" id="pierre_ordinateur">
+          <img src="assets/pierre.png" alt="photo de pierre" />
+          <p>Pierre</p>
+        </div>
+        <div class="btn btn_ordinateur" id="feuille_ordinateur">
+          <img src="assets/feuille.png" alt="photo de feuille" />
+          <p>Feuille</p>
+        </div>
+        <div class="btn btn_ordinateur" id="ciseaux_ordinateur">
+          <img src="assets/ciseaux.png" alt="photo de ciseaux" />
+          <p>Ciseaux</p>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+1. taper la commande :
+
+
+mysql -u root
+
+
+
+
+
+2. selectionner la base de donnée en utilisant la commande :
+
+
+use "nom_de_la_base_de_donnée"
+
+exemple : use alkas_2023
+
+
+
+
+
+3. Pour terminer saisir la commande : 
+
+
+source "puis le repertoire ou est situé le fichier SQL"
+
+exemple : source C:\Users\test\Bureau\al_forum creation des tables.sql
+
+
+
+
+
+
+
+
+
+********************************TERMINUS**************************************************
