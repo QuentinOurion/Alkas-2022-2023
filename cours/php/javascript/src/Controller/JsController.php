@@ -7,6 +7,11 @@ class JsController extends Controller
         $this->render('calculatrice');
     }
 
+    public function calculatriceB()
+    {
+        $this->render('calculatriceB');
+    }
+
     public function doWhile()
     {
         $this->render('doWhile');

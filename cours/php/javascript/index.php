@@ -51,6 +51,10 @@ if (!empty($_GET['page'])) {
             $jsController->calculatrice();
             break;
 
+        case 'calculatriceB':
+            $jsController->calculatriceB();
+            break;
+
         case 'doWhile':
             $jsController->doWhile();
             break;

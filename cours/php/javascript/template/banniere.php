@@ -5,7 +5,7 @@
         <ul>
             <li><a href="index.php">Home</a></li>
             <li>| Js ></li>
-            <li><a href="index.php?js=calculatrice">Calculatrice</a></li>
+            <li><a href="index.php?js=calculatrice">Calculatrice A</a> <a href="index.php?js=calculatriceB">B</a></li>
             <li><a href="index.php?js=doWhile">do while</a></li>
             <li><a href="index.php?js=event">Evenement</a></li>
             <li><a href="index.php?js=todo">To do list</a></li>
