@@ -28,3 +28,8 @@ On doit pouvoir saisir une nouvelle tache à faire et l'ajouter dans sa liste, p
 L'idée est de pouvoir utiliser cette liste n'importe où, donc tout doit être fait pour que ça soit contenu dans un block
 
 
+## Tous les exos sur la même page
+Dans un premier temps, mettre sur une seule et unique page, l'exo calculatrice + celui des évennements 
+
+Puis une fois que vous avez compris le mécanisme, mettre tous les autres exos JS sur cette même page
+
