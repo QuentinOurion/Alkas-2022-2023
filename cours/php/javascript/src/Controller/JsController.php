@@ -29,4 +29,9 @@ class JsController extends Controller
     {
         $this->render('shifumi');
     }
+
+    public function classJs()
+    {
+        $this->render('objet');
+    }
 }

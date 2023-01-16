@@ -66,6 +66,10 @@ if (!empty($_GET['page'])) {
         case 'shifumi':
             $jsController->shifumi();
             break;
+
+        case 'ClassJs':
+            $jsController->classJs();
+            break;
     }
 } else {
     $accueilController = new AccueilController();
