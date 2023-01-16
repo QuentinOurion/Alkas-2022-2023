@@ -24,4 +24,9 @@ class JsController extends Controller
     {
         $this->render('todo');
     }
+
+    public function shifumi()
+    {
+        $this->render('shifumi');
+    }
 }

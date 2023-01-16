@@ -122,3 +122,23 @@ Ajouter un élément dans une autre élément
 ```js
 autreElement.appendChild(elem)
 ```
+
+### Execution du JS retardé
+
+```js
+<script>
+// document.addEventListener('DOMContentLoaded', function ()  permet de charger la fonction uniquement quand toute la page en html uniquement est chargé (sans les images / css etc.) 
+    
+    document.addEventListener('DOMContentLoaded', lanceMesTests)
+
+    function lanceMesTests()
+    {
+        alert(document.getElementById("test"))
+    }
+</script>
+```
+
+Autre solution, mais de façon différé grâce à un attribut sur la balise script
+```js
+    <script defer src="monJs.js"></script> 
+```

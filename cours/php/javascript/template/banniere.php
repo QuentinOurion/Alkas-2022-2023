@@ -9,6 +9,7 @@
             <li><a href="index.php?js=doWhile">do while</a></li>
             <li><a href="index.php?js=event">Evenement</a></li>
             <li><a href="index.php?js=todo">To do list</a></li>
+            <li><a href="index.php?js=shifumi">Shifumi</a></li>
 
             <li>| Page ></li>
             <li><a href="index.php?admin=list">Liste des pages</a></li>
