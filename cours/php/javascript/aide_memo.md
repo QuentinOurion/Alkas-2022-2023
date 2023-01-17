@@ -142,3 +142,42 @@ Autre solution, mais de façon différé grâce à un attribut sur la balise scr
 ```js
     <script defer src="monJs.js"></script> 
 ```
+
+### Les classes 
+Cet exemple montre la création d'une classe et un héritage
+```js
+class ClassJs extends Controller {
+    constructor(elDeLaPage) { // en php public function __construct()
+        super() // en php parent::__construct()
+        this.elDeLaPage = elDeLaPage
+    }
+    
+    container() {
+        let oContainer = document.createElement('div')
+        container.textContent = "mon conteneur"
+        return oContainer
+    }
+
+    show() {
+        this.elDeLaPage.appendChild(this.container())
+        
+        // exemple d'appel d'une méthode statique 
+        console.log(ClassJs.addition(5, 6))
+    }
+
+    // Création d'une méthode statique 
+    static addition(chiffre1, chiffre2) {
+        return chiffre1 + chiffre2
+    }
+}
+
+class Controller {
+    constructor() {
+
+    }
+}
+
+
+
+
+```
