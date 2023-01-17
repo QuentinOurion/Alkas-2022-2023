@@ -35,8 +35,8 @@ class JsController extends Controller
         $this->render('shifumi');
     }
 
-    public function classJs()
+    public function tousExos()
     {
-        $this->render('objet');
+        $this->render('tousExos');
     }
 }

@@ -71,8 +71,8 @@ if (!empty($_GET['page'])) {
             $jsController->shifumi();
             break;
 
-        case 'ClassJs':
-            $jsController->classJs();
+        case 'tousExos':
+            $jsController->tousExos();
             break;
     }
 } else {

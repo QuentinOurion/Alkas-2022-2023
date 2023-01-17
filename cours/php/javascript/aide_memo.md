@@ -146,7 +146,9 @@ Autre solution, mais de façon différé grâce à un attribut sur la balise scr
 ### Les classes 
 Cet exemple montre la création d'une classe et un héritage
 ```js
-class ClassJs extends Controller {
+class Schwarze extends Robot {
+    elDeLaPage = null // déclaration de propriété de classe
+    
     constructor(elDeLaPage) { // en php public function __construct()
         super() // en php parent::__construct()
         this.elDeLaPage = elDeLaPage
@@ -171,7 +173,7 @@ class ClassJs extends Controller {
     }
 }
 
-class Controller {
+class Robot {
     constructor() {
 
     }

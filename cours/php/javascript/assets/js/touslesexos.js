@@ -1,8 +1,12 @@
-let elPage = document.querySelector('main')
+import ToDoList from "./class/ToDoList.js";
+import CalculatriceB from "./class/CalculatriceB.js";
 
-const classJs = new ClassJs(elPage)
-classJs.init()
-classJs.show()
+let elCalculatrice = document.querySelector('#calculatrice .card-body')
 
-alert(ClassJs.addition(5, 3))
-alert(Math.random())
+const calculatriceB = new CalculatriceB(elCalculatrice)
+calculatriceB.init()
+calculatriceB.show()
+
+const toDoList = new ToDoList(document.querySelector('#toutdouxliste .card-body'))
+toDoList.init()
+toDoList.show()
