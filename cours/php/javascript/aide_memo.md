@@ -178,8 +178,33 @@ class Robot {
 
     }
 }
+```
 
+### Les modules
 
+Les modules permettent d'inclure des fichiers JS comme on peut le faire en php via require_once()
 
+**Première étape**, il faut ajouter l'attribut type="module" dans la balise script (par défaut, il charge les fichiers en différé)
+```html
+<script type="module" src="exos.js"></script>
+```
 
+**Seconde étape**, il faut exporter les variables / fonctions / classes
+
+Généralement pour nous, ça sera une classe
+
+ex : 
+```js
+    export default class MaClasse {
+    
+    }       
+```
+
+**Troisième étape** 
+
+Il faut dans un fichier JS qui a besoin d'importer les autres fichiers, taper import NomDeLImport from NomFicherJS
+```js
+    import MaClasse from "MaClasse.js";
+
+    const maClasse = new MaClasse()
 ```
