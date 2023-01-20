@@ -147,14 +147,13 @@ Attribut ou propriété
     // change la valeur d'un champ par ex :
     elem.value = 5
 
-    // création d'un attribut d'un élément
+    // création ou ajout d'un attribut dans un élément
     elem.setAttribute('id', "nomID")
 ```
 
 ### Execution du JS retardé
 
 ```js
-<script>
 // document.addEventListener('DOMContentLoaded', function ()  permet de charger la fonction uniquement quand toute la page en html uniquement est chargé (sans les images / css etc.) 
     
     document.addEventListener('DOMContentLoaded', lanceMesTests)
@@ -163,7 +162,6 @@ Attribut ou propriété
     {
         alert(document.getElementById("test"))
     }
-</script>
 ```
 
 Autre solution, mais de façon différé grâce à un attribut sur la balise script
