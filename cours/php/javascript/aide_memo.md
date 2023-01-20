@@ -42,6 +42,26 @@ alert(blabla)
 
 // let monChiffre = Number(prompt("Tapez un chiffre"))
 // alert(monChiffre + 1)
+
+```
+
+### Les chaînes et les gabarits ou templates
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Template_literals 
+Les chaînes de caractères restent inchangée par rapport au php sauf pour les gabarits qui sont représentés, entouré par des accents grave ou backtick
+```js
+let maChaine = 'toto'
+let maChaine = "toto"
+// la version gabarit est plus puissante puisqu'elle permet d'ajouter des variables et passer à la ligne sans faire des concaténations
+let texte = "Bonjour,"
+let maChaine = `${texte} ceci est 
+une chaine 
+de caractère`
+// maChaine sera égale à Bonjour, ceci est une chaine de caractère
+
+// Si on avait du l'écrire avec des guillements ou apostrophe, il aurait fallu l'écrire comme :
+let maChaine = texte + " ceci est" +
+    "ma chaine" +
+    "de caractère"
 ```
 
 ### Pour afficher les infos sur les objets JS
@@ -94,7 +114,7 @@ function monParagrapheChangeCouleur(e) {
 }
 ```
 
-### Recherche des élements
+### Recherche des éléments
 ```js
 // façon simple
 let ulListOne = document.querySelector('#ulListOne')
@@ -112,7 +132,6 @@ let listLi = document.getElementById('ulListOne').getElementsByTagName('li')
 ```
 
 ### DOM
-
 Création d'un élément 
 ```js
 let elem = document.createElement('div')
@@ -121,6 +140,15 @@ Ajouter un élément dans une autre élément
 
 ```js
 autreElement.appendChild(elem)
+```
+
+Attribut ou propriété 
+```js
+    // change la valeur d'un champ par ex :
+    elem.value = 5
+
+    // création d'un attribut d'un élément
+    elem.setAttribute('id', "nomID")
 ```
 
 ### Execution du JS retardé
