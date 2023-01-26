@@ -6,7 +6,7 @@ class GestionSQL
 
     public function __construct()
     {
-        $this->connexion();
+//        $this->connexion();
     }
 
 
@@ -14,7 +14,7 @@ class GestionSQL
      * Connexion à la db
      *
      */
-    private function connexion(): void
+    public function connexion(): void
     {
         $this->con = new PDO('mysql:dbname='.DB_NAME.';host=localhost;charset=utf8', DB_USERNAME, DB_PASSWORD, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

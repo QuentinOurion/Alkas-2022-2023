@@ -10,6 +10,7 @@ require_once('src/Repository/PageRepository.php');
 
 try {
     $gestionSQL = new GestionSQL();
+    $gestionSQL->connexion();
 } catch (Exception $exception) {
     die('Merci de revenir plus tard car nous avons un problème technique !');
 }

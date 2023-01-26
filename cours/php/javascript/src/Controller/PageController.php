@@ -2,7 +2,15 @@
 
 class PageController extends Controller
 {
-    public function show(GestionSQL $gestionSQL, $slug): void
+
+    /**
+     * Affiche une page uniquement
+     *
+     * @param GestionSQL $gestionSQL
+     * @param string $slug
+     * @return void
+     */
+    public function show(GestionSQL $gestionSQL, string $slug): void
     {
         try {
             $pageRepository = new PageRepository($gestionSQL);
