@@ -2,6 +2,7 @@
 
 class PageController extends Controller
 {
+    private string $test = "dfsdfsd";
 
     /**
      * Affiche une page uniquement
@@ -105,4 +106,51 @@ class PageController extends Controller
             throw new Exception('Problème de lors de la création d\'une page');
         }
     }
+
+    /**
+     * @return string
+     */
+    public function getTest(): string
+    {
+        return $this->test;
+    }
+
+    /**
+     * @param string $test
+     * @return PageController
+     */
+    public function setTest(string $test): PageController
+    {
+        $this->test = $test;
+        return $this; // design pattern fluent
+    }
+
+
+
 }
+
+/*
+Exemple d'utilisation du design pattern fluent
+
+$pageController = new PageController();
+$pageController->setTest("dfdfdfdf");
+$test = $pageController->getTest();
+
+$test = $pageController->setTest("Magie du cinema")->getTest();
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
