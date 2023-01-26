@@ -8,12 +8,16 @@ require_once('src/Controller/JsController.php');
 require_once('src/Controller/PageController.php');
 require_once('src/Repository/PageRepository.php');
 
+
+
 try {
     $gestionSQL = new GestionSQL();
     $gestionSQL->connexion();
 } catch (Exception $exception) {
     die('Merci de revenir plus tard car nous avons un problème technique !');
 }
+
+
 
 // si slug = accueil ou rien
 // alors on fait appel à ça :
@@ -44,6 +48,7 @@ if (!empty($_GET['page'])) {
             $pageController->delete($gestionSQL, intval($_GET['id']));
             break;
     }
+
 } elseif (!empty($_GET['js'])) {
     $jsController = new JsController();
 
@@ -75,6 +80,11 @@ if (!empty($_GET['page'])) {
         case 'tousExos':
             $jsController->tousExos();
             break;
+
+        case 'formulaireCours':
+            $jsController->formulaire();
+            break;
+
     }
 } else {
     $accueilController = new AccueilController();

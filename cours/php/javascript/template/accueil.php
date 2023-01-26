@@ -13,7 +13,7 @@ require_once('doctype.php');
         }
         ?>
 
-        <footer>
+        <footer class="mt-3">
             Footer de mon article
         </footer>
     </article>
