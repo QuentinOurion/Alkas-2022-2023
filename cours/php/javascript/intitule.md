@@ -41,7 +41,9 @@ Les champs doivent avoir une couleur par default
 
 En JS, vous devez vérifier que la taille des champs et d'au moins 3 caractères et de taille maximum de 10
 
-Dans le cas contraire, les champs qui ont des erreurs doivent changer de couleurs et vous devez afficher la totalité des erreurs en dessous du formulaire.
+Si c'est le cas alors le champ valid doit être blanc et si tous les champs sont valid alors envoyer le formulaire au serveur
+
+Dans le cas contraire, les champs qui ont des erreurs doivent changer de couleurs et vous devez afficher la totalité des erreurs en dessous du formulaire et ne pas envoyer le formulaire.
 
 Vous devez automatiser le tout.
 
