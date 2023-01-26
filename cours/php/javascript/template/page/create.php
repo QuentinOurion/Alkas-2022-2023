@@ -1,5 +1,5 @@
 <?php
-require_once('doctype.php');
+require_once('template/doctype.php');
 ?>
     <section class="page create" role="contentinfo">
         <header>
@@ -7,9 +7,9 @@ require_once('doctype.php');
         </header>
 
         <?php
-        require_once ('formPage.php');
+        require_once('formPage.php');
         ?>
     </section>
 <?php
 
-require_once('footer.php');
+require_once('template/footer.php');

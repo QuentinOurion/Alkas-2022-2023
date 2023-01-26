@@ -16,7 +16,7 @@ class PageController extends Controller
             $pageRepository = new PageRepository($gestionSQL);
             $page = $pageRepository->findBySlug($slug);
 
-            $this->render('page', $page);
+            $this->render('page/page', $page);
         } catch (Exception $exception) {
             die($exception->getMessage());
         }
@@ -48,7 +48,7 @@ class PageController extends Controller
                 }
             }
 
-            $this->render('create');
+            $this->render('page/create');
         } catch (Exception $exception) {
             die($exception->getMessage());
         }
@@ -77,7 +77,7 @@ class PageController extends Controller
             }
         }
 
-        $this->render('modif', [
+        $this->render('page/modif', [
             'page' => $page
         ]);
 //        $this->render('modif', $data);
@@ -88,7 +88,7 @@ class PageController extends Controller
         $pageRepository = new PageRepository($gestionSQL);
         $pages = $pageRepository->findAll();
 
-        $this->render('listPage', [
+        $this->render('page/listPage', [
             'pages' => $pages
         ]);
 //        $this->render('modif', $data);

@@ -1,6 +1,6 @@
 <?php
 $head = '<script defer src="assets/js/event.js"></script>';
-require_once('doctype.php');
+require_once('template/doctype.php');
 ?>
     <article class="page" role="article">
         <header><h1>Evenement</h1></header>
@@ -22,4 +22,4 @@ require_once('doctype.php');
 
 <?php
 
-require_once('footer.php');
+require_once('template/footer.php');

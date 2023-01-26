@@ -7,6 +7,11 @@ require_once('doctype.php');
         </header>
 
         <p>Contenu de mon article</p>
+        <?php
+        foreach ($pages as $page) {
+            echo '<a href="?page='.$page['slug'].'">'.$page['titre'].'</a><br>';
+        }
+        ?>
 
         <footer>
             Footer de mon article

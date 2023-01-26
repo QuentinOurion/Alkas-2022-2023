@@ -78,7 +78,7 @@ if (!empty($_GET['page'])) {
     }
 } else {
     $accueilController = new AccueilController();
-    $accueilController->accueil();
+    $accueilController->accueil($gestionSQL);
 }
 
 // sinon éventuellement on fait appel ou pas à un autre contrôleur ...

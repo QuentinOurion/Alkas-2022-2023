@@ -1,5 +1,5 @@
 <?php
-require_once('doctype.php');
+require_once('template/doctype.php');
 ?>
 <article class="page" role="article">
     <header>
@@ -11,4 +11,4 @@ require_once('doctype.php');
 
 <?php
 
-require_once('footer.php');
+require_once('template/footer.php');

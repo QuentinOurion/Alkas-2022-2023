@@ -4,22 +4,22 @@ class JsController extends Controller
 {
     public function calculatrice()
     {
-        $this->render('calculatrice');
+        $this->render('js/calculatrice');
     }
 
     public function calculatriceB()
     {
-        $this->render('calculatriceB');
+        $this->render('js/calculatriceB');
     }
 
     public function doWhile()
     {
-        $this->render('doWhile');
+        $this->render('js/doWhile');
     }
 
     public function event()
     {
-        $this->render('event', [
+        $this->render('js/event', [
             'titre' => 'Exo event',
             'description' => "Exo sur les évenements"
         ]);
@@ -27,16 +27,16 @@ class JsController extends Controller
 
     public function todo()
     {
-        $this->render('todo');
+        $this->render('js/todo');
     }
 
     public function shifumi()
     {
-        $this->render('shifumi');
+        $this->render('js/shifumi');
     }
 
     public function tousExos()
     {
-        $this->render('tousExos');
+        $this->render('js/tousExos');
     }
 }
