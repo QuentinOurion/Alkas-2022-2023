@@ -12,8 +12,8 @@
             <li><a href="index.php?js=shifumi">Shifumi</a></li>
             <li><a href="index.php?js=tousExos">Tous les Exos</a></li>
 
-            <li>| Page ></li>
-            <li><a href="index.php?admin=list">Liste des pages</a></li>
+            <li>|</li>
+            <li><a href="index.php?admin=list">Admin</a></li>
         </ul>
     </nav>
 </header>
