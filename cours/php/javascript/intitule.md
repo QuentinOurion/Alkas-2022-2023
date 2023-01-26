@@ -33,3 +33,15 @@ Dans un premier temps, mettre sur une seule et unique page, l'exo calculatrice +
 
 Puis une fois que vous avez compris le mécanisme, mettre tous les autres exos JS sur cette même page
 
+## Vérification du formulaire
+Créez un formulaire avec les champs
+(nom, prénom, email, tel, pseudo et mot de passe)
+
+Les champs doivent avoir une couleur par default
+
+En JS, vous devez vérifier que la taille des champs et d'au moins 3 caractères et de taille maximum de 10
+
+Dans le cas contraire, les champs qui ont des erreurs doivent changer de couleurs et vous devez afficher la totalité des erreurs en dessous du formulaire.
+
+Vous devez automatiser le tout.
+
