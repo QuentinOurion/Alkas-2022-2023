@@ -67,6 +67,18 @@ nav[role=navigation] li {
     font-size: 25px;
     font-weight: bolder;
 }
+#formulaire input {
+    display: block;
+    margin-bottom: 16px;
+}
+
+#formulaire input:valid {
+    background-color: aqua;
+}
+
+#formulaire input:invalid {
+    background-color: khaki;
+}
 
 footer {
     background-color: #fff;

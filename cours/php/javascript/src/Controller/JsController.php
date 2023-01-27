@@ -40,8 +40,13 @@ class JsController extends Controller
         $this->render('js/tousExos');
     }
 
-    public function formulaire()
+    public function formulaireCours()
     {
         $this->render('js/formulaireCours');
+    }
+
+    public function formulaire()
+    {
+        $this->render('js/formulaire');
     }
 }

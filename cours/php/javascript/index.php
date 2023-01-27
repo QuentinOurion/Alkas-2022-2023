@@ -82,6 +82,10 @@ if (!empty($_GET['page'])) {
             break;
 
         case 'formulaireCours':
+            $jsController->formulaireCours();
+            break;
+
+        case 'formulaire':
             $jsController->formulaire();
             break;
 
