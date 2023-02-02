@@ -89,6 +89,9 @@ if (!empty($_GET['page'])) {
             $jsController->formulaire($_POST);
             break;
 
+        case 'jsonAjax':
+            $jsController->jsonAjax();
+            break;
     }
 } else {
     $accueilController = new AccueilController();

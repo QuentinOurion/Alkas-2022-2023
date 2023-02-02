@@ -47,3 +47,8 @@ Dans le cas contraire, les champs qui ont des erreurs doivent changer de couleur
 
 Vous devez automatiser le tout.
 
+## Fiche contact
+Créez deux fiches contact qui contient le nom, prénom et email
+Utilisez des cards (qui ont une tête) en boostrap et utilisez-les class mobile first, jusqu'à l'écran XL
+
+

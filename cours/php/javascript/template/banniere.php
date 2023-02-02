@@ -12,6 +12,7 @@
             <li><a href="index.php?js=shifumi">Shifumi</a></li>
             <li><a href="index.php?js=tousExos">Tous les Exos</a></li>
             <li><a href="index.php?js=formulaireCours">Formulaire Cours</a> <a href="index.php?js=formulaire">B</a></li>
+            <li><a href="index.php?js=jsonAjax">json</a></li>
 
             <li>|</li>
             <li><a href="index.php?admin=list">Admin</a></li>

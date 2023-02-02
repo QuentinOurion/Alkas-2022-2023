@@ -84,6 +84,6 @@ class JsController extends Controller
 
     public function jsonAjax()
     {
-        $this->render('jsonAjax');
+        $this->render('js/jsonAjax');
     }
 }
