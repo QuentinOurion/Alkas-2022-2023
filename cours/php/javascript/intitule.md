@@ -49,6 +49,6 @@ Vous devez automatiser le tout.
 
 ## Fiche contact
 Créez deux fiches contact qui contient le nom, prénom et email
-Utilisez des cards (qui ont une tête) en boostrap et utilisez-les class mobile first, jusqu'à l'écran XL
+Utilisez des cards (qui ont une tête) en boostrap pour chaque fiche contact et utilisez-les class mobile first, jusqu'à l'écran XL
 
 
