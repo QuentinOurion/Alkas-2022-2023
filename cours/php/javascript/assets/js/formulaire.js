@@ -27,10 +27,13 @@ function checkForm(event)
 
     messageErreur += gestionMessageErreur('nom', 'nom')
     messageErreur += gestionMessageErreur('prenom', 'prénom', 1)
+    messageErreur += gestionMessageErreur('email', 'email', 6)
 
-    if (messageErreur) {
-        document.getElementById('messageErreur').innerHTML = messageErreur
-    }
+    // if (messageErreur) {
+    //     document.getElementById('messageErreur').innerHTML = messageErreur
+    // } else {
+        event.target.submit()
+    // }
 }
 
 
@@ -38,7 +41,7 @@ function gestionMessageErreur(id, nom, tailleMin = 3)
 {
     let couleurErreur = 'red'
     let el = document.getElementById(id)
-    let messageErreur
+    let messageErreur = ''
 
     if (el) {
         if (!el.value) {

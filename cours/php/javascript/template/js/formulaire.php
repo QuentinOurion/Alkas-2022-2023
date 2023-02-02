@@ -29,7 +29,7 @@ print_r($_POST ?? '');
         <button type="submit">Envoyez</button>
     </form>
 
-    <div id="messageErreur"></div>
+    <div id="messageErreur"><?=$messageErreur?></div>
 
 <?php
 require_once('template/footer.php');

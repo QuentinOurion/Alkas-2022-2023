@@ -7,7 +7,7 @@ abstract class Controller
      * ex:
      * ['prenom' => 'toto']
      * va être converti par
-     * $prenomx
+     * $prenom
      *
      *
      * @param string $nomDuFichier

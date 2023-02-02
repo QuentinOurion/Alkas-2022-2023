@@ -86,7 +86,7 @@ if (!empty($_GET['page'])) {
             break;
 
         case 'formulaire':
-            $jsController->formulaire();
+            $jsController->formulaire($_POST);
             break;
 
     }
