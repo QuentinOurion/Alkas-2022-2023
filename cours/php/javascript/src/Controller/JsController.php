@@ -59,12 +59,14 @@ class JsController extends Controller
             $messageErreur .= $this->gestionMessageErreur($dataForm["nom"] ?? '', 'nom');
             $messageErreur .= $this->gestionMessageErreur($dataForm["telephone"] ?? '', 'téléphone');
             $messageErreur .= $this->gestionMessageErreur($dataForm["prenom"] ?? '', 'prénom');
+
+            if (!empty($dataForm['email']) || !filter_var($dataForm['email'], FILTER_VALIDATE_EMAIL)) {
+                $messageErreur .= 'Entre un email valid<br>';
+            }
         }
 
 
-        if (!filter_var($dataForm['email'], FILTER_VALIDATE_EMAIL)) {
-            $messageErreur .= 'Entre un email valid<br>';
-        }
+
 
         $this->render('js/formulaire', ['messageErreur' => $messageErreur]);
     }
@@ -78,5 +80,10 @@ class JsController extends Controller
         }
 
         return $messageErreur;
+    }
+
+    public function jsonAjax()
+    {
+        $this->render('jsonAjax');
     }
 }
