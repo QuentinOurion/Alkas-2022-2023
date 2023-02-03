@@ -258,7 +258,24 @@ import MaClasse from "MaClasse.js";
 const maClasse = new MaClasse()
 ```
 
+### Fonction fléchée
+
+```js
+// https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+let maFonction = () => {
+}
+
+// normalement on a besoin d'utiliser les accolades, mais dans le cadre d'une fonction fléché et si on n'a qu'une seule instruction à executer alors on n'est pas obligé dans mettre
+let maFonction = () => alert(1);
+
+// on n'a pas forcément besoin des parenthèses quand on a qu'un paramètre
+let maFonctionAuCarre = x => x * x;
+maFonctionAuCarre(10);
+// attention, le this appartient au contexte et non à l'événement par exemple
+```
+
 ### Json et les boucles
+
 ```js
 let ficheContact = {
     contacts: [
@@ -292,7 +309,7 @@ ficheContact.contacts.map((contact) => {
 ficheContact.contacts.map(contact => cequejeveux.innerHTML += `<p>${contact.prenom}</p>`)
 
 // boucle via un forEach
-ficheContact.contacts.forEach((contact)=>{
+ficheContact.contacts.forEach((contact) => {
     cequejeveux.innerHTML += `<p>${contact.prenom}</p>`
 })
 
@@ -304,11 +321,13 @@ Array.from(oVehicule).map((el) => {
 ```
 
 ### Ajax
+
 ça permet d'exécuter et de façon asynchrone l'appelle d'un fichier qui va nous renvoyer des données
 
 **fetch** permet de faire une requête ajax via une url
 
-**then** alors, qu'est-ce qu'on fait après ? On exécute une fonction puis on teste la réponse et si c'est ok alors on continue
+**then** alors, qu'est-ce qu'on fait après ? On exécute une fonction puis on teste la réponse et si c'est ok alors on
+continue
 
 **response.json()** on récupère la réponse dans le format text, json et la .json en json
 
@@ -317,7 +336,7 @@ Array.from(oVehicule).map((el) => {
 ```js
 let surMaPage = document.getElementById('message')
 
-fetch('url').then((reponse) => { 
+fetch('url').then((reponse) => {
     if (reponse.ok) {
         reponse.json().then((json) => {
             surMaPage.innerHTML = ''
@@ -339,6 +358,7 @@ function ajax() : string
 ```
 
 La version via un formulaire
+
 ```js
 let surMaPage = document.getElementById('message')
 let formContact = document.getElementById('formAjax') // formulaire la page en html
@@ -355,13 +375,15 @@ fetch('url', {
 })
 ```
 
-On peut ajouter au formulaire d'autres clés valeurs 
+On peut ajouter au formulaire d'autres clés valeurs
+
 ```js
 let formContact = document.getElementById('formAjax')
 formContact.append('test', 'formulaire de test') // test => 'formulaire de test' 
 ```
 
-On peut ajouter un catch en cas d'une erreur interne 
+On peut ajouter un catch en cas d'une erreur interne
+
 ```js
 let surMaPage = document.getElementById('message')
 
@@ -371,7 +393,7 @@ fetch('url').then((reponse) => {
             surMaPage.innerHTML = ''
         })
     }
-}).catch((e) => { 
+}).catch((e) => {
     alert(e.message);
 });
 ```
