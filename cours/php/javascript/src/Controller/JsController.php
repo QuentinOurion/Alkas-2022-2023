@@ -100,12 +100,33 @@ class JsController extends Controller
         ]);
     }
 
-    public function formContact(array $data) : string
+    public function formContact(array $data)
     {
-        var_dump($data);
+        $messageErreur = "Merci de bien saisir toutes les informations du formulaire";
 
-        echo "test";
+        if($data && !empty($data['email']) && !empty($data['message'])) {
+            if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL) || strlen(trim($data['message'])) < 10) {
+                $retourJson = [
+                    'message' => $messageErreur,
+                    'mail' => false
+                ];
+            } else {
+                // J'envoie mon email
+                //mail($data['email'], 'mail de mon site', $data['message']);
 
-        return "super ça marche";
+                $retourJson = [
+                    'message' => 'Le mail est bien envoyé',
+                    'mail' => true
+                ];
+            }
+        } else {
+            $retourJson = [
+                'message' => $messageErreur,
+                'mail' => false
+            ];
+        }
+
+        header('Content-Type: application/json; charset=utf-8');
+        die(json_encode($retourJson));
     }
 }

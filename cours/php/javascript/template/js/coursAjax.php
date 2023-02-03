@@ -13,11 +13,14 @@ require_once('template/doctype.php');
 
             <div class="mb-3">
                 <label for="message" class="form-label">Tapez votre message</label>
-                <textarea name="content" id="message" class="form-control" required></textarea>
+                <textarea name="message" id="message" class="form-control" required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary mb-3">Envoyer</button>
         </form>
+
+        <div id="reponse" class="bg-primary text-white"></div>
+        <div id="reponseErreur" class="bg-danger text-white"></div>
     </div>
 
 <?php
