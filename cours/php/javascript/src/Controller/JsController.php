@@ -102,4 +102,13 @@ class JsController extends Controller
             'description' => "Cours sur l'ajax"
         ]);
     }
+
+    public function formContact($data) : string
+    {
+        var_dump($data);
+
+        echo "test";
+
+        return "super ça marche";
+    }
 }

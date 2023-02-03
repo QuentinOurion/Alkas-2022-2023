@@ -99,6 +99,10 @@ if (!empty($_GET['page'])) {
         case 'coursAjax':
             $jsController->coursAjax();
             break;
+
+        case 'formContact':
+            $jsController->formContact($_POST);
+            break;
     }
 } else {
     $accueilController = new AccueilController();
