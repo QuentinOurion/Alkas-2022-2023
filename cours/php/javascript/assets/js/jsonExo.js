@@ -30,27 +30,6 @@ let ficheContact = {
 
 let cequejeveux = document.getElementById('ficheContact')
 
-/*
-// for each
-for (let contact in ficheContact.contacts) {
-    console.log(ficheContact.contacts[contact])
-    cequejeveux.innerHTML += `<p>${ficheContact.contacts[contact].prenom}</p>`
-}
-
-// boucle via un mapping (marche uniquement sur des tableaux [])
-ficheContact.contacts.map((contact) => {
-    cequejeveux.innerHTML += `<p>${contact.prenom}</p>`
-})
-
-// autre façon d'écrire un map avec une fonction fléché ligth par ce qu'il y a qu'une instruction donc on peut le raccourcir
-ficheContact.contacts.map(contact => cequejeveux.innerHTML += `<p>${contact.prenom}</p>`)
-
-// boucle via un forEach
-ficheContact.contacts.forEach((contact)=>{
-    cequejeveux.innerHTML += `<p>${contact.prenom}</p>`
-})
-*/
-
 // boucle for iterative
 for (let i = 0; i < ficheContact.contacts.length; i++) {
     console.log(ficheContact.contacts[i])

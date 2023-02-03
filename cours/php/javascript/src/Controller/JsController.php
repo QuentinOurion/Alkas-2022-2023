@@ -100,7 +100,7 @@ class JsController extends Controller
         ]);
     }
 
-    public function formContact(array $data)
+    public function formContact(array $data) : string
     {
         $messageErreur = "Merci de bien saisir toutes les informations du formulaire";
 
