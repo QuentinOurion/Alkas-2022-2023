@@ -1,22 +1,66 @@
 <header role="banner" class="container-lg">
     <h1>Javascript</h1>
 
-    <nav role="navigation">
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li>| Js ></li>
-            <li><a href="index.php?js=calculatrice">Calculatrice A</a> <a href="index.php?js=calculatriceB">B</a></li>
-            <li><a href="index.php?js=doWhile">do while</a></li>
-            <li><a href="index.php?js=event">Evenement</a></li>
-            <li><a href="index.php?js=todo">To do list</a></li>
-            <li><a href="index.php?js=shifumi">Shifumi</a></li>
-            <li><a href="index.php?js=tousExos">Tous les Exos</a></li>
-            <li><a href="index.php?js=formulaireCours">Formulaire Cours</a> <a href="index.php?js=formulaire">B</a></li>
-            <li><a href="index.php?js=jsonAjax">json</a></li>
+    <nav role="navigation" class="navbar navbar-expand-md bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuDeOuf" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <li>|</li>
-            <li><a href="index.php?admin=list">Admin</a></li>
-        </ul>
+            <div class="collapse navbar-collapse" id="menuDeOuf">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Js cours
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="index.php?js=formulaireCours" class="nav-link">Formulaire Cours</a>
+                            </li>
+
+                            <li class="nav-item"><a href="index.php?js=jsonAjax" class="nav-link">json</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Js
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a href="index.php?js=calculatrice" class="nav-link">Calculatrice A</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php?js=calculatriceB" class="nav-link">Calculatrice B</a>
+                            </li>
+                            <li class="nav-item"><a href="index.php?js=doWhile" class="nav-link">do while</a></li>
+                            <li class="nav-item"><a href="index.php?js=event" class="nav-link">Evenement</a></li>
+                            <li class="nav-item"><a href="index.php?js=todo" class="nav-link">To do list</a></li>
+                            <li class="nav-item"><a href="index.php?js=shifumi" class="nav-link">Shifumi</a></li>
+                            <li class="nav-item"><a href="index.php?js=tousExos" class="nav-link">Tous les Exos</a></li>
+                            <li class="nav-item">
+                                <a href="index.php?js=formulaire" class="nav-link">Formulaire</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Page
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a href="index.php?admin=list" class="nav-link">Admin</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 </header>
 
