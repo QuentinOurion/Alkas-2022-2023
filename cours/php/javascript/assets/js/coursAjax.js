@@ -13,8 +13,6 @@ function traiteMoi(e) {
         fetch('index.php?js=formContact', {
             method: 'post',
             body: formData
-        }).then((reponse) => {
-
         })
     } else {
         alert('Le formulaire est invalid')

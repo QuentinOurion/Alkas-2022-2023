@@ -65,9 +65,6 @@ class JsController extends Controller
             }
         }
 
-
-
-
         $this->render('js/formulaire', ['messageErreur' => $messageErreur]);
     }
 
@@ -103,7 +100,7 @@ class JsController extends Controller
         ]);
     }
 
-    public function formContact($data) : string
+    public function formContact(array $data) : string
     {
         var_dump($data);
 

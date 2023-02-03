@@ -17,7 +17,6 @@ try {
 }
 
 
-
 // si slug = accueil ou rien
 // alors on fait appel à ça :
 //$index = new AccueilController();
