@@ -295,6 +295,12 @@ ficheContact.contacts.map(contact => cequejeveux.innerHTML += `<p>${contact.pren
 ficheContact.contacts.forEach((contact)=>{
     cequejeveux.innerHTML += `<p>${contact.prenom}</p>`
 })
+
+// map sur un tableau html
+let oVehicule = document.getElementsByName('vehicule[]');
+Array.from(oVehicule).map((el) => {
+    el.checked = el.checked ? false : true;
+});
 ```
 
 ### Ajax
