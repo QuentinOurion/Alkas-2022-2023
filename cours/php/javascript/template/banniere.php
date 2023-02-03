@@ -22,6 +22,8 @@
                             </li>
 
                             <li class="nav-item"><a href="index.php?js=jsonAjax" class="nav-link">json</a></li>
+
+                            <li class="nav-item"><a href="index.php?js=coursAjax" class="nav-link">ajax</a></li>
                         </ul>
                     </li>
 
@@ -29,19 +31,31 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Js
                         </a>
+
                         <ul class="dropdown-menu">
                             <li class="nav-item"><a href="index.php?js=calculatrice" class="nav-link">Calculatrice A</a>
                             </li>
+
                             <li class="nav-item">
                                 <a href="index.php?js=calculatriceB" class="nav-link">Calculatrice B</a>
                             </li>
+
                             <li class="nav-item"><a href="index.php?js=doWhile" class="nav-link">do while</a></li>
+
                             <li class="nav-item"><a href="index.php?js=event" class="nav-link">Evenement</a></li>
+
                             <li class="nav-item"><a href="index.php?js=todo" class="nav-link">To do list</a></li>
+
                             <li class="nav-item"><a href="index.php?js=shifumi" class="nav-link">Shifumi</a></li>
+
                             <li class="nav-item"><a href="index.php?js=tousExos" class="nav-link">Tous les Exos</a></li>
+
                             <li class="nav-item">
                                 <a href="index.php?js=formulaire" class="nav-link">Formulaire</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="index.php?js=jsonExo" class="nav-link">Json</a>
                             </li>
                         </ul>
                     </li>

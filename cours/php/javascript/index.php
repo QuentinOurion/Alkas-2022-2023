@@ -9,7 +9,6 @@ require_once('src/Controller/PageController.php');
 require_once('src/Repository/PageRepository.php');
 
 
-
 try {
     $gestionSQL = new GestionSQL();
     $gestionSQL->connexion();
@@ -91,6 +90,14 @@ if (!empty($_GET['page'])) {
 
         case 'jsonAjax':
             $jsController->jsonAjax();
+            break;
+
+        case 'jsonExo':
+            $jsController->jsonExo();
+            break;
+
+        case 'coursAjax':
+            $jsController->coursAjax();
             break;
     }
 } else {

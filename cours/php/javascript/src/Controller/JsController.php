@@ -86,4 +86,20 @@ class JsController extends Controller
     {
         $this->render('js/jsonAjax');
     }
+
+    public function jsonExo()
+    {
+        $this->render('js/jsonExo', [
+            'titre' => 'Exo Json',
+            'description' => 'Correction de l\'exo sur le Json'
+        ]);
+    }
+
+    public function coursAjax()
+    {
+        $this->render('js/coursAjax', [
+            'titre' => 'Cours ajax',
+            'description' => "Cours sur l'ajax"
+        ]);
+    }
 }
