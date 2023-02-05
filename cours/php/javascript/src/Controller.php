@@ -2,6 +2,18 @@
 
 abstract class Controller
 {
+    /**
+     * extract permet de convertir dans un tableau les clés sous forme de variables
+     * ex:
+     * ['prenom' => 'toto']
+     * va être converti par
+     * $prenom
+     *
+     *
+     * @param string $nomDuFichier
+     * @param array $data
+     * @return void
+     */
     public function render(string $nomDuFichier, array $data = []): void
     {
         extract($data, EXTR_SKIP);

@@ -28,3 +28,27 @@ On doit pouvoir saisir une nouvelle tache à faire et l'ajouter dans sa liste, p
 L'idée est de pouvoir utiliser cette liste n'importe où, donc tout doit être fait pour que ça soit contenu dans un block
 
 
+## Tous les exos sur la même page
+Dans un premier temps, mettre sur une seule et unique page, l'exo calculatrice + celui des évennements 
+
+Puis une fois que vous avez compris le mécanisme, mettre tous les autres exos JS sur cette même page
+
+## Vérification du formulaire
+Créez un formulaire avec les champs
+(nom, prénom, email, tel, pseudo et mot de passe)
+
+Les champs doivent avoir une couleur par default
+
+En JS, vous devez vérifier que la taille des champs et d'au moins 3 caractères et de taille maximum de 10
+
+Si c'est le cas alors le champ valid doit être blanc et si tous les champs sont valid alors envoyer le formulaire au serveur
+
+Dans le cas contraire, les champs qui ont des erreurs doivent changer de couleurs et vous devez afficher la totalité des erreurs en dessous du formulaire et ne pas envoyer le formulaire.
+
+Vous devez automatiser le tout.
+
+## Fiche contact
+Créez deux fiches contact qui contient le nom, prénom et email
+Utilisez des cards (qui ont une tête) en boostrap pour chaque fiche contact et utilisez-les class mobile first, jusqu'à l'écran XL
+
+

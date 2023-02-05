@@ -2,13 +2,22 @@
 
 class PageController extends Controller
 {
-    public function show(GestionSQL $gestionSQL, $slug): void
+    private string $test = "dfsdfsd";
+
+    /**
+     * Affiche une page uniquement
+     *
+     * @param GestionSQL $gestionSQL
+     * @param string $slug
+     * @return void
+     */
+    public function show(GestionSQL $gestionSQL, string $slug): void
     {
         try {
             $pageRepository = new PageRepository($gestionSQL);
             $page = $pageRepository->findBySlug($slug);
 
-            $this->render('page', $page);
+            $this->render('page/page', $page);
         } catch (Exception $exception) {
             die($exception->getMessage());
         }
@@ -40,7 +49,7 @@ class PageController extends Controller
                 }
             }
 
-            $this->render('create');
+            $this->render('page/create');
         } catch (Exception $exception) {
             die($exception->getMessage());
         }
@@ -69,7 +78,7 @@ class PageController extends Controller
             }
         }
 
-        $this->render('modif', [
+        $this->render('page/modif', [
             'page' => $page
         ]);
 //        $this->render('modif', $data);
@@ -80,7 +89,7 @@ class PageController extends Controller
         $pageRepository = new PageRepository($gestionSQL);
         $pages = $pageRepository->findAll();
 
-        $this->render('listPage', [
+        $this->render('page/listPage', [
             'pages' => $pages
         ]);
 //        $this->render('modif', $data);
@@ -97,4 +106,51 @@ class PageController extends Controller
             throw new Exception('Problème de lors de la création d\'une page');
         }
     }
+
+    /**
+     * @return string
+     */
+    public function getTest(): string
+    {
+        return $this->test;
+    }
+
+    /**
+     * @param string $test
+     * @return PageController
+     */
+    public function setTest(string $test): PageController
+    {
+        $this->test = $test;
+        return $this; // design pattern fluent
+    }
+
+
+
 }
+
+/*
+Exemple d'utilisation du design pattern fluent
+
+$pageController = new PageController();
+$pageController->setTest("dfdfdfdf");
+$test = $pageController->getTest();
+
+$test = $pageController->setTest("Magie du cinema")->getTest();
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

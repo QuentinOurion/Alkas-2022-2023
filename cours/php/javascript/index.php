@@ -8,11 +8,14 @@ require_once('src/Controller/JsController.php');
 require_once('src/Controller/PageController.php');
 require_once('src/Repository/PageRepository.php');
 
+
 try {
     $gestionSQL = new GestionSQL();
+    $gestionSQL->connexion();
 } catch (Exception $exception) {
     die('Merci de revenir plus tard car nous avons un problème technique !');
 }
+
 
 // si slug = accueil ou rien
 // alors on fait appel à ça :
@@ -43,6 +46,7 @@ if (!empty($_GET['page'])) {
             $pageController->delete($gestionSQL, intval($_GET['id']));
             break;
     }
+
 } elseif (!empty($_GET['js'])) {
     $jsController = new JsController();
 
@@ -71,13 +75,37 @@ if (!empty($_GET['page'])) {
             $jsController->shifumi();
             break;
 
-        case 'ClassJs':
-            $jsController->classJs();
+        case 'tousExos':
+            $jsController->tousExos();
+            break;
+
+        case 'formulaireCours':
+            $jsController->formulaireCours();
+            break;
+
+        case 'formulaire':
+            $jsController->formulaire($_POST);
+            break;
+
+        case 'jsonAjax':
+            $jsController->jsonAjax();
+            break;
+
+        case 'jsonExo':
+            $jsController->jsonExo();
+            break;
+
+        case 'coursAjax':
+            $jsController->coursAjax();
+            break;
+
+        case 'formContact':
+            $jsController->formContact($_POST);
             break;
     }
 } else {
     $accueilController = new AccueilController();
-    $accueilController->accueil();
+    $accueilController->accueil($gestionSQL);
 }
 
 // sinon éventuellement on fait appel ou pas à un autre contrôleur ...

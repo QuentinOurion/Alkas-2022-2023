@@ -1,5 +1,5 @@
 <?php
-require_once('doctype.php');
+require_once('template/doctype.php');
 ?>
 
     <section class="listPage" role="contentinfo">
@@ -18,4 +18,4 @@ require_once('doctype.php');
     </section>
 
 <?php
-require_once('footer.php');
+require_once('template/footer.php');

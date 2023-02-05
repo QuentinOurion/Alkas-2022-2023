@@ -49,6 +49,7 @@ header[role=banner] a:hover {
     text-decoration: underline;
 }
 
+/*
 nav[role=navigation] ul {
     display: flex;
     background-color: #eee;
@@ -60,15 +61,26 @@ nav[role=navigation] ul {
 nav[role=navigation] li {
     margin: 0 10px;
 }
-
+*/
 .user_nom {
     display: flex;
     align-items: center;
     font-size: 25px;
     font-weight: bolder;
 }
+#formulaire input {
+    display: block;
+    margin-bottom: 16px;
+}
+
+#formulaire input:valid {
+    background-color: aqua;
+}
+
+#formulaire input:invalid {
+    background-color: khaki;
+}
 
 footer {
     background-color: #fff;
-
 }

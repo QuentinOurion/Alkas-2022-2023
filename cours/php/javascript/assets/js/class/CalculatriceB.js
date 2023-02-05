@@ -1,4 +1,4 @@
-class CalculatriceB {
+export default class CalculatriceB {
     constructor(el) {
         this.el = el
     }
