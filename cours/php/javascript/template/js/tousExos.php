@@ -19,6 +19,7 @@ require_once('template/doctype.php');
                     <div class="card-body"></div>
                 </div>
             </div>
+
             <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card" id="toutdouxliste">
                     <h5 class="card-header">Tout doux liste</h5>
@@ -26,8 +27,21 @@ require_once('template/doctype.php');
                     <div class="card-body"></div>
                 </div>
             </div>
+
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card" id="meteoAlkas">
+                    <h5 class="card-header">météo Alkas</h5>
+
+                    <div class="card-body"></div>
+                </div>
+            </div>
         </div>
     </article>
+
+<template id="meteo">
+
+</template>
 
 
 <?php

@@ -52,9 +52,9 @@ Créez deux fiches contact qui contient le nom, prénom et email
 Utilisez des cards (qui ont une tête) en boostrap pour chaque fiche contact et utilisez-les class mobile first, jusqu'à l'écran XL
 
 ## Météo Alkas
-Afficher la météo Alkas sur la page "tous les exos" en JS
+Afficher la météo Alkas sur la page "tous les exos" en JS (voir exemple de résultat dans le dossier assets/images/meteo.jpeg ou https://www.meteoblue.com/fr/meteo/semaine/montpellier_france_2992166)
 
-Il doit forcément y avoir le nom de la ville, le temps et min max, l'icône qui va bien, soit de bootstrap ou openWeatherMap pour interpréter la météo actuelle.
+Il doit forcément y avoir le nom de la ville, la température plus et min max, l'icône qui va bien, soit de bootstrap ou openWeatherMap pour interpréter la météo actuelle.
 
 Séparer pour les autres détails, la pression, vitesse du vent, orientation du vent, etc.
 
