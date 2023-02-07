@@ -83,11 +83,11 @@ console.log(document.body.children);
 console.log(document.body.childNodes);
 ```
 
-### Evenement
+### Événement
 
-````html
+```html
 <p id="monParagraphe">Saisir des données et s'arrêter dès que leur somme dépasse <span id="chiffreMax">500</span></p>
-````
+```
 
 ```js
 let chiffreMax = 200
@@ -138,7 +138,7 @@ let listLi = ulListOne.getElementsByTagName('li')
 let listLi = document.getElementById('ulListOne').getElementsByTagName('li')
 ```
 
-### DOM
+### DOM 
 
 Création d'un élément
 

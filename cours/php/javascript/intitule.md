@@ -60,5 +60,33 @@ Séparer pour les autres détails, la pression, vitesse du vent, orientation du 
 
 On utilisera l'"api restful" de ce site pour récupérer les informations de la météo https://openweathermap.org/
 
+# Eval JS 7 février 
+### QCM 
+* Où faire de la veille en JS ?
+* Qu'est-ce que le DOM ?
+* Créez un bouton dans une div et l'afficher dans sa page html via le dom uniquement
+* Comment exécuter son code JS après le chargement d'une page HTML ? Citez les différentes façons de le faire.
+* Comment faire appel via un seul fichier JS, plusieurs fichiers en donnant un exemple de code ?
+* Peut-on faire confiance aux données d'un formulaire que l'on demande à l'utilisateur et comment se protéger si ce n'est pas le cas, coté front end ou back end ?
+* Qu'est-ce que l'ajax et à quoi ça sert ?
+* À quoi sert le constructeur d'une classe ?
+
+---
+### Exo recherche d'utilisateur
+À partir de ce générateur de faux profil https://randomuser.me/ et sur la page JS "tous les exos"
+
+- Vous devez générer et afficher 100 personnes Françaises, dans des jolies cadres
+- Un cadre doit avoir la civilité, nom, prénom, email, tel et la photo
+- Il faudra pouvoir à la suite d'une recherche afficher uniquement les personnes qui ont dans leurs noms ou prénoms la partie de la recherche
+- Dans autre temps, il faudra que dès que l'on appuie sur une touche dans la recherche, ça n'affiche que les personnes concernées
+
+---
+Une fois le QCM devra être dans votre dossier étudiant/evalJs/qcm.md 
+À la fin ce même fichier, m'indiquer le nom et le dossier de votre exo
+Partagez le tout sur GIT
+
+--- 
+Bonne évaluation et journée 
+
 
 
