@@ -81,9 +81,9 @@ On utilisera l'"api restful" de ce site pour récupérer les informations de la 
 - Dans autre temps, il faudra que dès que l'on appuie sur une touche dans la recherche, ça n'affiche que les personnes concernées
 
 ---
-Une fois le QCM devra être dans votre dossier étudiant/evalJs/qcm.md 
-À la fin ce même fichier, m'indiquer le nom et le dossier de votre exo
-Partagez le tout sur GIT
+- Une fois le QCM devra être dans votre dossier étudiant/evalJs/qcm.md 
+- À la fin ce même fichier, m'indiquer le nom et le dossier de votre exo
+- Partagez le tout sur GIT
 
 --- 
 Bonne évaluation et journée 

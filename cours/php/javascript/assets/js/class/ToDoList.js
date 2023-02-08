@@ -1,15 +1,17 @@
 export default class ToDoList {
-    elPage
-    container
-    fieldTask
-    todoList
+    elPage = null
+    container = null
+    fieldTask = null
+    todoList = null
 
 
-    constructor(elPage) {
+    constructor(elPage)
+    {
         this.elPage = elPage
     }
 
-    init() {
+    init()
+    {
         this.container = document.createElement('span')
         let divTask = document.createElement('div')
         this.todoList = document.createElement('ul')
@@ -25,12 +27,14 @@ export default class ToDoList {
         this.container.appendChild(this.todoList)
     }
 
-    show() {
+    show()
+    {
         this.elPage.appendChild(this.container)
         this.fieldTask.focus()
     }
 
-    buttonAdd() {
+    buttonAdd()
+    {
         let btAdd = document.createElement('button')
         btAdd.textContent = "Ajouter"
         btAdd.classList.add("btn")
@@ -41,7 +45,8 @@ export default class ToDoList {
         return btAdd
     }
 
-    createFieldTask() {
+    createFieldTask()
+    {
         let task = document.createElement('input')
         task.type = "text"
         task.classList.add('form-control')
@@ -61,7 +66,8 @@ export default class ToDoList {
         this.fieldTask.focus()
     }
 
-    delTask(li) {
+    delTask(li)
+    {
         let del = document.createElement("button")
 
         del.textContent = "X"
