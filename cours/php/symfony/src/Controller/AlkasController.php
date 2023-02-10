@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+//use PHPUnit\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -62,17 +63,19 @@ class AlkasController extends AbstractController
             ->add('secondChamp')
             ->setMethod('post')
             ->getForm();
-
+//        $recupPremier = $r->request->get('premierChamp');
         $form->handleRequest($r);
 
         if($form->isSubmitted() && $form->isValid()) {
-//            $recupPremier = $r->request->get('premierChamp');
-//            $datasForm = $form->getData();
+//            dd($r);
+//            dd($recupPremier);
+            $datasForm = $form->getData();
+//            dd($datasForm);
         }
 
         return $this->render('alkas/formulaireSecond.twig', [
                 'form' => $form->createView(),
-                'toto' => true
+                'toto' => false
             ]
         );
     }
