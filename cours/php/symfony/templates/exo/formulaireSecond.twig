@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {#    {{ form(form) }} #}
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.prenom) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.email) }}
+
+    {{ form_row(form.login) }}
+    {{ form_row(form.password) }}
+
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+
+    {{ form_end(form) }}
+
+    {% if formSub %}
+
+        {% if formValid %}
+            <div class="bg-primary text-white">
+                {% if email %}
+                    <p>email valid</p>
+                {% endif %}
+                {% if password %}
+                    <p>mot de passe valid</p>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="bg-danger text-white">
+                {% if not email %}
+                    <p>email invalid</p>
+                {% endif %}
+                {% if not password %}
+                    <p>mot de passe invalid</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+    {% endif %}
+
+
+{% endblock %}
