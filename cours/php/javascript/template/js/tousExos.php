@@ -12,7 +12,7 @@ require_once('template/doctype.php');
         </header>
 
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
                 <div class="card" id="calculatrice">
                     <h5 class="card-header">Calculatrice</h5>
 
@@ -20,7 +20,7 @@ require_once('template/doctype.php');
                 </div>
             </div>
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
                 <div class="card" id="toutdouxliste">
                     <h5 class="card-header">Tout doux liste</h5>
 
@@ -28,21 +28,22 @@ require_once('template/doctype.php');
                 </div>
             </div>
 
-
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
                 <div class="card" id="meteoAlkas">
-                    <h5 class="card-header">météo Alkas</h5>
+                    <h5 class="card-header">Météo Alkas</h5>
+
+                    <div class="card-body"></div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-3">
+                <div class="card" id="shiFuMi">
+                    <h5 class="card-header">ShiFuMi</h5>
 
                     <div class="card-body"></div>
                 </div>
             </div>
         </div>
     </article>
-
-<template id="meteo">
-
-</template>
-
-
 <?php
 require_once('template/footer.php');

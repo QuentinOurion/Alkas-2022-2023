@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.premierChamp) }}
+    {{ form_row(form.secondChamp) }}
+
+    {% if toto %}
+        blabla
+    {% else %}
+        reblabla
+    {% endif %}
+
+    <button type="submit">Envoyer</button>
+
+    {{ form_end(form) }}
+
+{% endblock %}

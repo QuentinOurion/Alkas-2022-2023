@@ -3,6 +3,7 @@ export default class Meteo {
     openWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=43.610769&lon=3.876716&appid=9750eb1e8e72455ad3eddb38b8628101&lang=fr&units=metric'
 
     icon = 'https://openweathermap.org/img/wn/'
+    elPage = null
 
 
     constructor(elPage)
