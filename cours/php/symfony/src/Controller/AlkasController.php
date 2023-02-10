@@ -20,7 +20,13 @@ class AlkasController extends AbstractController
     #[Route('/response', name: 'pageIndex')]
     public function response(): Response
     {
+        $this->calcul();
         return new Response('test', 404);
+    }
+
+    private function calcul()
+    {
+
     }
 
     #[Route('/formulaire', name: 'formulaire')]
@@ -42,5 +48,39 @@ class AlkasController extends AbstractController
         ]);
     }
 
+    /**
+     * Création d'un formulaire en symfony
+     *
+     * @param Request $r
+     * @return Response
+     */
+    #[Route('/formulaire/second', name: 'formulaireSecond')]
+    public function formulaireSecond(Request $r) : Response
+    {
+        $form = $this->createFormBuilder()
+            ->add('premierChamp')
+            ->add('secondChamp')
+            ->setMethod('post')
+            ->getForm();
+
+        $form->handleRequest($r);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $recupPremier = $r->request->get('premierChamp');
+            $datasForm = $form->getData();
+//            $this->pleinDeParam($datasForm, $recupPremier);
+//            dd($datasForm, $recupPremier);
+        }
+
+        return $this->render('alkas/formulaireSecond.twig', [
+                'form' => $form->createView()
+            ]
+        );
+    }
+
+    private function pleinDeParam(...$test) : void
+    {
+        dd($test);
+    }
 
 }
