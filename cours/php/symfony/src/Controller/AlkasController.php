@@ -66,14 +66,13 @@ class AlkasController extends AbstractController
         $form->handleRequest($r);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $recupPremier = $r->request->get('premierChamp');
-            $datasForm = $form->getData();
-//            $this->pleinDeParam($datasForm, $recupPremier);
-//            dd($datasForm, $recupPremier);
+//            $recupPremier = $r->request->get('premierChamp');
+//            $datasForm = $form->getData();
         }
 
         return $this->render('alkas/formulaireSecond.twig', [
-                'form' => $form->createView()
+                'form' => $form->createView(),
+                'toto' => true
             ]
         );
     }
