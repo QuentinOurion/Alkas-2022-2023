@@ -41,6 +41,9 @@ ou via composer
 ***--dev*** precise à composer lors d'un déploiment en production que ces bundles ne seront pas installés
 
 ### Création d'un contrôleur symfony
+    symfony console make:controller
+ou
+
     php bin/console make:controller
 
 ### Éxecuter un projet
@@ -84,7 +87,7 @@ Les méthodes doivent avoir pour préfixes Test, TestMultiplication
 ## Base de donnée
 
 ### Ajouter le bundle doctrine 
-    composer req doctrine
+    composer req symfony/orm-pack -W
 
 ### Cloner le fichier .env en .env.local
 Ça sert à sécuriser les données sensibles telles que le **login** et **password** de sa base de donnée ou le **app_secret** de symfony 
@@ -102,12 +105,6 @@ ou
 ou
 
     php bin/console make:entity
-
-### Créer un CRUD (Create Read Update Delete) après avoir créé son entitée
-    symfony console make:crud
-ou
-
-    php bin/console make:crud	
 
 ### Ajouter dans notre base de donnée toutes les modifications précédentes
 Crée un fichier php avec les requêtes sql
@@ -130,6 +127,13 @@ Autre possibilité de mettre à jour sa base de donnée
 ou
 
     php bin/console doctrine:schema:update --dump-sql
+
+### Créer un CRUD (Create Read Update Delete) après avoir créé son entité
+    symfony console make:crud
+ou
+
+    php bin/console make:crud	
+
 
 **--dump-sql** permet de voir toutes les requêtes qu'il va faire
 une fois qu'on a vérifié alors on peut exécuter les requêtes 

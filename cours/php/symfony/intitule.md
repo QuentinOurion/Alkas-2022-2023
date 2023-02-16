@@ -15,3 +15,12 @@ Créez un formulaire d'inscription
 - password
 
 Vérifiez que le formulaire est bien envoyé et que l'email est valid, à la suite de ça, on affiche un message d'erreur correspondant ou que tout s'est bien passé
+
+## Test des repository et des routes
+Sur le contrôleur Voiture
+
+Créez des routes qui vont utiliser chaque méthode par défaut
+
+Dans vos vues, il faudra pouvoir voir le contenu des résultats attendus
+
+Chaque vue doit avoir un lien vers les autres pages grâce à la fonction path() de twig
