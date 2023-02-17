@@ -24,3 +24,6 @@ Créez des routes qui vont utiliser chaque méthode par défaut
 Dans vos vues, il faudra pouvoir voir le contenu des résultats attendus
 
 Chaque vue doit avoir un lien vers les autres pages grâce à la fonction path() de twig
+
+## Affichez les voitures via une url
+Il faudra pouvoir afficher une voiture par un ID dans l'url ou son nom
