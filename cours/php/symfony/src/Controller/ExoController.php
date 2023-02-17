@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Voiture;
 use App\Repository\VoitureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -102,7 +103,6 @@ class ExoController extends AbstractController
 //        dd($voitureRepository->findOneBy(['nom' => 'peugeot']));
     }
 
-
     #[Route('/findAllCars', name: 'findAllCars')]
     public function findAllCars(VoitureRepository $voitureRepository): Response
     {
@@ -111,6 +111,37 @@ class ExoController extends AbstractController
             ]
         );
 //        dd($voitureRepository->findAll());
+    }
+
+    /**
+     * 'id' attend une valeur numérique uniquement
+     *
+     * @param Voiture $voiture
+     * @return Response
+     */
+    #[Route('/{id}', name:'findByIDSlug', requirements: ['id' => '\d+'])]
+    public function findByIDSlug(Voiture $voiture) : Response
+    {
+        return $this->render('voiture/showOneCar.twig', [
+                'voiture' => $voiture
+            ]
+        );
+    }
+
+    /**
+     * 'nom' attend une chaîne dans l'url
+     * marche parce que la route précédente attend une valeur numérique
+     *
+     * @param Voiture $voiture
+     * @return Response
+     */
+    #[Route('/{nom}', name:'findByNomSlug')]
+    public function findByNomSlug(Voiture $voiture) : Response
+    {
+        return $this->render('voiture/showOneCar.twig', [
+                'voiture' => $voiture
+            ]
+        );
     }
 
 
