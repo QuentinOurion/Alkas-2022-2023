@@ -13,13 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/voiture')]
 class VoitureController extends AbstractController
 {
-    #[Route('/test', name: 'testVoiture')]
-    public function test(VoitureRepository $voitureRepository): Response
-    {
-        dd($voitureRepository->findBy(['nom' => 'peugeot']));
-    }
-
-
     #[Route('/', name: 'app_voiture_index', methods: ['GET'])]
     public function index(VoitureRepository $voitureRepository): Response
     {
@@ -38,6 +31,8 @@ class VoitureController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $voitureRepository->save($voiture, true);
 
+//            $this->addFlash('ERROR', "Ma page c'est bien enregistré" );
+
             return $this->redirectToRoute('app_voiture_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -47,13 +42,21 @@ class VoitureController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_voiture_show', methods: ['GET'])]
+
+    #[Route('/test', name: 'testVoiture')]
+    public function test(VoitureRepository $voitureRepository): Response
+    {
+        dd($voitureRepository->findBy(['nom' => 'peugeot']));
+    }
+
+    #[Route('/{nom}', name: 'app_voiture_show', methods: ['GET'])]
     public function show(Voiture $voiture): Response
     {
         return $this->render('voiture/show.html.twig', [
             'voiture' => $voiture,
         ]);
     }
+
 
     #[Route('/{id}/edit', name: 'app_voiture_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Voiture $voiture, VoitureRepository $voitureRepository): Response
@@ -62,6 +65,10 @@ class VoitureController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+//            $form->getData();
+            $voiture->setNom(strtoupper($voiture->getNom()));
+
             $voitureRepository->save($voiture, true);
 
             return $this->redirectToRoute('app_voiture_index', [], Response::HTTP_SEE_OTHER);
@@ -82,4 +89,7 @@ class VoitureController extends AbstractController
 
         return $this->redirectToRoute('app_voiture_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
+
 }

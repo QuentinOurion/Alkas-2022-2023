@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Liste de mes voitures peugeot</h1>
+
+    {% for voiture in voitures %}
+        <p>{{ voiture.nom }}</p>
+    {% endfor %}
+
+{% endblock %}

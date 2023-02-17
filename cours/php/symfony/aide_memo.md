@@ -75,6 +75,7 @@ Pour faire une mise à jour des dépendances on pourra taper
 
 Documentation sur les formulaires (création, type, validation, etc.) https://symfony.com/doc/current/forms.html
 
+
 ## PhpUnit
 PhpUnit permet de tester son code complétement
 
@@ -83,6 +84,7 @@ PhpUnit permet de tester son code complétement
 Dans le dossier tests, il faut créer une classe qui a pour suffixe Test, ex : CalculeTest
 
 Les méthodes doivent avoir pour préfixes Test, TestMultiplication
+
 
 ## Base de donnée
 
@@ -146,7 +148,6 @@ ou
 **--force** force la mise à jour
 
 ### Création d'utilisateur
-
 Création d'un utilisateur en utilisant les paramètres par défaut
 
     symfony console make:user
@@ -185,8 +186,7 @@ en twig
     {% if is_granted('ROLE_ADMIN') %} blabla {% endif %}
 
 
-# API RestFul
-
+# API RestFul (client)
 Il faut installer 
 
      composer require symfony/http-client
@@ -201,18 +201,22 @@ doc api restful
 
 https://www.gekko.fr/blog/les-bonnes-pratiques-a-suivre-pour-developper-des-apis-rest
 
+
 # Upload de fichier
+Voir doc symfony (https://symfony.com/doc/current/controller/upload_file.html)
 
-Voir doc symfony
-    
-https://symfony.com/doc/current/controller/upload_file.html
-
-analyser le format mime
+Analyser le format mime
     
     composer req symfony/mime
 
-# Configuration d'un serveur apache
 
-C'est obligatoire pour accéder aux routes de symfony    
+# Configuration d'un serveur apache
+C'est obligatoire pour accéder aux routes de symfony en prod
 
     composer req symfony/apache-pack
+
+
+# SSL (HTTPS)
+Configurer en mode https plutôt que http en local (https://symfony.com/doc/current/setup/symfony_server.html#enabling-tls)
+
+    symfony server:ca:install

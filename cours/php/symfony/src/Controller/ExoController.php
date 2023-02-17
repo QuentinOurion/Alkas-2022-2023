@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\VoitureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -18,13 +19,13 @@ class ExoController extends AbstractController
     public function index(): Response
     {
         return $this->render('exo/index.html.twig', [
-            'monTitre' => 'Super mega titre '.date('Y'),
+            'monTitre' => 'Super mega titre ' . date('Y'),
             'contenuDynamique' => "C'est de la dynamite"
         ]);
     }
 
     #[Route('/formulaire/second', 'exoFormulaireSecond')]
-    public function formulaireSecond(Request $r) : Response
+    public function formulaireSecond(Request $r): Response
     {
         $form = $this->createFormBuilder()
             ->add('prenom', TextType::class)
@@ -41,17 +42,17 @@ class ExoController extends AbstractController
         $formSub = false;
         $formValid = true;
 
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $datas = $form->getData();
             $formSub = true;
 
-            if(strlen(trim($datas['password'])) >= 10) {
+            if (strlen(trim($datas['password'])) >= 10) {
                 $password = true;
             } else {
                 $formValid = false;
             }
 
-            if(filter_var($datas['email'], FILTER_VALIDATE_EMAIL)) {
+            if (filter_var($datas['email'], FILTER_VALIDATE_EMAIL)) {
                 $email = true;
             } else {
                 $formValid = false;
@@ -65,6 +66,51 @@ class ExoController extends AbstractController
             'formValid' => $formValid,
             'password' => $password
         ]);
+    }
+
+    #[Route('/findByNameCars', name: 'findByNameCars')]
+    public function findByNameCars(VoitureRepository $voitureRepository): Response
+    {
+        return $this->render('voiture/findByNameCars.twig', [
+                'voitures' => $voitureRepository->findBy([
+                    'nom' => 'peugeot'
+                ])
+            ]
+        );
+//        dd($voitureRepository->findBy(['nom' => 'peugeot']));
+    }
+
+
+    #[Route('/finByIdVoiture', name: 'finByIdVoiture')]
+    public function finByIdVoiture(VoitureRepository $voitureRepository): Response
+    {
+        return $this->render('voiture/showOneCar.twig', [
+                'voiture' => $voitureRepository->find(2)
+            ]
+        );
+//        dd($voitureRepository->find(2));
+    }
+
+
+    #[Route('/findOneByCar', name: 'findOneByCar')]
+    public function findOneByCar(VoitureRepository $voitureRepository): Response
+    {
+        return $this->render('voiture/showOneCar.twig', [
+                'voiture' => $voitureRepository->findOneBy(['nom' => 'peugeot'])
+            ]
+        );
+//        dd($voitureRepository->findOneBy(['nom' => 'peugeot']));
+    }
+
+
+    #[Route('/findAllCars', name: 'findAllCars')]
+    public function findAllCars(VoitureRepository $voitureRepository): Response
+    {
+        return $this->render('voiture/findByNameCars.twig', [
+                'voitures' => $voitureRepository->findAll()
+            ]
+        );
+//        dd($voitureRepository->findAll());
     }
 
 
