@@ -27,3 +27,10 @@ Chaque vue doit avoir un lien vers les autres pages grâce à la fonction path()
 
 ## Affichez les voitures via une url
 Il faudra pouvoir afficher une voiture par un ID dans l'url ou son nom
+
+## Les vacancessss, exo "site propre en symfony avec bootstrap" pour le retour du 27 février
+Modifiez le site actuel entièrement avec bootstrap
+
+* Ajoutez un logo au centre avec le texte Alkas 
+* Un menu déroulant à gauche qui devra avoir un sous menu cours, exo et voiture. Ce dernier et ses pages devront être accessible uniquement si on est connecté en ADMIN (RTFM)
+* Un menu à droite pour la connexion et déconnexion si on est déjà connecté
