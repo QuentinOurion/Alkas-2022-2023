@@ -18,7 +18,7 @@ class AlkasController extends AbstractController
         ]);
     }
 
-    #[Route('/response', name: 'pageIndex')]
+    #[Route('/response', name: 'response')]
     public function response(): Response
     {
         $this->calcul();
