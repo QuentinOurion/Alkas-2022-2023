@@ -34,3 +34,8 @@ Modifiez le site actuel entièrement avec bootstrap
 * Ajoutez un logo au centre avec le texte Alkas 
 * Un menu déroulant à gauche qui devra avoir un sous menu cours, exo et voiture. Ce dernier et ses pages devront être accessible uniquement si on est connecté en ADMIN (RTFM)
 * Un menu à droite pour la connexion et déconnexion si on est déjà connecté
+
+
+
+
+---

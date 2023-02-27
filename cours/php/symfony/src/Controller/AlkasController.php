@@ -70,7 +70,8 @@ class AlkasController extends AbstractController
 //            dd($r);
 //            dd($recupPremier);
             $datasForm = $form->getData();
-//            dd($datasForm);
+            dd($datasForm);
+//            $this->pleinDeParam($datasForm, $r);
         }
 
         return $this->render('alkas/formulaireSecond.twig', [
