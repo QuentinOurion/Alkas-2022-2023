@@ -221,7 +221,7 @@ Email de vérification (si on a activé l'option)
 
     composer require symfonycasts/verify-email-bundle
 
-voir plus plus d'info sur l'envoie d'email https://writecode.fr/tutoriel/envoyer-un-e-mail
+Voir plus d'info sur l'envoie d'email https://writecode.fr/tutoriel/envoyer-un-e-mail
 
 Installer l'option "Mot de passe oublié"
 
@@ -238,7 +238,11 @@ Requête SQL pour le modifier directement
 
 Pour permettre de vérifier un type d'utilisateur dans twig, il faudra installer extra-bundle
 
-    composer require twig/extra-bundle
+    composer require twig/extra-bundle 
+
+ou
+
+    composer require symfony/twig-bundle
 
 en twig
 

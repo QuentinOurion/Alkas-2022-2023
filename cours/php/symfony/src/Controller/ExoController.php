@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Voiture;
 use App\Repository\VoitureRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -83,6 +84,7 @@ class ExoController extends AbstractController
 
 
     #[Route('/finByIdVoiture', name: 'finByIdVoiture')]
+    #[IsGranted('ROLE_USER')]
     public function finByIdVoiture(VoitureRepository $voitureRepository): Response
     {
         return $this->render('voiture/showOneCar.twig', [
@@ -123,7 +125,9 @@ class ExoController extends AbstractController
     public function findByIDSlug(Voiture $voiture) : Response
     {
         return $this->render('voiture/showOneCar.twig', [
-                'voiture' => $voiture
+                'voiture' => $voiture,
+                'menuExo' => true,
+                'menuFindByIDSlug' => true
             ]
         );
     }
