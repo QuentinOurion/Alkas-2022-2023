@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -45,10 +47,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $dateConnexion = null;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Chemise::class)]
+    private Collection $chemises;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: MarqueChemise::class)]
+    private Collection $marqueChemises;
+
     public function __construct()
     {
         $this->setDateInscription(new \DateTime());
         $this->setDateConnexion(new \DateTime());
+        $this->chemises = new ArrayCollection();
+        $this->marqueChemises = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -191,6 +201,66 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setDateConnexion(\DateTimeInterface $dateConnexion): self
     {
         $this->dateConnexion = $dateConnexion;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Chemise>
+     */
+    public function getChemises(): Collection
+    {
+        return $this->chemises;
+    }
+
+    public function addChemise(Chemise $chemise): self
+    {
+        if (!$this->chemises->contains($chemise)) {
+            $this->chemises->add($chemise);
+            $chemise->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeChemise(Chemise $chemise): self
+    {
+        if ($this->chemises->removeElement($chemise)) {
+            // set the owning side to null (unless already changed)
+            if ($chemise->getUser() === $this) {
+                $chemise->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, MarqueChemise>
+     */
+    public function getMarqueChemises(): Collection
+    {
+        return $this->marqueChemises;
+    }
+
+    public function addMarqueChemise(MarqueChemise $marqueChemise): self
+    {
+        if (!$this->marqueChemises->contains($marqueChemise)) {
+            $this->marqueChemises->add($marqueChemise);
+            $marqueChemise->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMarqueChemise(MarqueChemise $marqueChemise): self
+    {
+        if ($this->marqueChemises->removeElement($marqueChemise)) {
+            // set the owning side to null (unless already changed)
+            if ($marqueChemise->getUser() === $this) {
+                $marqueChemise->setUser(null);
+            }
+        }
 
         return $this;
     }

@@ -31,6 +31,10 @@ class ChemiseController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+//            $chemise->setTaille('xxxxl')->setNom($chemise->getNom().'-'.$chemise->getMarqueChemise()->getNom())->setUser($this->getUser());
+//            dd($chemise->setUser($this->getUser()));
+
+            $chemise->setUser($this->getUser());
             $chemiseRepository->save($chemise, true);
 
             return $this->redirectToRoute('app_chemise_index', [], Response::HTTP_SEE_OTHER);

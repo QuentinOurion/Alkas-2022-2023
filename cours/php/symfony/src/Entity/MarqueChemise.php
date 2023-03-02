@@ -22,6 +22,9 @@ class MarqueChemise
     #[ORM\OneToMany(mappedBy: 'marqueChemise', targetEntity: Chemise::class, orphanRemoval: true)]
     private Collection $chemises;
 
+    #[ORM\ManyToOne(inversedBy: 'marqueChemises')]
+    private ?User $user = null;
+
     public function __construct()
     {
         $this->chemises = new ArrayCollection();
@@ -70,6 +73,18 @@ class MarqueChemise
                 $chemise->setMarqueChemise(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

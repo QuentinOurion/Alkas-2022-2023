@@ -27,6 +27,9 @@ class Chemise
     #[ORM\JoinColumn(nullable: false)]
     private ?MarqueChemise $marqueChemise = null;
 
+    #[ORM\ManyToOne(inversedBy: 'chemises')]
+    private ?User $user = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -76,6 +79,18 @@ class Chemise
     public function setMarqueChemise(?MarqueChemise $marqueChemise): self
     {
         $this->marqueChemise = $marqueChemise;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
