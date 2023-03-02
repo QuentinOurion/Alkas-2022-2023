@@ -16,7 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/exo')]
 class ExoController extends AbstractController
 {
-
     #[Route('/firstExo', name: 'firstExo')]
     public function index(): Response
     {

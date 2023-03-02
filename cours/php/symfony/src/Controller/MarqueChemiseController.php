@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\MarqueChemise;
 use App\Form\MarqueChemiseType;
 use App\Repository\MarqueChemiseRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,6 +25,7 @@ class MarqueChemiseController extends AbstractController
     }
 
     #[Route('/new', name: 'app_marque_chemise_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_USER')]
     public function new(Request $request, MarqueChemiseRepository $marqueChemiseRepository): Response
     {
         $marqueChemise = new MarqueChemise();
@@ -31,6 +33,7 @@ class MarqueChemiseController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $marqueChemise->setUser($this->getUser());
             $marqueChemiseRepository->save($marqueChemise, true);
 
             return $this->redirectToRoute('app_marque_chemise_index', [], Response::HTTP_SEE_OTHER);
@@ -55,6 +58,7 @@ class MarqueChemiseController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_marque_chemise_edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_USER')]
     public function edit(Request $request, MarqueChemise $marqueChemise, MarqueChemiseRepository $marqueChemiseRepository): Response
     {
         $form = $this->createForm(MarqueChemiseType::class, $marqueChemise);
@@ -74,6 +78,7 @@ class MarqueChemiseController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_marque_chemise_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_USER')]
     public function delete(Request $request, MarqueChemise $marqueChemise, MarqueChemiseRepository $marqueChemiseRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$marqueChemise->getId(), $request->request->get('_token'))) {

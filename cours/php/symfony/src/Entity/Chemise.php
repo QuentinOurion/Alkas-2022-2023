@@ -28,6 +28,7 @@ class Chemise
     private ?MarqueChemise $marqueChemise = null;
 
     #[ORM\ManyToOne(inversedBy: 'chemises')]
+    #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
     public function getId(): ?int

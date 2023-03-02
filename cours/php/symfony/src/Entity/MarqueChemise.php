@@ -23,6 +23,7 @@ class MarqueChemise
     private Collection $chemises;
 
     #[ORM\ManyToOne(inversedBy: 'marqueChemises')]
+    #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
     public function __construct()

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Chemise;
 use App\Form\ChemiseType;
 use App\Repository\ChemiseRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,6 +25,7 @@ class ChemiseController extends AbstractController
     }
 
     #[Route('/new', name: 'app_chemise_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_USER')]
     public function new(Request $request, ChemiseRepository $chemiseRepository): Response
     {
         $chemise = new Chemise();
@@ -58,7 +60,9 @@ class ChemiseController extends AbstractController
         ]);
     }
 
+
     #[Route('/{id}/edit', name: 'app_chemise_edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_USER')]
     public function edit(Request $request, Chemise $chemise, ChemiseRepository $chemiseRepository): Response
     {
         $form = $this->createForm(ChemiseType::class, $chemise);
@@ -79,6 +83,7 @@ class ChemiseController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_chemise_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_USER')]
     public function delete(Request $request, Chemise $chemise, ChemiseRepository $chemiseRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$chemise->getId(), $request->request->get('_token'))) {
