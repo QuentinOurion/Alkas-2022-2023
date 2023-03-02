@@ -18,6 +18,8 @@ class ChemiseController extends AbstractController
     {
         return $this->render('chemise/index.html.twig', [
             'chemises' => $chemiseRepository->findAll(),
+            'menuCheMarque' => true,
+            'menuChemise' => true,
         ]);
     }
 
@@ -37,6 +39,8 @@ class ChemiseController extends AbstractController
         return $this->renderForm('chemise/new.html.twig', [
             'chemise' => $chemise,
             'form' => $form,
+            'menuCheMarque' => true,
+            'menuChemise' => true,
         ]);
     }
 
@@ -45,6 +49,8 @@ class ChemiseController extends AbstractController
     {
         return $this->render('chemise/show.html.twig', [
             'chemise' => $chemise,
+            'menuCheMarque' => true,
+            'menuChemise' => true,
         ]);
     }
 
@@ -63,6 +69,8 @@ class ChemiseController extends AbstractController
         return $this->renderForm('chemise/edit.html.twig', [
             'chemise' => $chemise,
             'form' => $form,
+            'menuCheMarque' => true,
+            'menuChemise' => true,
         ]);
     }
 

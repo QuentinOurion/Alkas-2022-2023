@@ -22,7 +22,9 @@ class ExoController extends AbstractController
     {
         return $this->render('exo/index.html.twig', [
             'monTitre' => 'Super mega titre ' . date('Y'),
-            'contenuDynamique' => "C'est de la dynamite"
+            'contenuDynamique' => "C'est de la dynamite",
+            'menuExo' => true,
+            'menuFirstExo' => true,
         ]);
     }
 
@@ -66,7 +68,9 @@ class ExoController extends AbstractController
             'email' => $email,
             'formSub' => $formSub,
             'formValid' => $formValid,
-            'password' => $password
+            'password' => $password,
+            'menuExo' => true,
+            'menuExoFormulaireSecond' => true
         ]);
     }
 
@@ -76,7 +80,9 @@ class ExoController extends AbstractController
         return $this->render('voiture/findByNameCars.twig', [
                 'voitures' => $voitureRepository->findBy([
                     'nom' => 'peugeot'
-                ])
+                ]),
+                'menuVoiture' => true,
+                'menuFindByNameCars' => true,
             ]
         );
 //        dd($voitureRepository->findBy(['nom' => 'peugeot']));
@@ -88,7 +94,9 @@ class ExoController extends AbstractController
     public function finByIdVoiture(VoitureRepository $voitureRepository): Response
     {
         return $this->render('voiture/showOneCar.twig', [
-                'voiture' => $voitureRepository->find(2)
+                'voiture' => $voitureRepository->find(2),
+                'menuVoiture' => true,
+                'menuFinByIdVoiture' => true,
             ]
         );
 //        dd($voitureRepository->find(2));
@@ -99,7 +107,9 @@ class ExoController extends AbstractController
     public function findOneByCar(VoitureRepository $voitureRepository): Response
     {
         return $this->render('voiture/showOneCar.twig', [
-                'voiture' => $voitureRepository->findOneBy(['nom' => 'peugeot'])
+                'voiture' => $voitureRepository->findOneBy(['nom' => 'peugeot']),
+                'menuVoiture' => true,
+                'menuFindOneByCar' => true,
             ]
         );
 //        dd($voitureRepository->findOneBy(['nom' => 'peugeot']));
@@ -109,7 +119,9 @@ class ExoController extends AbstractController
     public function findAllCars(VoitureRepository $voitureRepository): Response
     {
         return $this->render('voiture/findByNameCars.twig', [
-                'voitures' => $voitureRepository->findAll()
+                'voitures' => $voitureRepository->findAll(),
+                'menuVoiture' => true,
+                'menuFindAllCars' => true,
             ]
         );
 //        dd($voitureRepository->findAll());
@@ -126,8 +138,8 @@ class ExoController extends AbstractController
     {
         return $this->render('voiture/showOneCar.twig', [
                 'voiture' => $voiture,
-                'menuExo' => true,
-                'menuFindByIDSlug' => true
+                'menuVoiture' => true,
+                'menuVFindByIDSlug' => true
             ]
         );
     }
@@ -143,7 +155,9 @@ class ExoController extends AbstractController
     public function findByNomSlug(Voiture $voiture) : Response
     {
         return $this->render('voiture/showOneCar.twig', [
-                'voiture' => $voiture
+                'voiture' => $voiture,
+                'menuVoiture' => true,
+                'menuVFindByNomSlug' => true
             ]
         );
     }

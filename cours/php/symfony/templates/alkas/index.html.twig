@@ -3,6 +3,8 @@
 {% block title %}Hello {{ macle }}!{% endblock %}
 
 {% block body %}
+
+
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
@@ -17,4 +19,6 @@
         <li>Your template at <code><a href="{{ '/Users/laurent/dev/php/cours/Alkas-2022-2023/cours/php/symfony/templates/alkas/index.html.twig'|file_link(0) }}">templates/alkas/index.html.twig</a></code></li>
     </ul>
 </div>
+
+    {{ parent() }}
 {% endblock %}

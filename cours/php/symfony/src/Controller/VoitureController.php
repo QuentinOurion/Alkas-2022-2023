@@ -18,6 +18,7 @@ class VoitureController extends AbstractController
     {
         return $this->render('voiture/index.html.twig', [
             'voitures' => $voitureRepository->findAll(),
+            'menuVoiture' => true,
         ]);
     }
 
@@ -39,6 +40,7 @@ class VoitureController extends AbstractController
         return $this->renderForm('voiture/new.html.twig', [
             'voiture' => $voiture,
             'form' => $form,
+            'menuVoiture' => true,
         ]);
     }
 
@@ -54,6 +56,7 @@ class VoitureController extends AbstractController
     {
         return $this->render('voiture/show.html.twig', [
             'voiture' => $voiture,
+            'menuVoiture' => true,
         ]);
     }
 
@@ -77,6 +80,7 @@ class VoitureController extends AbstractController
         return $this->renderForm('voiture/edit.html.twig', [
             'voiture' => $voiture,
             'form' => $form,
+            'menuVoiture' => true,
         ]);
     }
 
@@ -89,7 +93,4 @@ class VoitureController extends AbstractController
 
         return $this->redirectToRoute('app_voiture_index', [], Response::HTTP_SEE_OTHER);
     }
-
-
-
 }

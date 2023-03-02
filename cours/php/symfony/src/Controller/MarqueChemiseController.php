@@ -18,6 +18,8 @@ class MarqueChemiseController extends AbstractController
     {
         return $this->render('marque_chemise/index.html.twig', [
             'marque_chemises' => $marqueChemiseRepository->findAll(),
+            'menuCheMarque' => true,
+            'menuMarque' => true,
         ]);
     }
 
@@ -37,6 +39,8 @@ class MarqueChemiseController extends AbstractController
         return $this->renderForm('marque_chemise/new.html.twig', [
             'marque_chemise' => $marqueChemise,
             'form' => $form,
+            'menuCheMarque' => true,
+            'menuMarque' => true,
         ]);
     }
 
@@ -45,6 +49,8 @@ class MarqueChemiseController extends AbstractController
     {
         return $this->render('marque_chemise/show.html.twig', [
             'marque_chemise' => $marqueChemise,
+            'menuCheMarque' => true,
+            'menuMarque' => true,
         ]);
     }
 
@@ -63,6 +69,7 @@ class MarqueChemiseController extends AbstractController
         return $this->renderForm('marque_chemise/edit.html.twig', [
             'marque_chemise' => $marqueChemise,
             'form' => $form,
+            'menuCheMarque' => true
         ]);
     }
 
