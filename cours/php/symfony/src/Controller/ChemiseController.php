@@ -68,7 +68,17 @@ class ChemiseController extends AbstractController
 //        if ($this->getUser()->getId() !== $chemise->getUser()->getId() && !$this->isGranted('ROLE_ADMIN')) {
 //            throw new \Exception('fuck u');
 //        }
-        $this->denyAccessUnlessGranted('modifChemise', $chemise);
+        try {
+            $this->denyAccessUnlessGranted('modifChemise', $chemise);
+        } catch (\Exception $e) {
+            if($e->getCode() === 403) {
+                $this->addFlash("warning", "Il y a une erreur de connexion");
+            } else {
+                $this->addFlash('error', $e->getMessage());
+            }
+
+            $this->redirectToRoute('accueil');
+        }
 
         $form = $this->createForm(ChemiseType::class, $chemise);
         $form->handleRequest($request);

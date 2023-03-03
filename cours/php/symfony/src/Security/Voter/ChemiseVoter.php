@@ -6,11 +6,17 @@ use App\Entity\Chemise;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Security;
 
 class ChemiseVoter extends Voter
 {
     private const MODIF = 'modifChemise';
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
 
     protected function supports(string $attribute, mixed $subject): bool
     {
@@ -26,6 +32,10 @@ class ChemiseVoter extends Voter
             return false;
         }
 
+//        if($attribute === self::MODIF && ($user->getId() === $subject->getUser()->getId() || $this->security->isGranted('ROLE_ADMIN'))) {
+//            return true;
+//        }
+
         return match ($attribute) {
             self::MODIF => $this->canUpdate($subject, $user),
             default => throw new \LogicException('This code should not be reached!')
@@ -34,7 +44,6 @@ class ChemiseVoter extends Voter
 
     private function canUpdate(Chemise $chemise, User $user): bool
     {
-        // this assumes that the Post object has a `getOwner()` method
-        return $user->getId() === $chemise->getUser()->getId();
+        return $user->getId() === $chemise->getUser()->getId() || $this->security->isGranted('ROLE_ADMIN');
     }
 }
