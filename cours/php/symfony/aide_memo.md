@@ -234,7 +234,7 @@ Modifier le premier role dans la base donnée, dans la table user
 
 Requête SQL pour le modifier directement
 
-    UPDATE user SET roles = ["ROLE_ADMIN"] WHERE id=1;
+    UPDATE user SET roles = '["ROLE_ADMIN"]' WHERE id=1;
 
 Pour permettre de vérifier un type d'utilisateur dans twig, il faudra installer extra-bundle
 

@@ -83,11 +83,17 @@
                 <ul class="navbar-nav ms-auto">
                     {% if is_granted('ROLE_USER') %}
                         <li class="nav-item">
+                            <span class="nav-link">{{ app.user.prenom | capitalize }} &gt;</span>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_login') }}">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('inscription') }}">S'incrire</a>
                         </li>
                     {% endif %}
                 </ul>

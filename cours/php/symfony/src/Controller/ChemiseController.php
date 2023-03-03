@@ -65,6 +65,11 @@ class ChemiseController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function edit(Request $request, Chemise $chemise, ChemiseRepository $chemiseRepository): Response
     {
+//        if ($this->getUser()->getId() !== $chemise->getUser()->getId() && !$this->isGranted('ROLE_ADMIN')) {
+//            throw new \Exception('fuck u');
+//        }
+        $this->denyAccessUnlessGranted('modifChemise', $chemise);
+
         $form = $this->createForm(ChemiseType::class, $chemise);
         $form->handleRequest($request);
 
@@ -86,7 +91,7 @@ class ChemiseController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function delete(Request $request, Chemise $chemise, ChemiseRepository $chemiseRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$chemise->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $chemise->getId(), $request->request->get('_token'))) {
             $chemiseRepository->remove($chemise, true);
         }
 
