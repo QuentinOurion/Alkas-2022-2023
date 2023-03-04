@@ -44,6 +44,8 @@ class ChemiseVoter extends Voter
 
     private function canUpdate(Chemise $chemise, User $user): bool
     {
+
+//        dd($chemise, $user);
         return $user->getId() === $chemise->getUser()->getId() || $this->security->isGranted('ROLE_ADMIN');
     }
 }

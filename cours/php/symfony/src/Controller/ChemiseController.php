@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 #[Route('/chemise')]
 class ChemiseController extends AbstractController
@@ -70,14 +71,14 @@ class ChemiseController extends AbstractController
 //        }
         try {
             $this->denyAccessUnlessGranted('modifChemise', $chemise);
-        } catch (\Exception $e) {
+        } catch (AccessDeniedException $e) {
             if($e->getCode() === 403) {
-                $this->addFlash("warning", "Il y a une erreur de connexion");
+                $this->addFlash("warning", "Il y a une erreur d'identifiant sur les chemises");
             } else {
                 $this->addFlash('error', $e->getMessage());
             }
 
-            $this->redirectToRoute('accueil');
+            return $this->redirectToRoute('accueil');
         }
 
         $form = $this->createForm(ChemiseType::class, $chemise);

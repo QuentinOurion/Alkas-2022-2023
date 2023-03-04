@@ -35,7 +35,11 @@ Modifiez le site actuel entièrement avec bootstrap
 * Un menu déroulant à gauche qui devra avoir un sous menu cours, exo et voiture. Ce dernier et ses pages devront être accessible uniquement si on est connecté en ADMIN (RTFM)
 * Un menu à droite pour la connexion et déconnexion si on est déjà connecté
 
+## Marque et chemise
+Création de la relation sur la marque chemise
 
+## Sécurité des marques et chemises
+Seuls les utilisateurs qui ont créé une chemise et une marque peuvent la changer et la supprimer
 
-
----
+## Voter sur les chemises et les marques
+Sécurité améliorée par les voters et affichage sur la page d'accueil d'un message d'erreur
