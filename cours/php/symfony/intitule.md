@@ -43,3 +43,6 @@ Seuls les utilisateurs qui ont créé une chemise et une marque peuvent la chang
 
 ## Voter sur les chemises et les marques
 Sécurité améliorée par les voters et affichage sur la page d'accueil d'un message d'erreur
+
+## Affichage restreint
+Les personnes doivent pouvoir voir uniquement leurs marques et chemises
