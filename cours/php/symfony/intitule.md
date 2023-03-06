@@ -46,3 +46,19 @@ Sécurité améliorée par les voters et affichage sur la page d'accueil d'un me
 
 ## Affichage restreint
 Les personnes doivent pouvoir voir uniquement leurs marques et chemises
+
+## Forum
+![](forum-symfony.png)
+- À partir du MCD, faire le forum
+
+- Il faudra avoir une page qui va lister les conversations (voir la date de création, de la dernière modif et le nom du dernier utilisateur qui a ajouté un message) et sur un clique on pourra voir les messages.
+
+- On pourra aussi retrouver la conversation via l'url, c'est-à-dire par un slug (pour créer un slug, il y a le composant Slug).
+
+- La page message devra afficher en titre le nom de la conversation, les noms des utilisateurs, la date et l'heure et on devra pouvoir revenir sur la liste des conversations.
+
+- Seul l'utilisateur (ou l'admin) qui a créé la conversation pourra choisir de terminer la conversation.
+
+- Seuls les admins peuvent supprimer les conversations (donc ses messages doivent être supprimé)
+
+- Un utilisateur pourra seulement modifier son propre message ou les admins, on pourra voir la date de modification
