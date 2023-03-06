@@ -75,7 +75,6 @@ class ChemiseController extends AbstractController
         } catch (AccessDeniedException  $e) {
             if($e->getCode() === 403) {
                 $this->addFlash("warning", "Il y a une erreur d'identifiant sur les chemises");
-            } elseif($e->getCode()) {
             } else {
                 $this->addFlash('error', $e->getMessage());
             }
@@ -111,6 +110,17 @@ class ChemiseController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function delete(Request $request, Chemise $chemise, ChemiseRepository $chemiseRepository): Response
     {
+        try {
+            $this->denyAccessUnlessGranted('modifChemise', $chemise);
+        } catch (AccessDeniedException  $e) {
+            if($e->getCode() === 403) {
+                $this->addFlash("warning", "Il y a une erreur d'identifiant sur les chemises");
+            } else {
+                $this->addFlash('error', $e->getMessage());
+            }
+
+            return $this->redirectToRoute('accueil');
+        }
         if ($this->isCsrfTokenValid('delete' . $chemise->getId(), $request->request->get('_token'))) {
             $chemiseRepository->remove($chemise, true);
         }

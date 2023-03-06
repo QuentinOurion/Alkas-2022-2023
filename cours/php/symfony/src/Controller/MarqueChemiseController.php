@@ -92,8 +92,19 @@ class MarqueChemiseController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function delete(Request $request, MarqueChemise $marqueChemise, MarqueChemiseRepository $marqueChemiseRepository): Response
     {
+        try {
+            $this->denyAccessUnlessGranted("modifMarqueChemise", $marqueChemise);
+        } catch (AccessDeniedException $accessDeniedException) {
+            $this->addFlash("warning", "Il y a une erreur d'identifiant sur les marques");
+
+            return $this->redirectToRoute('accueil');
+        }
+
         if ($this->isCsrfTokenValid('delete' . $marqueChemise->getId(), $request->request->get('_token'))) {
             $marqueChemiseRepository->remove($marqueChemise, true);
+        } else {
+            $this->addFlash("warning", "Vous n'avez pas les droits pour la suppression");
+            return $this->redirectToRoute('accueil');
         }
 
         return $this->redirectToRoute('app_marque_chemise_index', [], Response::HTTP_SEE_OTHER);
