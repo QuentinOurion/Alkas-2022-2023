@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 #[Route('/marque/chemise')]
 class MarqueChemiseController extends AbstractController
@@ -18,7 +19,9 @@ class MarqueChemiseController extends AbstractController
     public function index(MarqueChemiseRepository $marqueChemiseRepository): Response
     {
         return $this->render('marque_chemise/index.html.twig', [
-            'marque_chemises' => $marqueChemiseRepository->findAll(),
+            'marque_chemises' => $marqueChemiseRepository->findBy([
+                'user' => $this->getUser()->getId()
+            ]),
             'menuCheMarque' => true,
             'menuMarque' => true,
         ]);
@@ -61,6 +64,14 @@ class MarqueChemiseController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function edit(Request $request, MarqueChemise $marqueChemise, MarqueChemiseRepository $marqueChemiseRepository): Response
     {
+        try {
+            $this->denyAccessUnlessGranted("modifMarqueChemise", $marqueChemise);
+        } catch (AccessDeniedException $accessDeniedException) {
+            $this->addFlash("warning", "Il y a une erreur d'identifiant sur les marques");
+
+            return $this->redirectToRoute('accueil');
+        }
+
         $form = $this->createForm(MarqueChemiseType::class, $marqueChemise);
         $form->handleRequest($request);
 
@@ -81,7 +92,7 @@ class MarqueChemiseController extends AbstractController
     #[IsGranted('ROLE_USER')]
     public function delete(Request $request, MarqueChemise $marqueChemise, MarqueChemiseRepository $marqueChemiseRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$marqueChemise->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $marqueChemise->getId(), $request->request->get('_token'))) {
             $marqueChemiseRepository->remove($marqueChemise, true);
         }
 

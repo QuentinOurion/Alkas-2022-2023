@@ -13,11 +13,14 @@
 <div class="example-wrapper">
     <h1>Hello {{ macle }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/laurent/dev/php/cours/Alkas-2022-2023/cours/php/symfony/src/Controller/AlkasController.php'|file_link(0) }}">src/Controller/AlkasController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/laurent/dev/php/cours/Alkas-2022-2023/cours/php/symfony/templates/alkas/index.html.twig'|file_link(0) }}">templates/alkas/index.html.twig</a></code></li>
-    </ul>
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+
+            <div class="p-3 mb-2 alert alert-{{ label }}">{{ message }}</div>
+
+        {% endfor %}
+    {% endfor %}
+
 </div>
 
     {{ parent() }}

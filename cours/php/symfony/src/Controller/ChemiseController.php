@@ -19,7 +19,7 @@ class ChemiseController extends AbstractController
     public function index(ChemiseRepository $chemiseRepository): Response
     {
         return $this->render('chemise/index.html.twig', [
-            'chemises' => $chemiseRepository->findAll(),
+            'chemises' => $chemiseRepository->findBy(['user' => $this->getUser()->getId()]),
             'menuCheMarque' => true,
             'menuChemise' => true,
         ]);
@@ -67,19 +67,28 @@ class ChemiseController extends AbstractController
     public function edit(Request $request, Chemise $chemise, ChemiseRepository $chemiseRepository): Response
     {
 //        if ($this->getUser()->getId() !== $chemise->getUser()->getId() && !$this->isGranted('ROLE_ADMIN')) {
-//            throw new \Exception('fuck u');
+//            throw new \Exception('fuck u', 200);
 //        }
+
         try {
             $this->denyAccessUnlessGranted('modifChemise', $chemise);
-        } catch (AccessDeniedException $e) {
+        } catch (AccessDeniedException  $e) {
             if($e->getCode() === 403) {
                 $this->addFlash("warning", "Il y a une erreur d'identifiant sur les chemises");
+            } elseif($e->getCode()) {
             } else {
                 $this->addFlash('error', $e->getMessage());
             }
 
             return $this->redirectToRoute('accueil');
         }
+//
+//        try {
+//            throw new \Exception('fuck u');
+//        } catch (\Exception $e) {
+//            dd($e);
+//            echo $e->getMessage();
+//        }
 
         $form = $this->createForm(ChemiseType::class, $chemise);
         $form->handleRequest($request);
