@@ -121,8 +121,12 @@ class ChemiseController extends AbstractController
 
             return $this->redirectToRoute('accueil');
         }
+
         if ($this->isCsrfTokenValid('delete' . $chemise->getId(), $request->request->get('_token'))) {
             $chemiseRepository->remove($chemise, true);
+        } else {
+            $this->addFlash("warning", "Vous n'avez pas les droits pour la suppression");
+            return $this->redirectToRoute('accueil');
         }
 
         return $this->redirectToRoute('app_chemise_index', [], Response::HTTP_SEE_OTHER);
