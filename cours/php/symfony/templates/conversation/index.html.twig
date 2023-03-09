@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conversation index{% endblock %}
+
+{% block body %}
+    <h1>Conversation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Titre</th>
+
+                <th>Termine</th>
+                <th>DateCreation</th>
+                <th>DateModification</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for conversation in conversations %}
+            <tr>
+
+                <td>{{ conversation.titre }}</td>
+                <td>{{ conversation.termine ? 'Yes' : 'No' }}</td>
+                <td>{{ conversation.dateCreation|date('Y-m-d H:i:s') }}</td>
+                <td>{{ conversation.dateModification ? conversation.dateModification|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_conversation_show', {'slug': conversation.slug}) }}">voir</a>
+                    <a href="{{ path('app_conversation_edit', {'id': conversation.id}) }}">modif</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_conversation_new') }}">Create new</a>
+{% endblock %}

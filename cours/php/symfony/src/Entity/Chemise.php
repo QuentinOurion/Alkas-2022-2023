@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\ChemiseRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\MarqueChemise;
 
 #[ORM\Entity(repositoryClass: ChemiseRepository::class)]
 class Chemise

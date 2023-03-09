@@ -78,6 +78,18 @@
                             <li><a class="dropdown-item {% if menuMarque is defined %}active{% endif %}" href="{{ path('app_marque_chemise_index') }}">Marque</a></li>
                         </ul>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link {% if menuCheMarque is defined %}active{% endif %} dropdown-toggle" href="#"
+                           role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Forum
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ path('app_conversation_index') }}">Conversation.s</a></li>
+
+                        </ul>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto">
