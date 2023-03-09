@@ -3,40 +3,36 @@
 {% block title %}Conversation index{% endblock %}
 
 {% block body %}
-    <h1>Conversation index</h1>
+    <h1>Liste des conversations</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
 
-                <th>Titre</th>
+            <div class="p-3 mb-2 alert alert-{{ label }}">{{ message }}</div>
 
-                <th>Termine</th>
-                <th>DateCreation</th>
-                <th>DateModification</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for conversation in conversations %}
-            <tr>
-
-                <td>{{ conversation.titre }}</td>
-                <td>{{ conversation.termine ? 'Yes' : 'No' }}</td>
-                <td>{{ conversation.dateCreation|date('Y-m-d H:i:s') }}</td>
-                <td>{{ conversation.dateModification ? conversation.dateModification|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_conversation_show', {'slug': conversation.slug}) }}">voir</a>
-                    <a href="{{ path('app_conversation_edit', {'id': conversation.id}) }}">modif</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
         {% endfor %}
-        </tbody>
-    </table>
+    {% endfor %}
 
-    <a href="{{ path('app_conversation_new') }}">Create new</a>
+    {% for conversation in conversations %}
+        <div class="d-flex justify-content-between ">
+            <h6>
+                <a class="text-dark"
+                   href="{{ path('app_conversation_show', {'slug': conversation.slug}) }}">{{ conversation.titre }} <img
+                            src="/images/voir.svg" alt=""></a>
+            </h6>
+            <span>
+                <div class="{% if not conversation.termine %}text-success{% else %}text-danger{% endif %}">Conversation {{ conversation.termine ? 'Fermé' : 'ouverte' }}</div>
+                {{ conversation.dateCreation|date('Y-m-d H:i:s') }}
+                {{ conversation.dateModification ? conversation.dateModification|date('Y-m-d H:i:s') : '' }}
+
+                <a href="{{ path('app_conversation_edit', {'id': conversation.id}) }}">
+                    <img src="/images/modif.svg" alt="">
+                </a>
+            </span>
+        </div>
+    {% else %}
+        Il n'y a pas encore de conversation
+    {% endfor %}
+
+    <a href="{{ path('app_conversation_new') }}">Créer une nouvelle conversation</a>
 {% endblock %}
