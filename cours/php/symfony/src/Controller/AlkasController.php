@@ -10,15 +10,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AlkasController extends AbstractController
 {
-    #[Route('/', name: 'pageIndex')]
-    public function index(): Response
+    #[Route('/', name: 'accueil')]
+    public function accueil(): Response
     {
         return $this->render('alkas/index.html.twig', [
             'macle' => 'mon test',
+            'menuAccueil' => true,
         ]);
     }
 
-    #[Route('/response', name: 'pageIndex')]
+    #[Route('/response', name: 'response')]
     public function response(): Response
     {
         $this->calcul();
@@ -45,7 +46,9 @@ class AlkasController extends AbstractController
 //        dd());
         return $this->render('alkas/formulaire.twig', [
             'premierChamp' => $premierChamp,
-            'nombre' => $request->request->count()
+            'nombre' => $request->request->count(),
+            'menuCours' => true,
+            'menuFormulaire' => true,
         ]);
     }
 
@@ -70,12 +73,15 @@ class AlkasController extends AbstractController
 //            dd($r);
 //            dd($recupPremier);
             $datasForm = $form->getData();
-//            dd($datasForm);
+            dd($datasForm);
+//            $this->pleinDeParam($datasForm, $r);
         }
 
         return $this->render('alkas/formulaireSecond.twig', [
                 'form' => $form->createView(),
-                'toto' => false
+                'toto' => false,
+                'menuCours' => true,
+                'menuFormulaireSecond' => true,
             ]
         );
     }

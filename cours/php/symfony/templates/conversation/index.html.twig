@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conversation index{% endblock %}
+
+{% block body %}
+    <h1>Liste des conversations</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+
+            <div class="p-3 mb-2 alert alert-{{ label }}">{{ message }}</div>
+
+        {% endfor %}
+    {% endfor %}
+
+    {% for conversation in conversations %}
+        <div class="d-flex justify-content-between ">
+            <h6>
+                <a class="text-dark"
+                   href="{{ path('app_conversation_show', {'slug': conversation.slug}) }}">{{ conversation.titre }} <img
+                            src="/images/voir.svg" alt=""></a>
+            </h6>
+            <span>
+                <div class="{% if not conversation.termine %}text-success{% else %}text-danger{% endif %}">Conversation {{ conversation.termine ? 'Fermé' : 'ouverte' }}</div>
+                {{ conversation.dateCreation|date('Y-m-d H:i:s') }}
+                {{ conversation.dateModification ? conversation.dateModification|date('Y-m-d H:i:s') : '' }}
+
+                <a href="{{ path('app_conversation_edit', {'id': conversation.id}) }}">
+                    <img src="/images/modif.svg" alt="">
+                </a>
+            </span>
+        </div>
+    {% else %}
+        Il n'y a pas encore de conversation
+    {% endfor %}
+
+    <a href="{{ path('app_conversation_new') }}">Créer une nouvelle conversation</a>
+{% endblock %}
