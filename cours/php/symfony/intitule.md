@@ -62,3 +62,55 @@ Les personnes doivent pouvoir voir uniquement leurs marques et chemises
 - Seuls les admins peuvent supprimer les conversations (donc ses messages doivent être supprimé)
 
 - Un utilisateur pourra seulement modifier son propre message ou les admins, on pourra voir la date de modification
+
+# Eval Conception d'un " CMS " en symfony (10 mars 2022)
+
+## Questions
+
+- À quoi sert Request $request ?
+
+- Qu'est-ce qu'une hydratation ? 
+
+- Dans une méthode, on retrouve souvent dans les paramètres des choses du genre (Request $request, Chemise $chemise), comment ça s'appelle et comment ça marche ?
+
+- Via un contrôleur, j'aimerais afficher une chemise par son identifiant comme dans cet exemple /chemise/4, 
+Comment l'écrire ?
+
+- Qu'est-ce qu'un voter et son but ?
+
+- Qu'est-ce qu'une entité ?
+
+- Qu'est ce qu'un repository ?
+
+- Pourquoi il vaut mieux utiliser des versions LTS dans la majorité des cas ?
+
+- Comment envoyé une erreur et l'intercepté ? Expliquer la logique
+
+- Comment basculer le site en mode développement et production 
+
+- Comment supprimer le cache ?
+
+---
+## Exo de l'éval
+
+- Créez un projet symfony dans votre dossier étudiant/votreprénom/evalSymfony (vous pouvez faire un copier / coller de mon projet symfony mais pas le vôtre)
+
+- Créez une base de donnée via ce MCD :
+
+![](cms.png)
+
+- Chaque page a une catégorie (ex: sport, actualité, etc.) dont l'on devra sélectionner lors de la création et modification (création / modification que par un admin)
+
+- On pourra lister les pages et on pourra les supprimers ou modifiers mais uniquement par celui qui l'a créé ou un admin
+
+- On pourra trier les pages par leurs catégories
+
+- Affichez une page via son slug
+
+- La page doit afficher uniquement : le titre, la date de création, sa catégorie et date de modification ainsi que son contenu.
+
+- Ajoutez dans la bannière la possibilité de voir les pages
+
+- Faire une jolie mise en page
+
+Attention cependant pour le SEO, le titre et la description doivent être aussi dans les balises faites pour ça.
