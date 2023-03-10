@@ -1,0 +1,28 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="text-center">Liste des pages</h1>
+    <div>
+        <strong>Filtrer par catégorie :</strong>
+        <form action="{{ path('app_page_index') }}" method="get">
+            <select name="category">
+                <option value="">Toutes les catégories</option>
+                {% for categorie in categories %}
+                    <option value="{{ categorie.id }}" {% if selectedCategoryId == categorie.id %}selected{% endif %}}>
+                        {{ categorie.nom }}
+                    </option>
+                {% endfor %}
+            </select>
+            <button class="btn btn-primary" type="submit">Filtrer</button>
+        </form>
+    </div>
+    <ul>
+        {% for page in pages %}
+            <li>
+                <a href="{{ path('app_page_show', {'slug': page.slug}) }}">{{ page.titre }}</a>
+                - {{ page.dateCreation|date('d/m/Y') }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
